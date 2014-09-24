@@ -2,20 +2,20 @@ runRabbitRun
 ============
 
 ### Team Members
--Adam Ron
--Amelia Laundy
--Richard Garcia
--Steve Mathews
+* Adam Ron
+* Amelia Laundy
+* Richard Garcia
+* Steve Mathews
 
 ### Description
--A Google Maps based multi player game where users try to find another user who is the rabbit
+* A Google Maps based multi player game where users try to find another user who is the rabbit
 
 
 ### Team Roles / Accountabilities
--GameDesigner/Lead - Amelia
--BackEndTechnician - Adam
--WildCard - Steve
--FrontEnd/Js - Richard
+* GameDesigner/Lead - Amelia
+* BackEndTechnician - Adam
+* WildCard - Steve
+* FrontEnd/Js - Richard
 
 
 ### Github workflow
@@ -41,7 +41,7 @@ runRabbitRun
 * HTML Canvas
 
 ### Product Management Tools
-*[Trello] (https://trello.com/b/cg6Q6btz/runrabbitrun)
+* [Trello] (https://trello.com/b/cg6Q6btz/runrabbitrun)
 
 ### Coding Strategies
 * TDD
