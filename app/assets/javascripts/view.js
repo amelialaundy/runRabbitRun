@@ -19,5 +19,24 @@ View.prototype = {
       }
       this.map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
+    },
+
+    renderMapPlayerMarkers: function(playerMarker) {
+      var newMapMarker =  this.createMarker(playerMarker);
+    },
+
+    createMarker: function(playerMarker) {
+    	var options = this.createNewPlayerMarkerOptions(playerMarker);
+    	var newMapMarker = new google.maps.Marker(options)
+    	return newMapMarker
+    },
+
+    createNewPlayerMarkerOptions: function(playerMarker) {
+    	return {
+    	  map: this.map,
+    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
+    	  clickable: true,
+    	  animation: google.maps.Animation.DROP,
+    	};
     }
 }
