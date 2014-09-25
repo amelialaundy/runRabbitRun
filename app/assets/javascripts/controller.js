@@ -31,30 +31,23 @@ Controller.prototype = {
 		// 40 = down
 
 		if (e.keyCode == 38) {
-			this.view.googlePlayer.position.k = this.playerOptions.lat + 0.00008
-			this.view.googlePlayer.position.B = this.playerOptions.lng
-			this.playerOptions.lat = this.view.googlePlayer.position.k
-			this.playerOptions.lng = this.view.googlePlayer.position.B
+			this.playerOptions.lat = this.playerOptions.lat + 0.00008
+			this.playerOptions.lng = this.playerOptions.lng
+
+			// these two lines alter the google maps marker object itself, although I can;t get them to actually show their changed positions on the map
+			// this.playerOptions.lat = this.view.googlePlayer.position.k
+			// this.playerOptions.lng = this.view.googlePlayer.position.B
 			// this.createPlayerMarkers(this.playerOptions)
 
 		} else if (e.keyCode == 39) {
-			this.view.googlePlayer.position.k = this.playerOptions.lat
-			this.view.googlePlayer.position.B = this.playerOptions.lng + 0.00008
-			this.playerOptions.lat = this.view.googlePlayer.position.k
-			this.playerOptions.lng = this.view.googlePlayer.position.B
-			// this.createPlayerMarkers(this.playerOptions)
+			this.playerOptions.lat = this.playerOptions.lat
+			this.playerOptions.lng = this.playerOptions.lng + 0.00008
 		} else if (e.keyCode == 40) {
-			this.view.googlePlayer.position.k = this.playerOptions.lat - 0.00008
-			this.view.googlePlayer.position.B = this.playerOptions.lng 
-			this.playerOptions.lat = this.view.googlePlayer.position.k
-			this.playerOptions.lng = this.view.googlePlayer.position.B
-			// this.createPlayerMarkers(this.playerOptions)
+			this.playerOptions.lat = this.playerOptions.lat - 0.00008
+			this.playerOptions.lng = this.playerOptions.lng 
 		} else if (e.keyCode == 37) {
-			this.view.googlePlayer.position.k = this.playerOptions.lat
-			this.view.googlePlayer.position.B = this.playerOptions.lng - 0.00008
-			this.playerOptions.lat = this.view.googlePlayer.position.k
-			this.playerOptions.lng = this.view.googlePlayer.position.B
-			// this.createPlayerMarkers(this.playerOptions)
+			this.playerOptions.lat = this.playerOptions.lat
+			this.playerOptions.lng = this.playerOptions.lng - 0.00008
 		}
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
 	}
