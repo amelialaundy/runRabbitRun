@@ -31,8 +31,8 @@ Controller.prototype = {
 		// 40 = down
 
 		if (e.keyCode == 38) {
-			this.view.googlePlayer.position.k = -41.293430
-			this.view.googlePlayer.position.B = 174.775850
+			this.view.googlePlayer.position.k = this.playerOptions.lat + 0.002
+			this.view.googlePlayer.position.B = 174.773259
 			this.playerOptions.lat = this.view.googlePlayer.position.k
 			this.playerOptions.lng = this.view.googlePlayer.position.B
 			console.log(this.view.googlePlayer.position.k)
