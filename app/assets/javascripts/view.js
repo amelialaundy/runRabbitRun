@@ -2,6 +2,7 @@ function View() {
 	this.lat = -41.295308
 	this.lng = 174.773082
 	this.zoom = 15
+	this.googlePlayer = null
 
 }
 
@@ -27,8 +28,11 @@ View.prototype = {
 
     createMarker: function(playerMarker) {
     	var options = this.createNewPlayerMarkerOptions(playerMarker);
-    	var newMapMarker = new google.maps.Marker(options)
-    	return newMapMarker
+    	var googlePlayerMarker = new google.maps.Marker(options)
+    	this.googlePlayer = googlePlayerMarker
+    	console.log(googlePlayerMarker.position.k)
+    	console.log(googlePlayerMarker.position.B)
+    	return googlePlayerMarker
     },
 
     createNewPlayerMarkerOptions: function(playerMarker) {
