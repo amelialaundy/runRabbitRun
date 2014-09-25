@@ -14,7 +14,7 @@ runRabbitRun
 ### Team Roles / Accountabilities
 * GameDesigner/Lead - Amelia
 * BackEndTechnician - Adam
-* WildCard - Steve
+* ModelViewController - Steve
 * FrontEnd/Js - Richard
 
 
