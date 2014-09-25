@@ -879,3 +879,255 @@ Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:20:42 +12
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:20:42 +1200
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-25 22:23:17 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 110ms (Views: 109.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:17 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:17 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:17 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:17 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:17 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:18 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:18 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:18 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:18 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:18 +1200
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-25 22:23:28 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 111ms (Views: 110.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:29 +1200
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 101ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:23:36 +1200
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-25 22:25:05 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 130ms (Views: 130.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:06 +1200
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 106ms (Views: 105.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:21 +1200
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 108ms (Views: 108.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:25:35 +1200
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 106ms (Views: 105.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 22:26:57 +1200
