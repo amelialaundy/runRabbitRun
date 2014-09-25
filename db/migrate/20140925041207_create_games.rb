@@ -4,7 +4,7 @@ class CreateGames < ActiveRecord::Migration
       t.integer :centre_lat
       t.integer :centre_long
       t.integer :num_players
-      t.boolean :active
+      t.boolean :active, default: true
 
       t.timestamps
     end
