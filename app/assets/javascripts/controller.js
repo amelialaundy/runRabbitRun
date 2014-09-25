@@ -36,26 +36,27 @@ Controller.prototype = {
 			this.playerOptions.lat = this.view.googlePlayer.position.k
 			this.playerOptions.lng = this.view.googlePlayer.position.B
 			// this.createPlayerMarkers(this.playerOptions)
-			this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
+
 		} else if (e.keyCode == 39) {
 			this.view.googlePlayer.position.k = this.playerOptions.lat
 			this.view.googlePlayer.position.B = this.playerOptions.lng + 0.00008
 			this.playerOptions.lat = this.view.googlePlayer.position.k
 			this.playerOptions.lng = this.view.googlePlayer.position.B
-			this.createPlayerMarkers(this.playerOptions)
+			// this.createPlayerMarkers(this.playerOptions)
 		} else if (e.keyCode == 40) {
 			this.view.googlePlayer.position.k = this.playerOptions.lat - 0.00008
 			this.view.googlePlayer.position.B = this.playerOptions.lng 
 			this.playerOptions.lat = this.view.googlePlayer.position.k
 			this.playerOptions.lng = this.view.googlePlayer.position.B
-			this.createPlayerMarkers(this.playerOptions)
+			// this.createPlayerMarkers(this.playerOptions)
 		} else if (e.keyCode == 37) {
 			this.view.googlePlayer.position.k = this.playerOptions.lat
 			this.view.googlePlayer.position.B = this.playerOptions.lng - 0.00008
 			this.playerOptions.lat = this.view.googlePlayer.position.k
 			this.playerOptions.lng = this.view.googlePlayer.position.B
-			this.createPlayerMarkers(this.playerOptions)
+			// this.createPlayerMarkers(this.playerOptions)
 		}
+		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
 	}
 
 }

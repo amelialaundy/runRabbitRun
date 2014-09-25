@@ -46,7 +46,6 @@ View.prototype = {
 
     moveMarker: function(lat, lng) {
     	LatLng = {lat: lat, lng: lng}
-
     	this.googlePlayer.setPosition(LatLng);
     }
 }
