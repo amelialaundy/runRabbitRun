@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140925060831) do
     t.integer  "centre_lat"
     t.integer  "centre_lng"
     t.integer  "num_players"
-    t.boolean  "active"
+    t.boolean  "active",      default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
