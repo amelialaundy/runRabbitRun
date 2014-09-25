@@ -8,7 +8,6 @@ function View() {
 
 View.prototype = {
 	initializeMap: function() {
-		console.log("hey")
       var mapOptions = {
         center: new google.maps.LatLng(this.lat, this.lng),
         zoom: this.zoom,

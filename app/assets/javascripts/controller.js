@@ -12,10 +12,16 @@ Controller.prototype = {
 		this.bindEvents();
 		this.view.initializeMap();
 		this.createPlayerMarkers(this.playerOptions);
+		this.sendPlayerInfo();
 	},
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
+	},
+
+	sendPlayerInfo: function() {
+		var self = this
+		setInterval(function(){console.log(self.playerOptions)}, 1000)
 	},
 
 	createPlayerMarkers: function(player) {
@@ -24,7 +30,6 @@ Controller.prototype = {
 	},
 
 	movePlayerMarker: function(e) {
-		console.log(this)
 		// 37 = down
 		// 38 = up
 		// 39 = right
