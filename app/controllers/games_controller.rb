@@ -14,4 +14,11 @@ class GamesController < ApplicationController
 
   def show
   end
+
+  def active_games
+    @games = Game.all
+    p @games
+    render :json => @games
+  end
+
 end
