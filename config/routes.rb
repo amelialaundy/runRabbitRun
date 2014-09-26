@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  post 'player/update_position' => 'player#update_player_position'
+
   # Example of regular route:
     get 'map/map_page' => 'map#map_page'
 

@@ -45,6 +45,7 @@ Migrating to AddGameRefToPlayers (20140925060831)
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "players" ("created_at", "game_id", "kind", "lat", "lng", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-09-25 06:13:18.324741"], ["game_id", 1], ["kind", "hunter"], ["lat", -41], ["lng", 174], ["updated_at", "2014-09-25 06:13:18.324741"]]
   [1m[35m (1.8ms)[0m  COMMIT
+<<<<<<< HEAD
 
 
 Started GET "/" for 127.0.0.1 at 2014-09-25 21:17:38 +1200
@@ -3081,3 +3082,7 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-25 23:44:37
 
 
 Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 23:44:37 +1200
+=======
+  [1m[36mGame Load (51.2ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (37.8ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = $1  [["game_id", 1]]
+>>>>>>> cb86a6ec5ca6d6b45af7bc4b1f34ac1826b60fa8
