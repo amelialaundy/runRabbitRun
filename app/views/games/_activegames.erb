@@ -1,11 +1,9 @@
-hello richard
-
 <% @games.each do |game| %>
 	<p>
 		Open game 
 	#<%= game.id%>
 	<%= game.centre_lat %>:
 	<%= game.centre_lng %>
-	<%= button_to "join", method:'get', url: 'games/'+game.id.to_s %>
+	<%= link_to "join",'games/'+game.id.to_s,  method:'get' %>
 	</p>
 <%end%>
