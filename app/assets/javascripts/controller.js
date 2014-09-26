@@ -39,9 +39,11 @@ Controller.prototype = {
 	},
 
 	checkWinState: function(data) {
-		console.log(data)
-		console.log(this)
 		clearInterval(this.timer)
+		if (data.game_status == false) {
+			alert("end of game!!")
+		} 
+
 	},
 
 	createPlayerMarkers: function(player) {
