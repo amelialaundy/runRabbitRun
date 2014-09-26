@@ -3,8 +3,10 @@ function Controller() {
 	this.playerOptions = {
       lat: -41.297656,
       lng: 174.773259,
+      id: 1
     };
-    this.player = null
+    this.player = null;
+    this.updatePlayerUrl = '/player/update_position'
 }
 
 Controller.prototype = {
@@ -12,16 +14,25 @@ Controller.prototype = {
 		this.bindEvents();
 		this.view.initializeMap();
 		this.createPlayerMarkers(this.playerOptions);
-		this.sendPlayerInfo();
+		this.setUpTimer();
 	},
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
 	},
 
-	sendPlayerInfo: function() {
+	setUpTimer: function() {
 		var self = this
-		setInterval(function(){console.log(self.playerOptions)}, 1000)
+		setInterval(this.sendPlayerPosition.bind(this), 1000)
+	},
+
+	sendPlayerPosition: function() {
+		$.ajax({
+		  type: "POST",
+		  url: this.updatePlayerUrl,
+		  data: this.playerOptions,
+		  success: console.log("success")
+		});
 	},
 
 	createPlayerMarkers: function(player) {
