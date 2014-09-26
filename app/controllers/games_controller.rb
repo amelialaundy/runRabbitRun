@@ -13,5 +13,17 @@ class GamesController < ApplicationController
   end
 
   def show
+    @game = Game.find(params[:id])
+    @player = Player.create( game_id: params[:id],
+                          lat: @game.get_random_lat,
+                          lng: @game.get_random_lng,
+                          kind: @game.mark_as_rabbit? )
+    render :json =>  @player
   end
+
+  def active_games
+    @games = Game.all
+    render :json => @games
+  end
+
 end
