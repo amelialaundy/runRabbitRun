@@ -42,7 +42,7 @@ PlayerController.prototype = {
 		clearInterval(this.timer)
 		if (data.game_status == false) {
 			alert("end of game!!")
-		} 
+		}
 
 	},
 
