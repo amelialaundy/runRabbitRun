@@ -7,7 +7,9 @@ function Controller() {
       game_id: 1
     };
     this.player = null;
+    this.timer = null;
     this.updatePlayerUrl = '/player/update_position'
+    var self = this
 }
 
 Controller.prototype = {
@@ -15,16 +17,16 @@ Controller.prototype = {
 		this.bindEvents();
 		this.view.initializeMap();
 		this.createPlayerMarkers(this.playerOptions);
-		this.setUpTimer();
+		this.setUpTimer(1000);
 	},
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
 	},
 
-	setUpTimer: function() {
+	setUpTimer: function(interval) {
 		var self = this
-		setInterval(this.sendPlayerPosition.bind(this), 1000)
+		self.timer = setInterval(this.sendPlayerPosition.bind(this), interval)
 	},
 
 	sendPlayerPosition: function() {
@@ -32,12 +34,14 @@ Controller.prototype = {
 		  type: "POST",
 		  url: this.updatePlayerUrl,
 		  data: this.playerOptions,
-		  success: this.checkWinState
+		  success: this.checkWinState.bind(this)
 		});
 	},
 
 	checkWinState: function(data) {
 		console.log(data)
+		console.log(this)
+		clearInterval(this.timer)
 	},
 
 	createPlayerMarkers: function(player) {
