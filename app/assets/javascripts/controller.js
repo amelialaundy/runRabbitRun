@@ -1,4 +1,4 @@
-function Controller() {
+function PlayerController() {
 	this.view = new View();
 	this.playerOptions = {
       lat: -41.297656,
@@ -12,7 +12,7 @@ function Controller() {
     var self = this
 }
 
-Controller.prototype = {
+PlayerController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
