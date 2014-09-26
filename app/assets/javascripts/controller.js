@@ -1,10 +1,10 @@
 function PlayerController() {
 	this.view = new View();
 	this.playerOptions = {
-      lat: -41.295260,
-      lng: 174.772480,
-      id: 2,
-      game_id: 1
+      lat: null,
+      lng: null,
+      id: null,
+      game_id: null
     };
 
     this.player = null;
@@ -17,7 +17,7 @@ PlayerController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
-		this.createPlayerMarkers(this.playerOptions);
+		this.createPlayerMarkers();
 		this.setUpTimer(1000);
 	},
 
@@ -48,7 +48,11 @@ PlayerController.prototype = {
 
 	},
 
-	createPlayerMarkers: function(player) {
+	createPlayerMarkers: function() {
+		this.playerOptions.lat = 
+		this.playerOptions.lng = 
+		this.playerOptions.id = 
+		this.playerOptions.game_id =
 		this.player = new PlayerMarker(player);
 	    this.view.renderMapPlayerMarkers(this.player);
 	},
