@@ -73,8 +73,13 @@ PlayerController.prototype = {
 		// 40 = down
 
 		if (e.keyCode == 38) {
-			this.playerOptions.lat = this.playerOptions.lat + 0.00008
-			this.playerOptions.lng = this.playerOptions.lng
+			// debugger;
+			var new_lat = this.playerOptions.lat + 0.00008
+			console.log(this.biggestLat)
+			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+				this.playerOptions.lat = new_lat
+				this.playerOptions.lng = this.playerOptions.lng
+			}
 
 		} else if (e.keyCode == 39) {
 			this.playerOptions.lat = this.playerOptions.lat
@@ -92,10 +97,10 @@ PlayerController.prototype = {
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
-		biggestLat = centreLat + 0.007337
-		biggestLng = centreLng + 0.012514
-		smallestLat = centreLat - 0.007337
-		smallestLng = centreLng - 0.012514
+		this.biggestLat = centreLat + 0.007337
+		this.biggestLng = centreLng + 0.012514
+		this.smallestLat = centreLat - 0.007337
+		this.smallestLng = centreLng - 0.012514
 	}
 
 }
