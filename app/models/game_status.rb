@@ -16,7 +16,7 @@ private
 
 	def self.active?(game_id)
         @game = Game.find(game_id)
-        rabbit = game.players.find_by(kind: "rabbit")
+        rabbit = @game.players.find_by(kind: "rabbit")
         puts rabbit.lat
         puts rabbit.lng
         params = {
@@ -46,6 +46,7 @@ private
             puts radius**2
             if circle_area < radius**2
                 @game.active = false
+                @game.save
                 return true
             else
                 return false
