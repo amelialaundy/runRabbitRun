@@ -8,7 +8,12 @@ function PlayerController() {
       kind: null
     };
 
-    this.timer = null;
+    this.biggestLat = null
+    this.biggestLng = null
+    this.smallestLat = null
+    this.smallestLng = null
+
+    this.locationTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     var self = this
 }
@@ -18,16 +23,17 @@ PlayerController.prototype = {
 		this.bindEvents();
 		this.view.initializeMap();
 		this.createPlayerMarkers();
-		this.setUpTimer(1000);
+		this.setMapBoundaries();
+		this.setUpLocationTimer(1000);
 	},
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
 	},
 
-	setUpTimer: function(interval) {
+	setUpLocationTimer: function(interval) {
 		var self = this
-		self.timer = setInterval(this.sendPlayerPosition.bind(this), interval)
+		self.locationTimer = setInterval(this.sendPlayerPosition.bind(this), interval)
 	},
 
 	sendPlayerPosition: function() {
@@ -42,7 +48,7 @@ PlayerController.prototype = {
 	checkWinState: function(data) {
 		
 		if (data.game_status == true) {
-			clearInterval(this.timer)
+			clearInterval(this.locationTimer)
 			// $('document').off()
 			document.removeEventListener("keyup", this.movePlayerMarker.bind(this), false);
 			alert("end of game!!")
@@ -69,7 +75,6 @@ PlayerController.prototype = {
 		if (e.keyCode == 38) {
 			this.playerOptions.lat = this.playerOptions.lat + 0.00008
 			this.playerOptions.lng = this.playerOptions.lng
-
 			// these two lines alter the google maps marker object itself, although I can;t get them to actually show their changed positions on the map
 			// this.playerOptions.lat = this.view.googlePlayer.position.k
 			// this.playerOptions.lng = this.view.googlePlayer.position.B
@@ -86,6 +91,15 @@ PlayerController.prototype = {
 			this.playerOptions.lng = this.playerOptions.lng - 0.00008
 		}
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
+	},
+
+	setMapBoundaries: function() {
+		centreLat = this.view.lat;
+		centreLng = this.view.lng;
+		biggestLat = centreLat + 0.007337
+		biggestLng = centreLng + 0.012514
+		smallestLat = centreLat - 0.007337
+		smallestLng = centreLng - 0.012514
 	}
 
 }
