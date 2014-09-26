@@ -1,3 +1,10 @@
-<%=@game%>
-<%=    %>
-<%=    %>
+<div id="map-canvas"></div>
+
+<div id="player-info">
+<p>Game: #<%= @game.id %></p>
+<p id='player-id' data-pl-id=<%=@player.id %>>Player Id: <%= @player.id %></p>
+<p id='player-lat' data-pl-lat=<%=@player.lat %>>Player Lat: <%= @player.lat%></p>
+<p id='player-lng' data-pl-lng=<%=@player.lng %>>Player Lng: <%= @player.lng%></p>
+<p id='player-kind' data-kind=<%=@player.kind %>>Player kind: <%= @player.kind%></p>
+
+</div>
