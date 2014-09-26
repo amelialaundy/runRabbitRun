@@ -36,9 +36,10 @@ private
         puts "*******"
         puts player_x 
         puts "*******"
-        radius = 1
+        radius = 0.002
         circle_area = ((player_x - centre_x)**2 + (player_y - centre_y)**2)
         puts circle_area
+        puts radius**2
         if circle_area < radius**2
             return true
         else

@@ -1,11 +1,12 @@
 function PlayerController() {
 	this.view = new View();
 	this.playerOptions = {
-      lat: -41.297656,
-      lng: 174.773259,
-      id: 1,
+      lat: -41.295260,
+      lng: 174.772480,
+      id: 2,
       game_id: 1
     };
+
     this.player = null;
     this.timer = null;
     this.updatePlayerUrl = '/player/update_position'
@@ -40,7 +41,7 @@ PlayerController.prototype = {
 
 	checkWinState: function(data) {
 		
-		if (data.game_status == false) {
+		if (data.game_status == true) {
 			clearInterval(this.timer)
 			alert("end of game!!")
 		}
