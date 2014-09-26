@@ -39,8 +39,9 @@ PlayerController.prototype = {
 	},
 
 	checkWinState: function(data) {
-		clearInterval(this.timer)
+		
 		if (data.game_status == false) {
+			clearInterval(this.timer)
 			alert("end of game!!")
 		}
 
