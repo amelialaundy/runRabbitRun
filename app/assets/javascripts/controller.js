@@ -4,10 +4,10 @@ function PlayerController() {
       lat: null,
       lng: null,
       id: null,
-      game_id: null
+      game_id: null,
+      kind: null
     };
 
-    this.player = null;
     this.timer = null;
     this.updatePlayerUrl = '/player/update_position'
     var self = this
@@ -43,17 +43,20 @@ PlayerController.prototype = {
 		
 		if (data.game_status == true) {
 			clearInterval(this.timer)
+			// $('document').off()
+			document.removeEventListener("keyup", this.movePlayerMarker.bind(this), false);
 			alert("end of game!!")
 		}
 
 	},
 
 	createPlayerMarkers: function() {
-		this.playerOptions.lat = 
-		this.playerOptions.lng = 
-		this.playerOptions.id = 
-		this.playerOptions.game_id =
-		this.player = new PlayerMarker(player);
+		this.playerOptions.id = this.view.playerIdDiv
+		this.playerOptions.lat = this.view.playerLatDiv
+		this.playerOptions.lng = this.view.playerLngDiv
+		this.playerOptions.game_id = this.view.gameIdDiv
+		this.playerOptions.kind = this.view.playerKindDiv
+		this.player = new PlayerMarker(this.playerOptions);
 	    this.view.renderMapPlayerMarkers(this.player);
 	},
 

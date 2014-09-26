@@ -7,6 +7,7 @@ function View() {
     this.playerLatDiv = $('#player-lat').data().plLat
     this.playerLngDiv = $('#player-lng').data().plLng
     this.gameIdDiv = $('#player-info').data().plGameId
+    this.playerKindDiv = $('#player-kind').data().kind
 
 }
 
