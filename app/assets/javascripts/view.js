@@ -3,6 +3,10 @@ function View() {
 	this.lng = 174.773082
 	this.zoom = 15
 	this.googlePlayer = null
+    this.playerIdDiv = $('#player-id')
+    this.playerLatDiv = $('#player-lat')
+    this.playerLngDiv = $('#player-lng')
+    this.gameIdDiv = $('#player-info')
 
 }
 
