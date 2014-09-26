@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 Started GET "/map/map_page" for 127.0.0.1 at 2014-09-26 15:05:22 +1200
@@ -19621,3 +19622,70 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 16:43:29
 
 
 Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 16:43:29 +1200
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (33.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to LocationsToFloats (20140926033727)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (154.7ms)[0m  [1mALTER TABLE "games" ALTER COLUMN "centre_lat" TYPE float[0m
+  [1m[35m (7.9ms)[0m  ALTER TABLE "games" ALTER COLUMN "centre_lng" TYPE float
+  [1m[36m (20.6ms)[0m  [1mALTER TABLE "players" ALTER COLUMN "lat" TYPE float[0m
+  [1m[35m (17.1ms)[0m  ALTER TABLE "players" ALTER COLUMN "lng" TYPE float
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140926033727"]]
+  [1m[35m (3.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to LocationsToDecimals (20140926042123)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to LocationsToDecimals (20140926042123)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (8.6ms)[0m  [1mALTER TABLE "games" ALTER COLUMN "centre_lat" TYPE decimal(9,6)[0m
+  [1m[35m (11.3ms)[0m  ALTER TABLE "games" ALTER COLUMN "centre_lng" TYPE decimal(9,6)
+  [1m[36m (29.2ms)[0m  [1mALTER TABLE "players" ALTER COLUMN "lat" TYPE decimal(9,6)[0m
+  [1m[35m (14.4ms)[0m  ALTER TABLE "players" ALTER COLUMN "lng" TYPE decimal(9,6)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140926042123"]]
+  [1m[35m (2.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (5.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140925041207)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "games" ("id" serial primary key, "centre_lat" integer, "centre_long" integer, "num_players" integer, "active" boolean DEFAULT 't', "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140925041207"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePlayers (20140925041418)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "players" ("id" serial primary key, "kind" character varying(255), "lat" integer, "lng" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140925041418"]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+Migrating to ChangingCentreLongColumnOnGames (20140925054438)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "games" RENAME COLUMN "centre_long" TO "centre_lng"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140925054438"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddGameRefToPlayers (20140925060831)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "players" ADD COLUMN "game_id" integer[0m
+  [1m[35m (5.4ms)[0m  CREATE  INDEX  "index_players_on_game_id" ON "players"  ("game_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140925060831"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Migrating to LocationsToDecimals (20140926042123)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (9.7ms)[0m  ALTER TABLE "games" ALTER COLUMN "centre_lat" TYPE decimal(9,6)
+  [1m[36m (11.6ms)[0m  [1mALTER TABLE "games" ALTER COLUMN "centre_lng" TYPE decimal(9,6)[0m
+  [1m[35m (13.3ms)[0m  ALTER TABLE "players" ALTER COLUMN "lat" TYPE decimal(9,6)
+  [1m[36m (15.2ms)[0m  [1mALTER TABLE "players" ALTER COLUMN "lng" TYPE decimal(9,6)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140926042123"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "games" ("centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["centre_lat", "-41.295291"], ["centre_lng", "174.773071"], ["created_at", "2014-09-26 04:42:44.009247"], ["num_players", 2], ["updated_at", "2014-09-26 04:42:44.009247"]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "players" ("created_at", "game_id", "kind", "lat", "lng", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-09-26 04:42:44.071407"], ["game_id", 1], ["kind", "rabbit"], ["lat", "-41.295153"], ["lng", "174.772898"], ["updated_at", "2014-09-26 04:42:44.071407"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "players" ("created_at", "game_id", "kind", "lat", "lng", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-09-26 04:42:44.074952"], ["game_id", 1], ["kind", "hunter"], ["lat", "-41.29526"], ["lng", "174.77248"], ["updated_at", "2014-09-26 04:42:44.074952"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+>>>>>>> 1151acea9bb8c8863dc6bbf992a0e88ab6ff8550
