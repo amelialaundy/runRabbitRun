@@ -3,7 +3,8 @@ function Controller() {
 	this.playerOptions = {
       lat: -41.297656,
       lng: 174.773259,
-      id: 1
+      id: 1,
+      game_id: 1
     };
     this.player = null;
     this.updatePlayerUrl = '/player/update_position'
@@ -31,8 +32,12 @@ Controller.prototype = {
 		  type: "POST",
 		  url: this.updatePlayerUrl,
 		  data: this.playerOptions,
-		  success: console.log("success")
+		  success: this.checkWinState
 		});
+	},
+
+	checkWinState: function(data) {
+		console.log(data)
 	},
 
 	createPlayerMarkers: function(player) {
