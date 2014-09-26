@@ -1155,3 +1155,197 @@ ActionView::Template::Error (First argument in form cannot contain nil or be emp
   Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
   Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
   Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:45:12 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (1.3ms)
+  Rendered welcome/index.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @game do |f| %>
+    2:   <%= f.label :centre_lat %>
+    3:   <%= f.text_field :centre_lat %>
+    4:   <%= f.label :centre_lng %>
+  app/views/games/_new.erb:1:in `_app_views_games__new_erb__565344565131915152_69939298919200'
+  app/views/welcome/index.erb:1:in `_app_views_welcome_index_erb__3609815573440093444_69939296806620'
+
+
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:51:03 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (11.7ms)
+  Rendered welcome/index.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined method `games_path' for #<#<Class:0x007f380596a430>:0x007f3805969a58>):
+    1: <%= form_for @game do |f| %>
+    2:   <%= f.label :centre_lat %>
+    3:   <%= f.text_field :centre_lat %>
+    4:   <%= f.label :centre_lng %>
+  app/views/games/_new.erb:1:in `_app_views_games__new_erb__565344565131915152_69939294247020'
+  app/views/welcome/index.erb:1:in `_app_views_welcome_index_erb__3609815573440093444_69939296806620'
+
+
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 13:41:36 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (1.1ms)
+  Rendered welcome/index.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `label' for nil:NilClass):
+    1: <%= form_tag('games/new') do |f| %>
+    2:   <%= f.label :centre_lat %>
+    3:   <%= f.text_field :centre_lat %>
+    4:   <%= f.label :centre_lng %>
+    5:   <%= f.text_field :centre_lng %>
+  app/views/games/_new.erb:2:in `block in _app_views_games__new_erb__565344565131915152_69939286083500'
+  app/views/games/_new.erb:1:in `_app_views_games__new_erb__565344565131915152_69939286083500'
+  app/views/welcome/index.erb:1:in `_app_views_welcome_index_erb__3609815573440093444_69939296806620'
+
+
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 13:44:40 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (10.1ms)
+  Rendered welcome/index.erb within layouts/application (11.1ms)
+Completed 200 OK in 54ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/create_game.js?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 13:44:41 +1200
+
+
+Started POST "/" for 127.0.0.1 at 2014-09-26 13:44:51 +1200
+
+ActionController::RoutingError (No route matches [POST] "/"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/adam/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/adam/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/adam/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 13:46:32 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (3.0ms)
+  Rendered welcome/index.erb within layouts/application (3.7ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/create_game.js?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 13:46:33 +1200
+
+
+Started POST "/games/new" for 127.0.0.1 at 2014-09-26 13:46:35 +1200
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UPjkiWfneb+G2iFVJUUBWJqqMAgYnPVXAAidgkrj4Xc=", "game"=>{"centre_lat"=>"", "centre_lng"=>"", "num_players"=>""}, "commit"=>"Save Game"}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (wrong number of arguments (0 for 3)):
+  app/controllers/games_controller.rb:6:in `create'
+
+
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.4ms)
+
+
+Started POST "/games/new" for 127.0.0.1 at 2014-09-26 13:46:48 +1200
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UPjkiWfneb+G2iFVJUUBWJqqMAgYnPVXAAidgkrj4Xc=", "game"=>{"centre_lat"=>"11212", "centre_lng"=>"32123", "num_players"=>"5"}, "commit"=>"Save Game"}
+Completed 500 Internal Server Error in 0ms
+
+ArgumentError (wrong number of arguments (0 for 3)):
+  app/controllers/games_controller.rb:6:in `create'
+
+
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.2ms)

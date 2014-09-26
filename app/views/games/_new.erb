@@ -1,4 +1,4 @@
-<%= form_for @game do |f| %>
+<%= form_for :game, url:'games/new' do |f| %>
   <%= f.label :centre_lat %>
   <%= f.text_field :centre_lat %>
   <%= f.label :centre_lng %>
