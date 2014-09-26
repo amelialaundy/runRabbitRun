@@ -18,12 +18,12 @@ class GamesController < ApplicationController
                           lat: @game.get_random_lat,
                           lng: @game.get_random_lng,
                           kind: @game.mark_as_rabbit? )
-    render :json =>  @player
+    # render :json =>  @player
   end
 
   def active_games
     @games = Game.all
-    render :json => @games
+    # render :json => @games
   end
 
 end
