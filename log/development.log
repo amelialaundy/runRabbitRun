@@ -2179,3 +2179,138 @@ Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-09-26 14:14:18 +12
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:14:18 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (14.5ms)
+  Rendered welcome/index.erb within layouts/application (15.2ms)
+Completed 200 OK in 59ms (Views: 53.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/create_game.js?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:17:32 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 14:43:07 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (6.2ms)
+  Rendered welcome/index.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `player_id' for #<Game:0x007f3805b360e8>):
+     5:   <%= f.text_field :centre_lng %>
+     6:   <%= f.label :num_players %>
+     7:   <%= f.text_field :num_players %>
+     8:   <%= f.hidden_field :player_id %>
+     9:   <%= f.submit %>
+    10: <%end%>
+  app/views/games/_new.erb:8:in `block in _app_views_games__new_erb__565344565131915152_69939295246740'
+  app/views/games/_new.erb:1:in `_app_views_games__new_erb__565344565131915152_69939295246740'
+  app/views/welcome/index.erb:1:in `_app_views_welcome_index_erb__3609815573440093444_69939296806620'
+
+
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/adam/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 14:43:38 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (1.8ms)
+  Rendered welcome/index.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 14:43:38 +1200
+
+
+Started GET "/assets/create_game.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:39 +1200
+
+
+Started POST "/games/new" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UPjkiWfneb+G2iFVJUUBWJqqMAgYnPVXAAidgkrj4Xc=", "game"=>{"centre_lat"=>"", "centre_lng"=>"", "num_players"=>"", "player_id"=>""}, "commit"=>"Save Game"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "games" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-09-26 02:43:50.709272"], ["updated_at", "2014-09-26 02:43:50.709272"]]
+  [1m[36m (14.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/games/7
+Completed 302 Found in 33ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/games/7" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"7"}
+  Rendered games/show.erb within layouts/application (0.1ms)
+Completed 200 OK in 41ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/create_game.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:43:50 +1200
