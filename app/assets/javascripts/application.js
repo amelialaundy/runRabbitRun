@@ -16,6 +16,6 @@
 
 
 $(document).ready(function(){
-  var controller = new Controller();
-  controller.start();
+  var playerController = new PlayerController();
+  playerController.start();
 });
