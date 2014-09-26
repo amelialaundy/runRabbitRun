@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  post 'games/new' => 'games#new'
+  
+  get 'games/new' => 'games#new'  
+  post 'games/new' => 'games#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
