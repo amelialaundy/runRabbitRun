@@ -3086,3 +3086,200 @@ Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-25 23:44:37 +1200
   [1m[36mGame Load (51.2ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
   [1m[35mPlayer Load (37.8ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = $1  [["game_id", 1]]
 >>>>>>> cb86a6ec5ca6d6b45af7bc4b1f34ac1826b60fa8
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-26 14:36:24 +1200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 699ms (Views: 698.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:26 +1200
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 14:36:28 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.297656", "lng"=>"174.773259", "id"=>"1", "game_id"=>"1"}
+  [1m[35mPlayer Load (1.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.7ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 193ms (Views: 0.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-26 14:36:55 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 89ms (Views: 88.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:36:56 +1200
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 14:36:57 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.297656", "lng"=>"174.773259", "id"=>"1", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-26 14:37:36 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 92ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:37 +1200
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 14:37:38 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.297656", "lng"=>"174.773259", "id"=>"1", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/map/map_page" for 127.0.0.1 at 2014-09-26 14:37:47 +1200
+Processing by MapController#map_page as HTML
+  Rendered map/map_page.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 215ms (Views: 214.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 14:37:48 +1200
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 14:37:50 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.297656", "lng"=>"174.773259", "id"=>"1", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.8ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.6ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.9ms)
