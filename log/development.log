@@ -38861,3 +38861,1984 @@ Processing by PlayerController#update_player_position as */*
   [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
   [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
 Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:20 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:21 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:22 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:23 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:24 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:25 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:26 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:27 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:28 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:29 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:30 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:31 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:32 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:33 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:34 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:35 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:36 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:37 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:38 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:39 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:40 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:41 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:42 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:43 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:44 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:45 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:46 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:47 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:48 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:49 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:50 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:51 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:52 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:53 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.2ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:54 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:55 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:56 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:57 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:58 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:53:59 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:00 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:01 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.2ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:02 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:03 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:04 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:05 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:06 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:07 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:08 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:09 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:10 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:11 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:12 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:13 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:14 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (2.2ms)
+  [1m[36mGame Load (0.6ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  Rendered games/_activegames.erb (2.2ms)
+  Rendered welcome/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:15 +1200
+
+
+Started POST "/games/new" for 127.0.0.1 at 2014-09-26 18:54:39 +1200
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UPjkiWfneb+G2iFVJUUBWJqqMAgYnPVXAAidgkrj4Xc=", "game"=>{"centre_lat"=>"41.295291", "centre_lng"=>"174.773071", "num_players"=>"45464123", "player_id"=>""}, "commit"=>"Save Game"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "games" ("centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["centre_lat", "41.295291"], ["centre_lng", "174.773071"], ["created_at", "2014-09-26 06:54:39.781739"], ["num_players", 45464123], ["updated_at", "2014-09-26 06:54:39.781739"]]
+  [1m[35m (37.2ms)[0m  COMMIT
+Redirected to http://127.0.0.1:3000/games/4
+Completed 302 Found in 41ms (ActiveRecord: 37.8ms)
+
+
+Started GET "/games/4" for 127.0.0.1 at 2014-09-26 18:54:39 +1200
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = $1  [["game_id", 4]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "players" ("created_at", "game_id", "kind", "lat", "lng", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-09-26 06:54:39.838370"], ["game_id", 4], ["kind", "rabbit"], ["lat", "41.294946"], ["lng", "174.772803"], ["updated_at", "2014-09-26 06:54:39.838370"]]
+  [1m[36m (21.8ms)[0m  [1mCOMMIT[0m
+  Rendered games/show.erb within layouts/application (0.3ms)
+Completed 200 OK in 81ms (Views: 52.0ms | ActiveRecord: 23.4ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:39 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:39 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:40 +1200
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:41 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:42 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:43 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:44 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:45 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:46 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:47 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:48 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (2.1ms)
+  [1m[36mGame Load (0.6ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  Rendered games/_activegames.erb (1.7ms)
+  Rendered welcome/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:49 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (1.8ms)
+  [1m[35mGame Load (0.4ms)[0m  SELECT "games".* FROM "games"
+  Rendered games/_activegames.erb (1.3ms)
+  Rendered welcome/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:53 +1200
+
+
+Started GET "/games/4" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+Processing by GamesController#show as HTML
+  Parameters: {"authenticity_token"=>"UPjkiWfneb+G2iFVJUUBWJqqMAgYnPVXAAidgkrj4Xc=", "id"=>"4"}
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = $1  [["game_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "players" ("created_at", "game_id", "kind", "lat", "lng", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-09-26 06:54:56.325833"], ["game_id", 4], ["kind", "hunter"], ["lat", "41.295028"], ["lng", "174.772805"], ["updated_at", "2014-09-26 06:54:56.325833"]]
+  [1m[36m (18.2ms)[0m  [1mCOMMIT[0m
+  Rendered games/show.erb within layouts/application (0.2ms)
+Completed 200 OK in 78ms (Views: 53.3ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:54:56 +1200
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:57 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:58 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:54:59 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:00 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:01 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:02 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:03 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:04 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:05 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:06 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:07 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:08 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:09 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:10 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:11 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:12 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:13 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:14 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:15 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:16 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:17 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:18 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:19 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:20 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:21 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:22 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:23 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:24 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:25 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:26 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:27 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:28 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:29 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:30 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:31 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:32 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:33 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:34 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:35 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:36 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:37 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:38 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:39 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:40 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:41 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:42 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:43 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:44 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:45 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:46 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:47 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:48 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:49 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:50 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:51 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:52 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:53 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:54 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:56 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:57 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:58 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:55:59 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:56:00 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:56:01 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (2.4ms)
+  [1m[36mGame Load (0.6ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  Rendered games/_activegames.erb (1.9ms)
+  Rendered welcome/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 60ms (Views: 59.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:56:02 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (2.5ms)
+  [1m[35mGame Load (0.6ms)[0m  SELECT "games".* FROM "games"
+  Rendered games/_activegames.erb (2.2ms)
+  Rendered welcome/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 61ms (Views: 60.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:14 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+Processing by WelcomeController#index as HTML
+  Rendered games/_new.erb (7.0ms)
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  Rendered games/_activegames.erb (1.6ms)
+  Rendered welcome/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:23 +1200
+
+
+Started GET "/games/1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+Processing by GamesController#show as HTML
+  Parameters: {"authenticity_token"=>"UPjkiWfneb+G2iFVJUUBWJqqMAgYnPVXAAidgkrj4Xc=", "id"=>"1"}
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "players" ("created_at", "game_id", "kind", "lat", "lng", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-09-26 06:58:55.583815"], ["game_id", 1], ["kind", "hunter"], ["lat", "-41.295479"], ["lng", "174.772808"], ["updated_at", "2014-09-26 06:58:55.583815"]]
+  [1m[35m (18.5ms)[0m  COMMIT
+  Rendered games/show.erb within layouts/application (0.6ms)
+Completed 200 OK in 105ms (Views: 81.7ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/controller.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/playerMarker.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/view.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 18:58:55 +1200
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:58:57 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:58:58 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:58:59 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:00 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:01 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:02 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:03 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:04 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:05 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.2ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:06 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:07 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.3ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:08 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:09 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:10 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGame Load (0.4ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/player/update_position" for 127.0.0.1 at 2014-09-26 18:59:11 +1200
+Processing by PlayerController#update_player_position as */*
+  Parameters: {"lat"=>"-41.29526", "lng"=>"174.77248", "id"=>"2", "game_id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGame Load (0.4ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."game_id" = $1 AND "players"."kind" = 'rabbit' LIMIT 1[0m  [["game_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.0ms)
