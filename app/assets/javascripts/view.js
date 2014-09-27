@@ -8,7 +8,6 @@ function View() {
     this.playerLngDiv = $('#player-lng').data().plLng
     this.gameIdDiv = $('#player-info').data().plGameId
     this.playerKindDiv = $('#player-kind').data().kind
-
 }
 
 View.prototype = {
@@ -34,17 +33,13 @@ View.prototype = {
     	var options = this.createNewPlayerMarkerOptions(playerMarker);
     	var googlePlayerMarker = new google.maps.Marker(options)
     	this.googlePlayer = googlePlayerMarker
-    	console.log(googlePlayerMarker.position.k)
-    	console.log(googlePlayerMarker.position.B)
     	return googlePlayerMarker
     },
 
     createNewPlayerMarkerOptions: function(playerMarker) {
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
-    	  clickable: true,
-    	  animation: google.maps.Animation.DROP,
+    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng)
     	};
     },
 
