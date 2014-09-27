@@ -14,6 +14,7 @@ function PlayerController() {
     this.smallestLng = null
 
     this.locationTimer = null;
+    this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     var self = this
 }
@@ -25,6 +26,7 @@ PlayerController.prototype = {
 		this.createPlayerMarkers();
 		this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
+		// this.setUpRabbitLocationTimer(10000);
 	},
 
 	bindEvents: function() {
@@ -98,6 +100,23 @@ PlayerController.prototype = {
 		this.biggestLng = centreLng + 0.012514
 		this.smallestLat = centreLat - 0.007337
 		this.smallestLng = centreLng - 0.012514
-	}
+	},
+
+	// setUpRabbitLocationTimer: function(interval) {
+	// 	var pusher = new Pusher('7a73ab83106664465bfd');
+	// 	var channel = pusher.subscribe('rabbit_location'+this.game_id);
+	// 	channel.bind('show_rabbit_street_view', function(data) {
+	// 		alert(data.message)
+	// 	});
+	// 	self.rabbitTimer = setInterval(this.sendRabbitPosition.bind(this), interval)
+	// },
+
+	// sendRabbitPosition: function(){
+	// 	console.log(this)
+	// 	if(this.kind == 'rabbit'){
+
+	// 	}
+
+	// }
 
 };
