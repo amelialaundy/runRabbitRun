@@ -2,7 +2,6 @@ class Game < ActiveRecord::Base
   has_many :players
 
   def get_random_lat
-    puts "this is the centre lat:#{centre_lat}"
     centre_lat + ((rand(3000..8000))/1000000.00)
   end
 
