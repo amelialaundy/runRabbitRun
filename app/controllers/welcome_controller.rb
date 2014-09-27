@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
 	def index
-    @games = Game.where("active = ?", "true")
+    @games = Game.all
 	end
 end
