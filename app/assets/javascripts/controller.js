@@ -75,15 +75,21 @@ PlayerController.prototype = {
 		if (e.keyCode == 38) {
 			// debugger;
 			var new_lat = this.playerOptions.lat + 0.00008
-			console.log(this.biggestLat)
+			// console.log(this.biggestLat)
 			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
 				this.playerOptions.lat = new_lat
 				this.playerOptions.lng = this.playerOptions.lng
 			}
 
 		} else if (e.keyCode == 39) {
-			this.playerOptions.lat = this.playerOptions.lat
-			this.playerOptions.lng = this.playerOptions.lng + 0.00008
+			var new_lng = this.playerOptions.lng + 0.00008
+			console.log(this.biggestLng)
+			console.log(new_lng)
+			console.log(this.smallestLng)
+			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
+				this.playerOptions.lat = this.playerOptions.lat
+				this.playerOptions.lng = new_lng
+			}
 		} else if (e.keyCode == 40) {
 			this.playerOptions.lat = this.playerOptions.lat - 0.00008
 			this.playerOptions.lng = this.playerOptions.lng 
