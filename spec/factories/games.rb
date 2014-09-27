@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :game do
     centre_lat 1
-    centre_long 1
+    centre_lng 1
     num_players 1
     active false
   end
