@@ -1,0 +1,50 @@
+function View() {
+	this.lat = -41.295308
+	this.lng = 174.773082
+	this.zoom = 15
+	this.googlePlayer = null
+    this.playerIdDiv = $('#player-id').data().plId
+    this.playerLatDiv = $('#player-lat').data().plLat
+    this.playerLngDiv = $('#player-lng').data().plLng
+    this.gameIdDiv = $('#player-info').data().plGameId
+    this.playerKindDiv = $('#player-kind').data().kind
+}
+
+View.prototype = {
+	initializeMap: function() {
+      var mapOptions = {
+        center: new google.maps.LatLng(this.lat, this.lng),
+        zoom: this.zoom,
+        draggable: false,
+        zoomControl: false,
+        scrollwheel: false,
+        disableDoubleClickZoom: true,
+        streetViewControl: false
+      }
+      this.map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
+    },
+
+    renderMapPlayerMarkers: function(playerMarker) {
+      var newMapMarker =  this.createMarker(playerMarker);
+    },
+
+    createMarker: function(playerMarker) {
+    	var options = this.createNewPlayerMarkerOptions(playerMarker);
+    	var googlePlayerMarker = new google.maps.Marker(options)
+    	this.googlePlayer = googlePlayerMarker
+    	return googlePlayerMarker
+    },
+
+    createNewPlayerMarkerOptions: function(playerMarker) {
+    	return {
+    	  map: this.map,
+    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng)
+    	};
+    },
+
+    moveMarker: function(lat, lng) {
+    	LatLng = {lat: lat, lng: lng}
+    	this.googlePlayer.setPosition(LatLng);
+    }
+}

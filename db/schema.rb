@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925060831) do
+ActiveRecord::Schema.define(version: 20140926042123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: true do |t|
-    t.integer  "centre_lat"
-    t.integer  "centre_lng"
+    t.decimal  "centre_lat",  precision: 9, scale: 6
+    t.decimal  "centre_lng",  precision: 9, scale: 6
     t.integer  "num_players"
-    t.boolean  "active"
+    t.boolean  "active",                              default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "players", force: true do |t|
     t.string   "kind"
-    t.integer  "lat"
-    t.integer  "lng"
+    t.decimal  "lat",        precision: 9, scale: 6
+    t.decimal  "lng",        precision: 9, scale: 6
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "game_id"
