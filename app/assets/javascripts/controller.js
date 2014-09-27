@@ -83,16 +83,17 @@ PlayerController.prototype = {
 
 		} else if (e.keyCode == 39) {
 			var new_lng = this.playerOptions.lng + 0.00008
-			console.log(this.biggestLng)
-			console.log(new_lng)
-			console.log(this.smallestLng)
 			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
 				this.playerOptions.lat = this.playerOptions.lat
 				this.playerOptions.lng = new_lng
 			}
+
 		} else if (e.keyCode == 40) {
-			this.playerOptions.lat = this.playerOptions.lat - 0.00008
-			this.playerOptions.lng = this.playerOptions.lng 
+			var new_lat = this.playerOptions.lat - 0.00008
+			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+				this.playerOptions.lat = new_lat
+				this.playerOptions.lng = this.playerOptions.lng
+			}
 		} else if (e.keyCode == 37) {
 			this.playerOptions.lat = this.playerOptions.lat
 			this.playerOptions.lng = this.playerOptions.lng - 0.00008
