@@ -15,8 +15,8 @@ private
 	end
 
 	def self.active?(game_id)
-        game = Game.find(game_id)
-        rabbit = game.players.find_by(kind: "rabbit")
+        @game = Game.find(game_id)
+        rabbit = @game.players.find_by(kind: "rabbit")
         puts rabbit.lat
         puts rabbit.lng
         params = {
@@ -30,21 +30,27 @@ private
 	end
 
     def self.in_circle?(options)
-        puts options[:player_x]
-        puts options[:player_y]
-        centre_x = options[:centre_x]
-        centre_y = options[:centre_y]
-        player_x = options[:player_x]
-        player_y = options[:player_y]
-        puts "*******"
-        puts player_x 
-        puts "*******"
-        radius = 0.0002
-        circle_area = ((player_x - centre_x)**2 + (player_y - centre_y)**2)
-        puts circle_area
-        puts radius**2
-        if circle_area < radius**2
-            return true
+        if @player.kind == "hunter"
+            puts options[:player_x]
+            puts options[:player_y]
+            centre_x = options[:centre_x]
+            centre_y = options[:centre_y]
+            player_x = options[:player_x]
+            player_y = options[:player_y]
+            puts "*******"
+            puts player_x 
+            puts "*******"
+            radius = 0.0002
+            circle_area = ((player_x - centre_x)**2 + (player_y - centre_y)**2)
+            puts circle_area
+            puts radius**2
+            if circle_area < radius**2
+                @game.active = false
+                @game.save
+                return true
+            else
+                return false
+            end
         else
             return false
         end

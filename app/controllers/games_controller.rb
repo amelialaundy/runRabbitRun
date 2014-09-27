@@ -22,7 +22,7 @@ class GamesController < ApplicationController
   end
 
   def active_games
-    @games = Game.all
+    @games = Game.where("active = ?", "true")
     # render :json => @games
   end
 

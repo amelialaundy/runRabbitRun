@@ -67,28 +67,33 @@ PlayerController.prototype = {
 	},
 
 	movePlayerMarker: function(e) {
-		// 37 = down
+		// 37 = left
 		// 38 = up
 		// 39 = right
 		// 40 = down
 
 		if (e.keyCode == 38) {
-			this.playerOptions.lat = this.playerOptions.lat + 0.00008
-			this.playerOptions.lng = this.playerOptions.lng
-			// these two lines alter the google maps marker object itself, although I can;t get them to actually show their changed positions on the map
-			// this.playerOptions.lat = this.view.googlePlayer.position.k
-			// this.playerOptions.lng = this.view.googlePlayer.position.B
-			// this.createPlayerMarkers(this.playerOptions)
+			var new_lat = this.playerOptions.lat + 0.00008
+			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+				this.playerOptions.lat = new_lat
+			}
 
 		} else if (e.keyCode == 39) {
-			this.playerOptions.lat = this.playerOptions.lat
-			this.playerOptions.lng = this.playerOptions.lng + 0.00008
+			var new_lng = this.playerOptions.lng + 0.00008
+			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
+				this.playerOptions.lng = new_lng
+			}
+
 		} else if (e.keyCode == 40) {
-			this.playerOptions.lat = this.playerOptions.lat - 0.00008
-			this.playerOptions.lng = this.playerOptions.lng 
+			var new_lat = this.playerOptions.lat - 0.00008
+			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+				this.playerOptions.lat = new_lat
+			}
 		} else if (e.keyCode == 37) {
-			this.playerOptions.lat = this.playerOptions.lat
-			this.playerOptions.lng = this.playerOptions.lng - 0.00008
+			var new_lng = this.playerOptions.lng - 0.00008
+			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
+				this.playerOptions.lng = new_lng
+			}
 		}
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
 	},
@@ -96,10 +101,10 @@ PlayerController.prototype = {
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
-		biggestLat = centreLat + 0.007337
-		biggestLng = centreLng + 0.012514
-		smallestLat = centreLat - 0.007337
-		smallestLng = centreLng - 0.012514
+		this.biggestLat = centreLat + 0.007337
+		this.biggestLng = centreLng + 0.012514
+		this.smallestLat = centreLat - 0.007337
+		this.smallestLng = centreLng - 0.012514
 	}
 
 }
