@@ -172,3 +172,243 @@ Processing by PlayerController#update_player_position as HTML
 Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (36.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (78.4ms)[0m  CREATE TABLE "games" ("id" serial primary key, "centre_lat" decimal(9,6), "centre_lng" decimal(9,6), "num_players" integer, "active" boolean DEFAULT 't', "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "players" ("id" serial primary key, "kind" character varying(255), "lat" decimal(9,6), "lng" decimal(9,6), "created_at" timestamp, "updated_at" timestamp, "game_id" integer) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_players_on_game_id" ON "players" USING btree ("game_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (33.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140926042123')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140925041207')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140925041418')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140925054438')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140925060831')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "games" DISABLE TRIGGER ALL;ALTER TABLE "players" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (18.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'runRabbitRun_test'[0m
+  [1m[35m (4.4ms)[0m  TRUNCATE TABLE "games", "players" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "games" ENABLE TRIGGER ALL;ALTER TABLE "players" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (15.8ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:47:13.294173"], ["num_players", 1], ["updated_at", "2014-09-27 23:47:13.294173"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.5ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:47:13.338921"], ["num_players", 1], ["updated_at", "2014-09-27 23:47:13.338921"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:47:13.343788"], ["num_players", 1], ["updated_at", "2014-09-27 23:47:13.343788"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mPlayer Load (0.6ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = $1[0m  [["game_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "games" DISABLE TRIGGER ALL;ALTER TABLE "players" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'runRabbitRun_test'[0m
+  [1m[35m (23.9ms)[0m  TRUNCATE TABLE "games", "players" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "games" ENABLE TRIGGER ALL;ALTER TABLE "players" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:50:32.531632"], ["num_players", 1], ["updated_at", "2014-09-27 23:50:32.531632"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:50:32.577655"], ["num_players", 1], ["updated_at", "2014-09-27 23:50:32.577655"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:50:32.581512"], ["num_players", 1], ["updated_at", "2014-09-27 23:50:32.581512"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "games" DISABLE TRIGGER ALL;ALTER TABLE "players" DISABLE TRIGGER ALL
+  [1m[36m (1.5ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'runRabbitRun_test'[0m
+  [1m[35m (22.7ms)[0m  TRUNCATE TABLE "games", "players" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "games" ENABLE TRIGGER ALL;ALTER TABLE "players" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:51:05.787462"], ["num_players", 1], ["updated_at", "2014-09-27 23:51:05.787462"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:51:05.829188"], ["num_players", 1], ["updated_at", "2014-09-27 23:51:05.829188"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:51:05.833195"], ["num_players", 1], ["updated_at", "2014-09-27 23:51:05.833195"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "games" DISABLE TRIGGER ALL;ALTER TABLE "players" DISABLE TRIGGER ALL
+  [1m[36m (1.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'runRabbitRun_test'[0m
+  [1m[35m (21.2ms)[0m  TRUNCATE TABLE "games", "players" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "games" ENABLE TRIGGER ALL;ALTER TABLE "players" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:51:21.436119"], ["num_players", 1], ["updated_at", "2014-09-27 23:51:21.436119"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:51:21.483753"], ["num_players", 1], ["updated_at", "2014-09-27 23:51:21.483753"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:51:21.487661"], ["num_players", 1], ["updated_at", "2014-09-27 23:51:21.487661"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "games" DISABLE TRIGGER ALL;ALTER TABLE "players" DISABLE TRIGGER ALL
+  [1m[36m (1.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'runRabbitRun_test'[0m
+  [1m[35m (3.4ms)[0m  TRUNCATE TABLE "games", "players" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "games" ENABLE TRIGGER ALL;ALTER TABLE "players" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:52:13.231176"], ["num_players", 1], ["updated_at", "2014-09-27 23:52:13.231176"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:52:13.273729"], ["num_players", 1], ["updated_at", "2014-09-27 23:52:13.273729"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:52:13.277592"], ["num_players", 1], ["updated_at", "2014-09-27 23:52:13.277592"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = $1[0m  [["game_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "games" DISABLE TRIGGER ALL;ALTER TABLE "players" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'runRabbitRun_test'[0m
+  [1m[35m (22.2ms)[0m  TRUNCATE TABLE "games", "players" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "games" ENABLE TRIGGER ALL;ALTER TABLE "players" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:52:22.082059"], ["num_players", 1], ["updated_at", "2014-09-27 23:52:22.082059"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:52:22.124327"], ["num_players", 1], ["updated_at", "2014-09-27 23:52:22.124327"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:52:22.128081"], ["num_players", 1], ["updated_at", "2014-09-27 23:52:22.128081"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = $1[0m  [["game_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "games" DISABLE TRIGGER ALL;ALTER TABLE "players" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'runRabbitRun_test'[0m
+  [1m[35m (20.2ms)[0m  TRUNCATE TABLE "games", "players" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "games" ENABLE TRIGGER ALL;ALTER TABLE "players" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:53:28.362919"], ["num_players", 1], ["updated_at", "2014-09-27 23:53:28.362919"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:53:28.405085"], ["num_players", 1], ["updated_at", "2014-09-27 23:53:28.405085"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("active", "centre_lat", "centre_lng", "created_at", "num_players", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["active", "f"], ["centre_lat", "41.29526"], ["centre_lng", "174.77248"], ["created_at", "2014-09-27 23:53:28.408861"], ["num_players", 1], ["updated_at", "2014-09-27 23:53:28.408861"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = $1[0m  [["game_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
