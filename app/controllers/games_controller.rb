@@ -20,4 +20,8 @@ class GamesController < ApplicationController
                           kind: @game.mark_as_rabbit? )
   end
 
+  def active_games
+    @games = Game.where("active = ?", "true")
+  end
+
 end
