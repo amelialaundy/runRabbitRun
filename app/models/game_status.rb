@@ -17,8 +17,6 @@ private
 	def self.active?(game_id)
         @game = Game.find(game_id)
         rabbit = @game.players.find_by(kind: "rabbit")
-        puts rabbit.lat
-        puts rabbit.lng
         params = {
             centre_x: rabbit.lat,
             centre_y: rabbit.lng,
