@@ -1,6 +1,6 @@
 <div id="map-canvas"></div>
 
-<div id="player-info">
+<div id="player-info" data-pl-game-id=<%=@player.game_id %>>
 <div>Game: #<%= @game.id %></div>
 <div id='player-id' data-pl-id=<%=@player.id %> >Player Id: <%= @player.id %></div>
 <div id='player-lat' data-pl-lat=<%=@player.lat %>>Player Lat: <%= @player.lat%></div>

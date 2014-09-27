@@ -2,11 +2,12 @@ class Game < ActiveRecord::Base
   has_many :players
 
   def get_random_lat
-    centre_lat + ((rand(800)-400)/1000000.00)
+    puts "this is the centre lat:#{centre_lat}"
+    centre_lat + ((rand(3000..8000))/1000000.00)
   end
 
   def get_random_lng
-    centre_lng + ((rand(800)-400)/1000000.00)
+    centre_lng + ((rand(3000..8000))/1000000.00)
   end
 
   def mark_as_rabbit?
