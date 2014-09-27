@@ -32,7 +32,6 @@ PlayerController.prototype = {
 	},
 
 	setUpLocationTimer: function(interval) {
-		var self = this
 		self.locationTimer = setInterval(this.sendPlayerPosition.bind(this), interval)
 	},
 
@@ -46,11 +45,8 @@ PlayerController.prototype = {
 	},
 
 	checkWinState: function(data) {
-		
 		if (data.game_status == true) {
 			clearInterval(this.locationTimer)
-			// $('document').off()
-			document.removeEventListener("keyup", this.movePlayerMarker.bind(this), false);
 			alert("end of game!!")
 		}
 
@@ -67,28 +63,25 @@ PlayerController.prototype = {
 	},
 
 	movePlayerMarker: function(e) {
-		// 37 = left
 		// 38 = up
-		// 39 = right
-		// 40 = down
-
 		if (e.keyCode == 38) {
 			var new_lat = this.playerOptions.lat + 0.00008
 			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
 				this.playerOptions.lat = new_lat
 			}
-
+		// 39 = right
 		} else if (e.keyCode == 39) {
 			var new_lng = this.playerOptions.lng + 0.00008
 			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
 				this.playerOptions.lng = new_lng
 			}
-
+		// 40 = down
 		} else if (e.keyCode == 40) {
 			var new_lat = this.playerOptions.lat - 0.00008
 			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
 				this.playerOptions.lat = new_lat
 			}
+		// 37 = left
 		} else if (e.keyCode == 37) {
 			var new_lng = this.playerOptions.lng - 0.00008
 			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
@@ -107,4 +100,4 @@ PlayerController.prototype = {
 		this.smallestLng = centreLng - 0.012514
 	}
 
-}
+};
