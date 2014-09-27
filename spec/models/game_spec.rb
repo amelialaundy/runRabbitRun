@@ -11,7 +11,7 @@ RSpec.describe Game, :type => :model do
   end
   describe "get_random_lng" do
     it "returns a random latitude within 0.005 of centre" do
-      expect(game.get_random_lng).to be_within(0.005).of(41.295260)
+      expect(game.get_random_lng).to be_within(0.005).of(174.772480)
     end
   end
 
