@@ -67,7 +67,7 @@ PlayerController.prototype = {
 	},
 
 	movePlayerMarker: function(e) {
-		// 37 = down
+		// 37 = left
 		// 38 = up
 		// 39 = right
 		// 40 = down
@@ -95,8 +95,11 @@ PlayerController.prototype = {
 				this.playerOptions.lng = this.playerOptions.lng
 			}
 		} else if (e.keyCode == 37) {
-			this.playerOptions.lat = this.playerOptions.lat
-			this.playerOptions.lng = this.playerOptions.lng - 0.00008
+			var new_lng = this.playerOptions.lng - 0.00008
+			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
+				this.playerOptions.lat = this.playerOptions.lat
+				this.playerOptions.lng = new_lng
+			}
 		}
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
 	},
