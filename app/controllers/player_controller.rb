@@ -1,4 +1,4 @@
-class PlayerController < ApplicationController
+class PlayersController < ApplicationController
 
 	def update_player_position
     	game_data = GameStatus.update(params)
