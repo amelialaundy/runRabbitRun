@@ -19,9 +19,7 @@ class GamesController < ApplicationController
                           lat: @game.get_random_lat,
                           lng: @game.get_random_lng,
                           kind: @game.mark_as_rabbit? )
-    Pusher['rabbit_location_game_'+@game.id.to_s].trigger('show_rabbit_street_view_game', {
-      :message => "pusher is working!"
-      })
+
   end
 
 end

@@ -16,6 +16,7 @@ function PlayerController() {
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
+    this.updateRabbitUrl = '/player/update_rabbit_position'
     var self = this
 }
 
@@ -112,8 +113,12 @@ PlayerController.prototype = {
 	// Only sends message if player is 'rabbit'
 	sendRabbitPosition: function(){
 		if(this.playerOptions.kind == 'rabbit'){
-			console.log(this.channel)
-			this.channel.trigger('show_rabbit_street_view_game', { message: 'hey'})
+			$.ajax({
+			  type: "POST",
+			  url: this.updateRabbitUrl,
+			  data: this.playerOptions,
+			  success: console.log(this.playerOptions)
+			});
 		}
 	},
 	// sets up pusher channel
@@ -123,6 +128,6 @@ PlayerController.prototype = {
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
 			alert(data.message)
 		});
-	}
+	},
 
 };
