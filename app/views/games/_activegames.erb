@@ -1,3 +1,4 @@
+<div id='open-games'>
 <% @games.each do |game| %>
 	<p>
 		Open game
@@ -7,3 +8,4 @@
 	<%= link_to "join",'games/'+game.id.to_s,  method:'get' %>
 	</p>
 <%end%>
+</div>
