@@ -56,11 +56,11 @@ PlayerController.prototype = {
 	},
 
 	createPlayerMarkers: function() {
-		this.playerOptions.id = this.view.playerIdDiv
-		this.playerOptions.lat = this.view.playerLatDiv
-		this.playerOptions.lng = this.view.playerLngDiv
-		this.playerOptions.game_id = this.view.gameIdDiv
-		this.playerOptions.kind = this.view.playerKindDiv
+		this.playerOptions.id = this.view.playerId
+		this.playerOptions.lat = this.view.playerLat
+		this.playerOptions.lng = this.view.playerLng
+		this.playerOptions.game_id = this.view.gameId
+		this.playerOptions.kind = this.view.playerKind
 		this.player = new PlayerMarker(this.playerOptions);
 	    this.view.renderMapPlayerMarkers(this.player);
 	},

@@ -2,21 +2,21 @@ DomManager = (function () {
     publik = {};
 
     publik.registerDivs = function () {
-        publik.playerIdDiv = $('#player-id')
-        publik.playerLatDiv = $('#player-lat');
-        publik.playerLngDiv = $('#player-lng');
-        publik.gameIdDiv = $('#player-info');
-        publik.playerKindDiv = $('#player-kind')
+        publik.gameId = localStorage['game.id'];
+        publik.playerId = localStorage['player.id']
+        publik.playerLat = localStorage['player.lat'];
+        publik.playerLng = localStorage['player.lng'];
+        publik.playerKind = localStorage['player.kind']
     }
 
     
     publik.getDivContents = function () {
         return {
-            plId: publik.playerIdDiv.data().plId,
-            plLat: publik.playerLatDiv.data().plLat,
-            plLng: publik.playerLngDiv.data().plLng,
-            plGameId: publik.gameIdDiv.data().plGameId,
-            kind: publik.playerKindDiv.data().kind
+            plGameId: publik.gameId,
+            plId: publik.playerId,
+            plLat: publik.playerLat,
+            plLng: publik.playerLng,
+            kind: publik.playerKind
         }
     }
 
@@ -31,11 +31,11 @@ function View() {
 
     this.divData = DomManager.getDivContents();
 
-    this.playerIdDiv = this.divData.plId
-    this.playerLatDiv = this.divData.plLat
-    this.playerLngDiv = this.divData.plLng
-    this.gameIdDiv = this.divData.plGameId
-    this.playerKindDiv = this.divData.kind
+    this.playerId = this.divData.plId
+    this.playerLat = this.divData.plLat
+    this.playerLng = this.divData.plLng
+    this.gameId = this.divData.plGameId
+    this.playerKind = this.divData.kind
 }
 
 View.prototype = {
