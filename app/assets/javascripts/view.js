@@ -1,3 +1,5 @@
+// This object should be in another file.
+// That said good use of module pattern.
 DomManager = (function () {
     publik = {};
 
@@ -11,6 +13,11 @@ DomManager = (function () {
 
     
     publik.getDivContents = function () {
+      // You shouldn't be storing game state in the DOM
+      // that is basically holding model concerns in the view
+      // it gets dangerous (if the DOM element is deleted or
+      // changed) and it is hard to maintain and test.
+      // Likely there is a missing `Player` model.
         return {
             plId: publik.playerIdDiv.data().plId,
             plLat: publik.playerLatDiv.data().plLat,
@@ -24,6 +31,8 @@ DomManager = (function () {
 }());
 
 function View() {
+  // Consider another object literal to hold these values
+  // this.lat = GameSettings.startingLat
 	this.lat = -41.295308
 	this.lng = 174.773082
 	this.zoom = 15
@@ -77,6 +86,7 @@ View.prototype = {
     },
 
     showStreetView: function(latlng){
+        // See above re GameSettings object
         var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
         $('#streetview').html('<img src='+baseUri+latlng+'>')
     }

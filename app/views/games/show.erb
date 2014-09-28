@@ -1,12 +1,20 @@
 <script type="text/javascript">
 $(document).ready(function(){
   DomManager.registerDivs()
+  // Rather than saving state in the DOM you could
+  // pass in data to the controller here. Somethin like:
+  // var current_player = {
+  //   lat: '<%= @player.lat %>',
+  //   lng: ...,
+  // }
+  // new PlayerController(current_player)
   var playerController = new PlayerController();
   playerController.start();
 });
 </script>
 <script type='text/javascript'>
 
+  // Not sure why you are saving data in DOM and localstore?
 	localStorage['info'] = <%= @game.id %>
 	localStorage['player.id'] = <%=@player.id %> 
 	localStorage['player.lat'] = <%=@player.lat %>
