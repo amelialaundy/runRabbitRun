@@ -1,13 +1,43 @@
+DomManager = (function () {
+    publik = {};
+
+     // this.playerIdDiv = $('#player-id').data().plId
+
+    publik.registerDivs = function () {
+        publik.playerIdDiv = $('#player-id')
+        publik.playerLatDiv = $('#player-lat');
+        publik.playerLngDiv = $('#player-lng');
+        publik.gameIdDiv = $('#player-info');
+        publik.playerKindDiv = $('#player-kind')
+    }
+
+    
+    publik.getDivContents = function () {
+        return {
+            plId: publik.playerIdDiv.data().plId,
+            plLat: publik.playerLatDiv.data().plLat,
+            plLng: publik.playerLngDiv.data().plLng,
+            plGameId: publik.gameIdDiv.data().plGameId,
+            kind: publik.playerKindDiv.data().kind
+        }
+    }
+
+    return publik;
+}());
+
 function View() {
 	this.lat = -41.295308
 	this.lng = 174.773082
 	this.zoom = 15
 	this.googlePlayer = null
-    this.playerIdDiv = $('#player-id').data().plId
-    this.playerLatDiv = $('#player-lat').data().plLat
-    this.playerLngDiv = $('#player-lng').data().plLng
-    this.gameIdDiv = $('#player-info').data().plGameId
-    this.playerKindDiv = $('#player-kind').data().kind
+
+    divData = DomManager.getDivContents();
+
+    this.playerIdDiv = divData.plId
+    this.playerLatDiv = divData.plLat
+    this.playerLngDiv = divData.plLng
+    this.gameIdDiv = divData.plGameId
+    this.playerKindDiv = divData.kind
 }
 
 View.prototype = {
