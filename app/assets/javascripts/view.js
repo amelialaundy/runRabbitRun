@@ -1,8 +1,6 @@
 DomManager = (function () {
     publik = {};
 
-     // this.playerIdDiv = $('#player-id').data().plId
-
     publik.registerDivs = function () {
         publik.playerIdDiv = $('#player-id')
         publik.playerLatDiv = $('#player-lat');

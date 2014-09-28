@@ -202,14 +202,24 @@ describe("bind events function", function() {
 	    expect(controller.playerOptions.lng).toBe(originalLng - 0.00008);
 	  });
 
-	  it("doesn't change the longitude of the player when out of the boundary", function () {
+	  it("doesn't change the longitude of the player when attempting to move out of the boundary", function () {
 			this.event = {
-			    keyCode: 37
+			    keyCode: 39
 			};
 			controller.playerOptions.lng = 174.785597
 			var originalLng = controller.playerOptions.lng
 			controller.movePlayerMarker(this.event);
 	    expect(controller.playerOptions.lng).toBe(originalLng);
+	  });
+
+	  it("doesn't change the latitude of the player when attempting to move out of the boundary", function () {
+			this.event = {
+			    keyCode: 40
+			};
+			controller.playerOptions.lat = -41.302644
+			var originalLat = controller.playerOptions.lat
+			controller.movePlayerMarker(this.event);
+	    expect(controller.playerOptions.lat).toBe(originalLat);
 	  });
   	
 
