@@ -49,6 +49,7 @@ View.prototype = {
     },
 
     showStreetView: function(latlng){
-        $('body').append('<p>'+latlng+'</p>')
+        var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
+        $('body').append('<img src='+baseUri+latlng+'>')
     }
 }
