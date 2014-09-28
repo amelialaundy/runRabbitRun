@@ -117,7 +117,6 @@ PlayerController.prototype = {
 			  type: "POST",
 			  url: this.updateRabbitUrl,
 			  data: this.playerOptions,
-			  success: console.log(this.playerOptions)
 			});
 		}
 	},
@@ -127,7 +126,6 @@ PlayerController.prototype = {
 		this.pusher = new Pusher('7a73ab83106664465bfd');
 		this.channel = this.pusher.subscribe('rabbit_location_game_'+ this.playerOptions.game_id);
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
-			console.log(self)
 			self.view.showStreetView(data.message)
 		});
 	},
