@@ -4,7 +4,7 @@ RSpec.describe GamesController, :type => :controller do
 
 	describe "#create" do
 
-		let(:params) {{game: {centre_lat: "-41.29526", centre_lng: "174.77248", num_players: "2"}}}
+		let(:params) {{game: {centre_lat: "-41.29526", centre_lng: "174.77248", num_players: "2", active: true}}}
 
     it "receives json parameters" do
       expect(Game).to receive(:new).with(params[:game]).and_call_original
