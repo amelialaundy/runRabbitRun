@@ -16,25 +16,18 @@ describe("PlayerController", function() {
 
 
 	describe("attributes on creation", function() {
-	  var controller = null;
-
 	  beforeEach(function() {
-	    controller = new PlayerController();
-	  	// };
-	  	
-
-	  	spyOn(View, 'new');
-	    // controller.view();
+	  	var myView = spyOn(window, 'View');
+	  	controller = new PlayerController();
 	  });
 
 	  it("a new view has been created", function() {
-	    expect(controller.view).toHaveBeenCalled();
+	    expect(controller.view).toBeDefined();
 	  });
 
-	  // it("tracks all the arguments of its calls", function() {
-	  //   expect(foo.setBar).toHaveBeenCalledWith(123);
-	  //   expect(foo.setBar).toHaveBeenCalledWith(456, 'another param');
-	  // });
+	  it("creates playerOptions", function() {
+	    expect(controller.playerOptions).toBeDefined();
+	  });
 
 	  // it("stops all execution on a function", function() {
 	  //   expect(bar).toBeNull();
