@@ -1,15 +1,27 @@
-describe "the signin process", :type => :feature do
-  before :each do
-    User.make(:email => 'user@example.com', :password => 'caplin')
+require 'rails_helper'
+describe "the start new game process", :type => :feature do
+
+  it "starts a new game" do
+    visit '/'
+    click_button 'Play New Game in Wellington'
+    expect(page).to have_css '#map-canvas'
   end
 
-  it "signs me in" do
-    visit '/sessions/new'
-    within("#session") do
-      fill_in 'Email', :with => 'user@example.com'
-      fill_in 'Password', :with => 'password'
-    end
-    click_button 'Sign in'
-    expect(page).to have_content 'Success'
+  it "displays a list of current games" do
+    visit '/'
+    expect(page).to have_css '#open-games'
   end
 end
+
+
+
+# describe "the search location process", :type => :feature do
+#   it "searches for a location" do
+#     visit '/'
+#     within("#search") do
+#       fill_in 'address', :with => '15 walter street te aro'
+#     end
+#     click_button 'search'
+#     expect(page).to have_content 'Walter'
+#   end
+# end
