@@ -76,5 +76,10 @@ View.prototype = {
     moveMarker: function(lat, lng) {
     	LatLng = {lat: lat, lng: lng}
     	this.googlePlayer.setPosition(LatLng);
+    },
+
+    showStreetView: function(latlng){
+        var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
+        $('#streetview').html('<img src='+baseUri+latlng+'>')
     }
 }

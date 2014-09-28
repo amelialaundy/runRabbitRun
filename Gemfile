@@ -32,6 +32,7 @@ group :development, :test do
   gem 'jasmine', '~> 2.0.3'
 end
 
+gem 'pusher'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
