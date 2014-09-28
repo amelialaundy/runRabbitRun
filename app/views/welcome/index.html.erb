@@ -1,2 +1,30 @@
-<%= render "games/new" %>
-<%= render "games/activegames" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Run Rabbit Run!</title>
+	<!-- <link rel="stylesheet" href="site.css"> -->
+</head>
+<body>
+	<article>
+		<header>&nbsp;</header>
+		<article>
+			<section class="logo"><%= image_tag("rrrlogo2.jpg", :alt => "Run Rabbit Run logo", :class => "imageLogoStyle") %></section>
+			<nav class="floatLeft">
+				<div><%= render "games/new" %></div>
+				<div>
+					<p>Join active game:</p>
+					<div><%= render "games/activegames" %></div>
+				</div>
+			</nav>
+		</article>
+		<footer class="textCenter"><b>Disclaimer</b><br/><i>No rabbits were harassed, mistreated, or harmed during the production of this application.. However.. *burp!*<br/>..And the rabbits were handled properly by Adam... :)</i></footer>
+	</article><br/>
+</body>
+</html>
+
+
+
+
+
+<%#= render "games/activegames" %>
