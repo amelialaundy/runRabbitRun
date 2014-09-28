@@ -1,10 +1,6 @@
 <%= form_for :game, url:'games/new' do |f| %>
-  <%= f.label :centre_lat %>
-  <%= f.text_field :centre_lat %>
-  <%= f.label :centre_lng %>
-  <%= f.text_field :centre_lng %>
-  <%= f.label :num_players %>
-  <%= f.text_field :num_players %>
+  <%= f.hidden_field :centre_lat, :value=>"-41.295308" %>
+  <%= f.hidden_field :centre_lng, :value=>"174.773082" %>
   <%= f.hidden_field :player_id %>
-  <%= f.submit %>
+  <%= f.submit "Play New Game in Wellington" %>
 <%end%>
