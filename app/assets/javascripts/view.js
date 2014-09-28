@@ -1,8 +1,6 @@
 DomManager = (function () {
     publik = {};
 
-     // this.playerIdDiv = $('#player-id').data().plId
-
     publik.registerDivs = function () {
         publik.playerIdDiv = $('#player-id')
         publik.playerLatDiv = $('#player-lat');
@@ -31,13 +29,13 @@ function View() {
 	this.zoom = 15
 	this.googlePlayer = null
 
-    divData = DomManager.getDivContents();
+    this.divData = DomManager.getDivContents();
 
-    this.playerIdDiv = divData.plId
-    this.playerLatDiv = divData.plLat
-    this.playerLngDiv = divData.plLng
-    this.gameIdDiv = divData.plGameId
-    this.playerKindDiv = divData.kind
+    this.playerIdDiv = this.divData.plId
+    this.playerLatDiv = this.divData.plLat
+    this.playerLngDiv = this.divData.plLng
+    this.gameIdDiv = this.divData.plGameId
+    this.playerKindDiv = this.divData.kind
 }
 
 View.prototype = {
