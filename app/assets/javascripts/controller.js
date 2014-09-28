@@ -98,6 +98,8 @@ PlayerController.prototype = {
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
+    // Magic numbers. Figure out the best place to put them so they can be
+    // named. Maybe in GameSettings?
 		this.biggestLat = centreLat + 0.007337
 		this.biggestLng = centreLng + 0.012514
 		this.smallestLat = centreLat - 0.007337
@@ -120,6 +122,9 @@ PlayerController.prototype = {
 			});
 		}
 	},
+  // If you had a App object that kicked things off then you could
+  // create a Pusher object (that connects to pusher) then pass that
+  // into the controller to use.
 	// sets up pusher channel
 	setUpRabbitLocationPusher: function(){
 		var self = this
