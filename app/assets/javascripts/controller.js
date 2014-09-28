@@ -27,7 +27,7 @@ PlayerController.prototype = {
 		this.createPlayerMarkers();
 		this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
-		this.setUpRabbitLocationTimer(5000);
+		this.setUpRabbitLocationTimer(10000);
 	},
 
 	bindEvents: function() {
