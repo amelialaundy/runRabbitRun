@@ -54,6 +54,11 @@ PlayerController.prototype = {
 		}
 
 	},
+	sendWinMessageToAll:function(this.playerOptions.id){
+		$.ajax({
+
+		})
+	}
 
 	createPlayerMarkers: function() {
 		this.playerOptions.id = this.view.playerIdDiv
@@ -128,6 +133,9 @@ PlayerController.prototype = {
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
 			self.view.showStreetView(data.message)
 		});
+		this.channel.bind('win_message'), function(data){
+			alert(data.message)
+		}
 	},
 
 };
