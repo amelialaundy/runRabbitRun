@@ -31,11 +31,11 @@ function View() {
 
     this.divData = DomManager.getDivContents();
 
-    this.playerIdDiv = this.divData.plId
-    this.playerLatDiv = this.divData.plLat
-    this.playerLngDiv = this.divData.plLng
-    this.gameIdDiv = this.divData.plGameId
-    this.playerKindDiv = this.divData.kind
+    this.playerId = this.divData.plId
+    this.playerLat = this.divData.plLat
+    this.playerLng = this.divData.plLng
+    this.gameId = this.divData.plGameId
+    this.playerKind = this.divData.kind
 }
 
 View.prototype = {
