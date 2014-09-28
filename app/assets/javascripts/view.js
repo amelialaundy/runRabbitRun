@@ -2,21 +2,21 @@ DomManager = (function () {
     publik = {};
 
     publik.registerDivs = function () {
-        publik.playerIdDiv = $('#player-id')
-        publik.playerLatDiv = $('#player-lat');
-        publik.playerLngDiv = $('#player-lng');
-        publik.gameIdDiv = $('#player-info');
-        publik.playerKindDiv = $('#player-kind')
+        publik.gameId = localStorage['game.id'];
+        publik.playerId = localStorage['player.id']
+        publik.playerLat = localStorage['player.lat'];
+        publik.playerLng = localStorage['player.lng'];
+        publik.playerKind = localStorage['player.kind']
     }
 
     
     publik.getDivContents = function () {
         return {
-            plId: publik.playerIdDiv.data().plId,
-            plLat: publik.playerLatDiv.data().plLat,
-            plLng: publik.playerLngDiv.data().plLng,
-            plGameId: publik.gameIdDiv.data().plGameId,
-            kind: publik.playerKindDiv.data().kind
+            plGameId: publik.gameId,
+            plId: publik.playerId,
+            plLat: publik.playerLat,
+            plLng: publik.playerLng,
+            kind: publik.playerKind
         }
     }
 

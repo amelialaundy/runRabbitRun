@@ -5,9 +5,10 @@ $(document).ready(function(){
   playerController.start();
 });
 </script>
+
 <script type='text/javascript'>
 
-	localStorage['info'] = <%= @game.id %>
+	localStorage['game.id'] = <%= @player.game_id %>
 	localStorage['player.id'] = <%=@player.id %> 
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
