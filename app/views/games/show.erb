@@ -1,3 +1,13 @@
+<script type='text/javascript'>
+
+	localStorage['info'] = <%= @game.id %>
+	localStorage['player.id'] = <%=@player.id %> 
+	localStorage['player.lat'] = <%=@player.lat %>
+	localStorage['player.lng'] = <%=@player.lng %>
+	localStorage['player.kind'] = <%=@player.kind %>
+
+</script>
+
 <div id="map-canvas"></div>
 
 <div id="player-info" data-pl-game-id=<%=@player.game_id %>>
