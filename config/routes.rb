@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get 'games/new' => 'games#new'  
+  get 'games/new' => 'games#new'
   post 'games/new' => 'games#create'
   get 'games/:id' => 'games#show'
   get 'games/' => 'games#active_games'
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   post 'player/update_position' => 'players#update_player_position'
+  post 'rabbit/update_rabbit_street_view' => 'rabbit#update_rabbit_street_view'
 
   # Example of regular route:
     get 'map/map_page' => 'map#map_page'

@@ -4,6 +4,5 @@ class PlayersController < ApplicationController
     game_data = GameStatus.update(params)
 		render json: {game_status: game_data}
 	end
-
 end
 

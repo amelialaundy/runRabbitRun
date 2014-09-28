@@ -14,7 +14,9 @@ function PlayerController() {
     this.smallestLng = null
 
     this.locationTimer = null;
+    this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
+    this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
     var self = this
 }
 
@@ -25,6 +27,7 @@ PlayerController.prototype = {
 		this.createPlayerMarkers();
 		this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
+		this.setUpRabbitLocationTimer(10000);
 	},
 
 	bindEvents: function() {
@@ -98,6 +101,32 @@ PlayerController.prototype = {
 		this.biggestLng = centreLng + 0.012514
 		this.smallestLat = centreLat - 0.007337
 		this.smallestLng = centreLng - 0.012514
-	}
+	},
+
+
+	setUpRabbitLocationTimer: function(interval) {
+		this.setUpRabbitLocationPusher();
+		self.rabbitTimer = setInterval(this.sendRabbitPosition.bind(this), interval)
+	},
+
+	// Only sends message if player is 'rabbit'
+	sendRabbitPosition: function(){
+		if(this.playerOptions.kind == 'rabbit'){
+			$.ajax({
+			  type: "POST",
+			  url: this.updateRabbitUrl,
+			  data: this.playerOptions,
+			});
+		}
+	},
+	// sets up pusher channel
+	setUpRabbitLocationPusher: function(){
+		var self = this
+		this.pusher = new Pusher('7a73ab83106664465bfd');
+		this.channel = this.pusher.subscribe('rabbit_location_game_'+ this.playerOptions.game_id);
+		this.channel.bind('show_rabbit_street_view_game', function(data) {
+			self.view.showStreetView(data.message)
+		});
+	},
 
 };
