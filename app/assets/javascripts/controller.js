@@ -16,7 +16,7 @@ function PlayerController() {
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
-    this.updateRabbitUrl = '/player/update_rabbit_position'
+    this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
     var self = this
 }
 
@@ -123,10 +123,12 @@ PlayerController.prototype = {
 	},
 	// sets up pusher channel
 	setUpRabbitLocationPusher: function(){
+		var self = this
 		this.pusher = new Pusher('7a73ab83106664465bfd');
 		this.channel = this.pusher.subscribe('rabbit_location_game_'+ this.playerOptions.game_id);
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
-			alert(data.message)
+			console.log(self)
+			self.view.showStreetView(data.message)
 		});
 	},
 
