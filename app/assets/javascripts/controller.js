@@ -17,6 +17,7 @@ function PlayerController() {
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
+    this.sendWinMessageUrl = 'player/send_win_message'
     var self = this
 }
 
@@ -50,13 +51,16 @@ PlayerController.prototype = {
 	checkWinState: function(data) {
 		if (data.game_status == true) {
 			clearInterval(this.locationTimer)
-			alert("end of game!!")
+			sendWinMessageToAll();
 		}
 
 	},
-	sendWinMessageToAll:function(this.playerOptions.id){
+	sendWinMessageToAll:function(){
 		$.ajax({
-
+			type: "POST",
+			url: this.sendWinMessageUrl,
+			data: this.playerOptions.id,
+			success: console.log("You won!")
 		})
 	}
 
