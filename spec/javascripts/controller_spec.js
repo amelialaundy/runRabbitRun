@@ -111,13 +111,12 @@ describe("bind events function", function() {
 	})
 
 	describe("create player markers", function() {
-
 		beforeEach(function() {
-			spyOn(window, 'PlayerMarker');
+			this.marker = spyOn(window, 'PlayerMarker');
 			controller.view = {
 				playerIdDiv: 1,
-				playerLatDiv: 2,
-				playerLngDiv: 3,
+				playerLatDiv: -41.295308,
+				playerLngDiv: 174.773082,
 				gameIdDiv: 4,
 				playerKindDiv: "rabbit",
 
@@ -133,22 +132,89 @@ describe("bind events function", function() {
 	  });
 
 	  it("sets the player options lat from info from the view", function () {
-	    expect(controller.playerOptions.lat).toBe(2);
+	    expect(controller.playerOptions.lat).toBe(-41.295308);
 	  });
 
 	  it("sets the player options lng from info from the view", function () {
-	    expect(controller.playerOptions.lng).toBe(3);
+	    expect(controller.playerOptions.lng).toBe(174.773082);
 	  });
 
 	  it("sets the player options lng from info from the view", function () {
 	    expect(controller.playerOptions.game_id).toBe(4);
 	  });
 
-	  it("creates a new player marker object", function () {
-	  	console.log(controller.playerOptions)
-	    expect(controller.view.renderMapPlayerMarkers).toHaveBeenCalledWith(controller.playerOptions);
+	  it("creates a new player marker object with the player options", function () {
+	    expect(this.marker).toHaveBeenCalledWith(controller.playerOptions);
+	  });
+
+	  it("calls a render map marker object with the controllers player object", function () {
+	    expect(controller.view.renderMapPlayerMarkers).toHaveBeenCalledWith(controller.player);
 	  });
 	})
+	
+
+	describe("move player marker function", function() {
+		beforeEach(function() {
+			controller.view = {
+				moveMarker: function() {}
+			}
+			this.moveMarker = spyOn(controller.view, 'moveMarker');
+			controller.biggestLat = -41.287971
+	    controller.biggestLng = 174.785596
+	    controller.smallestLat = -41.302645
+	    controller.smallestLng = 174.760568
+			
+		})
+
+		it("changes the latitude of the player positively when the up arrow is pressed", function () {
+			this.event = {
+			    keyCode: 38
+			};
+			var originalLat = controller.playerOptions.lat
+			controller.movePlayerMarker(this.event);
+	    expect(controller.playerOptions.lat).toBe(originalLat + 0.00008);
+	  });
+
+	  it("changes the longitude of the player positively when the right arrow is pressed", function () {
+			this.event = {
+			    keyCode: 39
+			};
+			var originalLng = controller.playerOptions.lng
+			controller.movePlayerMarker(this.event);
+	    expect(controller.playerOptions.lng).toBe(originalLng + 0.00008);
+	  });
+
+	  it("changes the latitude of the player negatively when the down arrow is pressed", function () {
+			this.event = {
+			    keyCode: 40
+			};
+			var originalLat = controller.playerOptions.lat
+			controller.movePlayerMarker(this.event);
+	    expect(controller.playerOptions.lat).toBe(originalLat - 0.00008);
+	  });
+
+	  it("changes the longitude of the player negatively when the right arrow is pressed", function () {
+			this.event = {
+			    keyCode: 37
+			};
+			var originalLng = controller.playerOptions.lng
+			controller.movePlayerMarker(this.event);
+	    expect(controller.playerOptions.lng).toBe(originalLng - 0.00008);
+	  });
+
+	  it("doesn't change the longitude of the player when out of the boundary", function () {
+			this.event = {
+			    keyCode: 37
+			};
+			controller.playerOptions.lng = 174.785597
+			var originalLng = controller.playerOptions.lng
+			controller.movePlayerMarker(this.event);
+	    expect(controller.playerOptions.lng).toBe(originalLng);
+	  });
+  	
+
+	})
+
 });
 
 
