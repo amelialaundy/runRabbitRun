@@ -8,7 +8,8 @@ class GamesController < ApplicationController
     game_params = params["game"]
     game = Game.new(centre_lat:game_params["centre_lat"],
                      centre_lng:game_params["centre_lng"],
-                     num_players:game_params["num_players"])
+                     num_players:game_params["num_players"],
+                     active: true)
     game.save
     redirect_to ('/games/'+game.id.to_s)
   end
