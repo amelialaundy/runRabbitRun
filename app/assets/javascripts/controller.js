@@ -105,7 +105,6 @@ PlayerController.prototype = {
 
 
 	setUpRabbitLocationTimer: function(interval) {
-		console.log('rabbit_location_game_'+ this.playerOptions.game_id);
 		this.setUpRabbitLocationPusher();
 		self.rabbitTimer = setInterval(this.sendRabbitPosition.bind(this), interval)
 	},
