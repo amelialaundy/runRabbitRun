@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   post 'player/update_position' => 'players#update_player_position'
+  post 'rabbit/update_rabbit_street_view' => 'rabbit#update_rabbit_street_view'
 
   # Example of regular route:
-    get 'map/map_page' => 'map#map_page'
     post 'player/update_position' => 'players#update_position'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
