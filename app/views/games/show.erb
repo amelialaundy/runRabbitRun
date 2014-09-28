@@ -4,6 +4,7 @@ $(document).ready(function(){
   var playerController = new PlayerController();
   playerController.start();
 });
+</script>
 <script type='text/javascript'>
 
 	localStorage['info'] = <%= @game.id %>
@@ -11,7 +12,6 @@ $(document).ready(function(){
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
 	localStorage['player.kind'] = <%=@player.kind %>
-
 
 </script>
 
