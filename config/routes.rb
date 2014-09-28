@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   post 'player/update_position' => 'players#update_player_position'
+  posr '/player/send_win_message' => 'players#send_win_message'
   post 'rabbit/update_rabbit_street_view' => 'rabbit#update_rabbit_street_view'
 
   # Example of regular route:

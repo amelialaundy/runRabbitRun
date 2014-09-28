@@ -17,7 +17,7 @@ function PlayerController() {
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
-    this.sendWinMessageUrl = 'player/send_win_message'
+    this.sendWinMessageUrl = '/player/send_win_message'
     var self = this
 }
 
@@ -62,7 +62,7 @@ PlayerController.prototype = {
 			data: this.playerOptions.id,
 			success: console.log("You won!")
 		})
-	}
+	},
 
 	createPlayerMarkers: function() {
 		this.playerOptions.id = this.view.playerIdDiv
