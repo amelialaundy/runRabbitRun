@@ -1,7 +1,7 @@
 describe("View", function() {
   var view = null;
 
-  describe("attrbutes on initialize", function() {
+  describe("attributes on initialize", function() {
 
     beforeEach(function() {
       spyOn(DomManager, 'getDivContents')
