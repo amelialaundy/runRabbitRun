@@ -83,7 +83,7 @@ PlayerController.prototype = {
 		// 38 = up
 		if (e.keyCode == 38) {
 			var new_lat = this.playerOptions.lat + 0.00008
-			debugger;
+			// debugger;
 			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
 
 				this.playerOptions.lat = new_lat

@@ -19,6 +19,11 @@
    width: 700px;
  }
 
+ #streetview {
+ 	height: 400px;
+ 	width: 400px;
+ }
+
 
  /* run rabit run css lib */
  body {

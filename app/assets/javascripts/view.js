@@ -29,8 +29,8 @@ DomManager = (function () {
 
 function View() {
   this.divData = DomManager.getDivContents();
-	this.lat = this.divData.gameLat
-	this.lng = this.divData.gameLng
+	this.lat = parseFloat(this.divData.gameLat);
+	this.lng = parseFloat(this.divData.gameLng);
 	this.zoom = 15
 	this.googlePlayer = null
   this.searchButton = document.querySelector(".newGameButton")
