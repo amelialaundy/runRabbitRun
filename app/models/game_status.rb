@@ -1,7 +1,7 @@
 class GameStatus
 
   def update(args)
-    player_location(args)
+    update_player_location(args)
     @game = Game.find(args.fetch(:game_id))
     zone = proximity_to_rabbit?
     @game.finished! if zone == "win_zone"
@@ -10,7 +10,7 @@ class GameStatus
 
 private
 
-	def player_location(args)
+	def update_player_location(args)
     @player = Player.find(args.fetch(:id))
     @player.lat = args.fetch(:lat)
     @player.lng = args.fetch(:lng)
