@@ -7,7 +7,6 @@ function GeocodeController() {
 
 GeocodeController.prototype = {
 	getGeocodeLocation: function(e) {
-		console.log(self)
 		e.preventDefault();
 		var location = self.view.getAddress();
 		self.geocodeSearch.search(location.address, self.setGeocodedLocationForNewGame)
@@ -15,7 +14,6 @@ GeocodeController.prototype = {
 	},
 
 	setGeocodedLocationForNewGame: function(postData) {
-		console.log(postData[0]['geometry']['location']['lat'])
 		self.view.setMapLocation(postData)
 		$.ajax({
 			type: "POST",
@@ -26,9 +24,7 @@ GeocodeController.prototype = {
 	},
 
 	printData: function(data) {
-			console.log(data['game_id'])
 		window.location.replace("/games/"+data['game_id'])
-		console.log("data function")
 	
 	}
 }

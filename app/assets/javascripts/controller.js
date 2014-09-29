@@ -113,7 +113,6 @@ PlayerController.prototype = {
 	},
 
 	setMapBoundaries: function() {
-		console.log(this.view.lat)
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
 		this.biggestLat = centreLat + 0.003882

@@ -24,7 +24,6 @@ $(document).ready(function(){
 
   
   var geocodeController = new GeocodeController();
-  console.log("geocode")
 
   $(geocodeController.view.searchButton).on("click", geocodeController.getGeocodeLocation);
 });

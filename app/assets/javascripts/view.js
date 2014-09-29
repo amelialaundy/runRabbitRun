@@ -93,8 +93,6 @@ View.prototype = {
     },
 
     moveMarker: function(lat, lng) {
-      console.log(lat)
-      console.log(lng)
     	LatLng = {lat: parseFloat(lat), lng: parseFloat(lng)}
       // debugger;
     	this.googlePlayer.setPosition(LatLng);
