@@ -7,22 +7,22 @@ RSpec.describe GameStatus, :type => :model do
   describe "#update method" do
     it "calls player location method with args" do
       allow(GameStatus).to receive(:player_location).with(options)
-      allow(GameStatus).to receive(:active?)
+      allow(GameStatus).to receive(:proximity_to_rabbit?)
       expect(GameStatus).to receive(:player_location).with(options)
       GameStatus.update(options)
     end
 
-    it "calls active? method with args" do
+    it "calls proximity_to_rabbit? method with args" do
       allow(GameStatus).to receive(:player_location).with(options)
-      allow(GameStatus).to receive(:active?)
-      expect(GameStatus).to receive(:active?).with(options[:game_id])
+      allow(GameStatus).to receive(:proximity_to_rabbit?)
+      expect(GameStatus).to receive(:proximity_to_rabbit?).with(options[:game_id])
       GameStatus.update(options)
     end
 
-    it "receives true back from active? method" do
+    it "receives true back from proximity_to_rabbit? method" do
       allow(GameStatus).to receive(:player_location).with(options)
-      allow(GameStatus).to receive(:active?)
-      expect(GameStatus).to receive(:active?).with(options[:game_id]).and_return(true)
+      allow(GameStatus).to receive(:proximity_to_rabbit?)
+      expect(GameStatus).to receive(:proximity_to_rabbit?).with(options[:game_id]).and_return(true)
       GameStatus.update(options)
     end
   end

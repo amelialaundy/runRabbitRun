@@ -48,11 +48,11 @@ PlayerController.prototype = {
 	},
 
 	checkProximityToRabbit: function(data) {
-		if (data.proximity == true) {
+		if (data.proximity == "win_zone") {
 			clearInterval(this.locationTimer)
 			alert("end of game!!")
 		} 
-		else if (data.proximity == true) {
+		else if (data.proximity == "red_zone") {
       alert("close to rabbit!!")
 		}
 	},
