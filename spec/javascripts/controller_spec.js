@@ -260,28 +260,18 @@ describe("bind events function", function() {
 	    	expect(this.requestArgs[0].type).toEqual('POST');
 	  	});
 
-			xit("doesn't send rabbit coordinates if the player is not a rabbit", function(){
-				controller.playerOptions.kind = "hunter";
-				controller.sendRabbitPosition();
-			})
+	  	it("sends the POST request to '/rabbit/update_rabbit_street_view'",function(){
+	    	expect(this.requestArgs[0].url).toEqual(controller.updateRabbitUrl);
+	  	})
 
-			xit("sends the correct latitude of the rabbit", function(){
-				controller.sendRabbitPosition();
-			})
+			it("sends the correct details of the rabbit", function(){
+	    	expect(this.requestArgs[0].data).toEqual(controller.playerOptions);
+			});
 
 		});
 
 
   });
-
-
-
-
-  // 	it("sends the request to '/player/update_position' ", function () {
-  //     expect(this.requestArgs[0].data).toEqual(controller.playerOptions);
-  //   });
-
-	// });
 
 });
 
