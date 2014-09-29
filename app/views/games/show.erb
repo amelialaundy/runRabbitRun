@@ -12,6 +12,10 @@
 	localStorage['player.id'] = <%=@player.id %> 
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
+	localStorage['game.lng'] = <%=@player.lng %>
+	localStorage['game.lat'] = '<%=@player.game.centre_lat %>'
+	localStorage['game.lng'] = '<%=@player.game.centre_lng %>'
+
 	localStorage['player.kind'] = '<%=@player.kind %>'
 
 </script>
