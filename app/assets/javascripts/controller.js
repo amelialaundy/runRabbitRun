@@ -37,13 +37,7 @@ PlayerController.prototype = {
 		
 	},
 
-	getGeocodeLocation: function(e) {
-		console.log("hey")
-		e.preventDefault();
-		var location = this.view.getAddress();
-		this.geocodeSearch.search(location.address, this.setGeocodedLocationForNewGame)
-		
-	},
+	
 
 	setGeocodedLocationForNewGame: function(data) {
 		this.view.setMapLocation
