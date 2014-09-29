@@ -103,10 +103,12 @@ PlayerController.prototype = {
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
-		this.biggestLat = centreLat + 0.003882
-		this.biggestLng = centreLng + 0.007397
-		this.smallestLat = centreLat - 0.003882
-		this.smallestLng = centreLng - 0.007397
+		farthestLat = 0.003882
+		fatherestLng = 0.007397
+		this.biggestLat = centreLat + farthestLat
+		this.biggestLng = centreLng + fatherestLng
+		this.smallestLat = centreLat - farthestLat
+		this.smallestLng = centreLng - fatherestLng
 	},
 
 

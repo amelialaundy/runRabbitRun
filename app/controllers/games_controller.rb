@@ -5,7 +5,6 @@ class GamesController < ApplicationController
 
   def create
     game_params = GamesController.get_params(params)
-    p game_params
     game = Game.new(centre_lat:game_params[:lat],
                      centre_lng:game_params[:lng],
                      num_players: 1,
@@ -23,7 +22,6 @@ class GamesController < ApplicationController
   end
 
   def self.get_params(params)
-    p params
     return {
       lat: params['data']['results']['0']['geometry']['location']['lat'],
       lng: params['data']['results']['0']['geometry']['location']['lng']
