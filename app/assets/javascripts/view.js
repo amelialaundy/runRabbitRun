@@ -26,7 +26,7 @@ DomManager = (function () {
 function View() {
 	this.lat = -41.295308
 	this.lng = 174.773082
-	this.zoom = 15
+	this.zoom = 16
 	this.googlePlayer = null
 
     this.divData = DomManager.getDivContents();
