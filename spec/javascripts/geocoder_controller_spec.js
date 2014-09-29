@@ -69,7 +69,6 @@ describe("GeocoderController", function() {
 		});
 
 		it("calls a reload function on ajax success", function() {
-			console.log(this.requestArgs[0].success)
 			expect(this.requestArgs[0].success).toEqual(geocodeController.redirectToNewGame);
 		});
 	})
