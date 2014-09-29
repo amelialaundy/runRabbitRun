@@ -236,9 +236,52 @@ describe("bind events function", function() {
 
   	it('sets a up rabbit location timer', function(){
   		expect(controller.setUpRabbitLocationTimer).toBeDefined()
-  	})
+  	});
 
-	})
+  	it('has a send rabbit position function', function(){
+  		expect(controller.sendRabbitPosition).toBeDefined()
+  	});
+
+  	describe("sendRabbitPosition", function() {
+			beforeEach(function() {
+				spyOn($, 'ajax');
+				controller.playerOptions = {
+			    lat: -41.295308,
+			    lng: 174.773082,
+			    id: 1,
+			    game_id: 1,
+			    kind: "rabbit"
+				};
+				controller.sendRabbitPosition();
+				this.requestArgs = $.ajax.calls.argsFor(0);
+			});
+
+			it("makes a POST request", function () {
+	    	expect(this.requestArgs[0].type).toEqual('POST');
+	  	});
+
+			xit("doesn't send rabbit coordinates if the player is not a rabbit", function(){
+				controller.playerOptions.kind = "hunter";
+				controller.sendRabbitPosition();
+			})
+
+			xit("sends the correct latitude of the rabbit", function(){
+				controller.sendRabbitPosition();
+			})
+
+		});
+
+
+  });
+
+
+
+
+  // 	it("sends the request to '/player/update_position' ", function () {
+  //     expect(this.requestArgs[0].data).toEqual(controller.playerOptions);
+  //   });
+
+	// });
 
 });
 
