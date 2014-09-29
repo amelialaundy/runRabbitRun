@@ -1,5 +1,8 @@
 class GameStatus
 
+  WIN_ZONE_RADIUS = 0.001
+  RED_ZONE_RADIUS = 0.0001
+
   def update(args)
     update_player_location(args)
     @game = Game.find(args.fetch(:game_id))
@@ -32,9 +35,8 @@ private
       centre_y = options[:centre_y]
       player_x = options[:player_x]
       player_y = options[:player_y]
-      radius = 0.001
       circle_area = ((player_x - centre_x)**2 + (player_y - centre_y)**2)
-      if circle_area < radius**2
+      if circle_area < WIN_ZONE_RADIUS**2
         @game.active = false
         @game.save
         return true
