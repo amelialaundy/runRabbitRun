@@ -57,14 +57,10 @@ PlayerController.prototype = {
 
 	sendWinMessageToAll:function(){
 		var self = this
-		console.log(this.playerOptions)
 		$.ajax({
 			type: "POST",
 			url: this.sendWinMessageUrl,
 			data: {player_stats: self.playerOptions},
-			success: function(){
-				console.log("You won!");
-			}
 		})
 	},
 
