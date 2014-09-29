@@ -3,7 +3,7 @@ class GameStatus
 	def self.update(args)
         player_location(args)
         active?(args.fetch(:game_id))
-	end
+	end    
 
 private
 
