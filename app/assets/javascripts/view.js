@@ -28,6 +28,7 @@ function View() {
 	this.lng = 174.773082
 	this.zoom = 15
 	this.googlePlayer = null
+    this.searchButton = document.querySelector(".newGameButton")
 
     this.divData = DomManager.getDivContents();
 
@@ -55,6 +56,13 @@ View.prototype = {
 
     renderMapPlayerMarkers: function(playerMarker) {
       var newMapMarker =  this.createMarker(playerMarker);
+    },
+
+    getAddress: function() {
+      this.address = $('#address-search-bar').val();
+      return {
+        address: this.address
+      };
     },
 
     createMarker: function(playerMarker) {

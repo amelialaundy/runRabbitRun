@@ -1,5 +1,6 @@
 function PlayerController() {
 	this.view = new View();
+	this.geocodeSearch = new GeocodeSearch();
 	this.playerOptions = {
       lat: null,
       lng: null,
@@ -32,6 +33,12 @@ PlayerController.prototype = {
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
+		$(this.view.searchButton).on("click", this.getGeocodeLocation.bind(this));
+	},
+
+	getGeocodeLocation: function(e) {
+		e.preventDefault();
+		var location = this.view.getAddress();
 	},
 
 	setUpLocationTimer: function(interval) {
