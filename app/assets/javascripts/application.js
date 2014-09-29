@@ -14,15 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
-
-	// var view = new View();
-	// DomManager.registerDivs()
-	// var playerController = new PlayerController(view);
-	// playerController.start();
-
-
-
-  
   var geocodeController = new GeocodeController();
 
   $(geocodeController.view.searchButton).on("click", geocodeController.getGeocodeLocation);
