@@ -32,16 +32,21 @@
  	border: none;
  }
 
-article, header, nav, aside, section, footer, nav {
+article, 
+header, 
+nav, 
+aside, 
+section, 
+footer, 
+nav, 
+#map-canvas, 
+#streetview {
 	display: block;
-}
-
-article, header, nav, aside, section, footer, nav {
-	xoutline: 1px solid #000; 
+	xoutline: 1px solid red;
 }
 
 body {
-	width: 960px;
+	width: 980px;
 	margin: 0 auto; 
 }
 
@@ -121,15 +126,15 @@ a:active {
    height: 500px;
    width: 700px;
    border: 5px solid #fff;
+   float: left;
+   margin-right: 10px;
  }
 
-#streetView {
-	border: 1px solid green;
-
-	width: 100px;
-	height: 100px;
+#streetview img {
+	border: 5px solid #fff;
+	width: 250px;
+	height: 250px;
 }
-
 
 /* button styling */
 /* first style the button */

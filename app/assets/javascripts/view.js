@@ -80,7 +80,7 @@ View.prototype = {
     },
 
     showStreetView: function(latlng){
-        var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
-        $('#streetview').html('<img src='+baseUri+latlng+'>')
+        var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=250x250&location="
+        $('#streetview').html('<img class="streetview" src='+baseUri+latlng+'>')
     }
 }
