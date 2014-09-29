@@ -116,10 +116,10 @@ PlayerController.prototype = {
 		console.log(this.view.lat)
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
-		this.biggestLat = centreLat + 0.007337
-		this.biggestLng = centreLng + 0.012514
-		this.smallestLat = centreLat - 0.007337
-		this.smallestLng = centreLng - 0.012514
+		this.biggestLat = centreLat + 0.003882
+		this.biggestLng = centreLng + 0.007397
+		this.smallestLat = centreLat - 0.003882
+		this.smallestLng = centreLng - 0.007397
 	},
 
 
