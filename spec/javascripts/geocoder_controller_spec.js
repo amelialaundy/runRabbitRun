@@ -43,7 +43,6 @@ describe("GeocoderController", function() {
 	  	spyOn($, 'ajax');
 	  	this.setMap = spyOn(View.prototype, 'setMapLocation');
 
-	  	// this.data = ('postData', [ 'data' ]);
 	  	this.dataForPost = jasmine.createSpyObj('postData', ['data']);
 
 	  	geocodeController.setGeocodedLocationForNewGame(this.dataForPost);
@@ -54,15 +53,12 @@ describe("GeocoderController", function() {
 			expect(this.requestArgs[0].type).toEqual('POST');
 		});
 
-		it("makes a POST request ", function() {
-			expect(this.requestArgs[0].type).toEqual('POST');
-		});
 
 		it("sends data to '/games", function() {
 			expect(this.requestArgs[0].url).toEqual(geocodeController.createGameUrl);
 		});
 
-		it("sends data to '/games", function() {
+		it("sends the correct data to '/games", function() {
 			expect(this.requestArgs[0].data).toEqual(this.dataForPost);
 		});
 
