@@ -15,7 +15,7 @@
 //= require_tree .
 $(document).ready(function(){
   var geocodeController = new GeocodeController();
-
-  $(geocodeController.view.searchButton).on("click", geocodeController.getGeocodeLocation);
+// $(geocodeController.view.searchButton).on("click", geocodeController.getGeocodeLocation);
+  
 });
 

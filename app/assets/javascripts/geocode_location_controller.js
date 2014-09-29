@@ -2,6 +2,7 @@ function GeocodeController() {
 	this.view = new View();
 	this.geocodeSearch  = new GeocodeSearch();
 	this.createGameUrl = '/games'
+	$(this.view.searchButton).on("click", this.getGeocodeLocation);
 	self = this
 }
 
