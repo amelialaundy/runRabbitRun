@@ -63,8 +63,6 @@ describe("GeocoderController", function() {
 		});
 
 		it("sends data to '/games", function() {
-			console.log(this.requestArgs[0])
-			console.log(this.dataForPost)
 			expect(this.requestArgs[0].data).toEqual(this.dataForPost);
 		});
 
