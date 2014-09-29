@@ -16,7 +16,7 @@ private
 	end
 
 	def proximity_to_rabbit?(game_id)
-    rabbit = @game.players.find_by(kind: "rabbit")
+    rabbit = @game.find_rabbit
     params = {
       centre_x: rabbit.lat,
       centre_y: rabbit.lng,
@@ -27,7 +27,7 @@ private
 	end
 
   def which_zone?(options)
-    if @player.kind == "hunter"
+    if @player.hunter?
       centre_x = options[:centre_x]
       centre_y = options[:centre_y]
       player_x = options[:player_x]
