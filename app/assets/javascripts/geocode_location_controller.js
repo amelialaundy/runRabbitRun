@@ -1,7 +1,7 @@
 function GeocodeController() {
 	this.view = new View();
 	this.geocodeSearch  = new GeocodeSearch();
-	this.newGameUrl = '/games/new'
+	this.newGameUrl = '/games/create'
 	self = this
 }
 
@@ -14,13 +14,19 @@ GeocodeController.prototype = {
 		
 	},
 
-	setGeocodedLocationForNewGame: function(data) {
-		console.log(data[0]['geometry']['location']['lat'])
-		self.view.setMapLocation(data)
+	setGeocodedLocationForNewGame: function(postData) {
+		console.log(postData[0]['geometry']['location']['lat'])
+		self.view.setMapLocation(postData)
 		$.ajax({
 			type: "POST",
 			url: self.newGameUrl,
-			data: {data: data}
+			data: {data: postData},
+			success: this.printData
 		});
+	},
+
+	printData: function(data) {
+		console.log("data function")
+		console.log(data)
 	}
 }

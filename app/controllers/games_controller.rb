@@ -16,7 +16,10 @@ class GamesController < ApplicationController
                      num_players: 1,
                      active: true)
     game.save
-    redirect_to ('/games/'+game.id.to_s)
+    # format.html
+    render json: {game_id: game.id}
+     # render layout: false
+     # redirect_to ('/games/'+game.id.to_s)
   end
 
   def show
@@ -25,7 +28,6 @@ class GamesController < ApplicationController
                           lat: @game.get_random_lat,
                           lng: @game.get_random_lng,
                           kind: @game.mark_as_rabbit? )
-
   end
 
 end

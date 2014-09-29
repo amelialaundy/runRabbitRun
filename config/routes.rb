@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'games/new' => 'games#new'
-  post 'games/new' => 'games#create'
+  post 'games' => 'games#create'
   get 'games/:id' => 'games#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
