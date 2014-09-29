@@ -51,10 +51,10 @@ PlayerController.prototype = {
 	checkWinState: function(data) {
 		if (data.game_status == true) {
 			clearInterval(this.locationTimer)
-			sendWinMessageToAll();
+			this.sendWinMessageToAll()
 		}
-
 	},
+
 	sendWinMessageToAll:function(){
 		$.ajax({
 			type: "POST",
@@ -137,9 +137,9 @@ PlayerController.prototype = {
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
 			self.view.showStreetView(data.message)
 		});
-		this.channel.bind('win_message'), function(data){
+		this.channel.bind('win_message', function(data){
 			alert(data.message)
-		}
-	},
+		});
+	}
 
 };
