@@ -4,8 +4,10 @@ class GamesController < ApplicationController
   end
 
   def create
-    game = Game.new(centre_lat:params['data']['0']['geometry']['location']['lat'],
-                     centre_lng:params['data']['0']['geometry']['location']['lng'],
+    game_params = GamesController.get_params(params)
+    p game_params
+    game = Game.new(centre_lat:game_params[:lat],
+                     centre_lng:game_params[:lng],
                      num_players: 1,
                      active: true)
     game.save
@@ -18,6 +20,13 @@ class GamesController < ApplicationController
                           lat: @game.get_random_lat,
                           lng: @game.get_random_lng,
                           kind: @game.mark_as_rabbit? )
+  end
+
+  def self.get_params(params)
+    return {
+      lat: params['data']['0']['geometry']['location']['lat'],
+      lng: params['data']['0']['geometry']['location']['lng']
+    }
   end
 
 end
