@@ -1,5 +1,6 @@
 function PlayerController() {
 	this.view = new View();
+	
 	this.playerOptions = {
       lat: null,
       lng: null,
@@ -17,6 +18,8 @@ function PlayerController() {
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
+    this.sendWinMessageUrl = '/player/send_win_message'
+
     var self = this
 }
 
@@ -32,6 +35,7 @@ PlayerController.prototype = {
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
+
 	},
 
 	setUpLocationTimer: function(interval) {
@@ -50,11 +54,20 @@ PlayerController.prototype = {
 	checkProximityToRabbit: function(data) {
 		if (data.proximity == "win_zone") {
 			clearInterval(this.locationTimer)
-			alert("end of game!!")
+			this.sendWinMessageToAll()
 		} 
 		else if (data.proximity == "red_zone") {
       alert("close to rabbit!!")
 		}
+	},
+
+	sendWinMessageToAll:function(){
+		var self = this
+		$.ajax({
+			type: "POST",
+			url: this.sendWinMessageUrl,
+			data: {player_stats: self.playerOptions},
+		})
 	},
 
 	createPlayerMarkers: function() {
@@ -72,6 +85,7 @@ PlayerController.prototype = {
 		if (e.keyCode == 38) {
 			var new_lat = this.playerOptions.lat + 0.00008
 			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+
 				this.playerOptions.lat = new_lat
 
 			}
@@ -94,16 +108,19 @@ PlayerController.prototype = {
 				this.playerOptions.lng = new_lng
 			}
 		}
+
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
 	},
 
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
-		this.biggestLat = centreLat + 0.003882
-		this.biggestLng = centreLng + 0.007397
-		this.smallestLat = centreLat - 0.003882
-		this.smallestLng = centreLng - 0.007397
+		farthestLat = 0.003882
+		farthestLng = 0.007397
+		this.biggestLat = centreLat + farthestLat
+		this.biggestLng = centreLng + farthestLng
+		this.smallestLat = centreLat - farthestLat
+		this.smallestLng = centreLng - farthestLng
 	},
 
 
@@ -125,11 +142,16 @@ PlayerController.prototype = {
 	// sets up pusher channel
 	setUpRabbitLocationPusher: function(){
 		var self = this
+		var gameId = this.playerOptions.game_id
 		this.pusher = new Pusher('7a73ab83106664465bfd');
-		this.channel = this.pusher.subscribe('rabbit_location_game_'+ this.playerOptions.game_id);
+		this.channel = this.pusher.subscribe('game_'+ gameId);
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
 			self.view.showStreetView(data.message)
 		});
-	},
+		this.channel.bind('win_message', function(data){
+			alert(data.message)
+		});
+
+	}
 
 };
