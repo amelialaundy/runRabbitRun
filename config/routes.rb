@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'games/new' => 'games#new'
-  post 'games/new' => 'games#create'
+  post 'games' => 'games#create'
   get 'games/:id' => 'games#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   post 'player/update_position' => 'players#update_player_position'
+  post '/player/send_win_message' => 'players#send_win_message'
   post 'rabbit/update_rabbit_street_view' => 'rabbit#update_rabbit_street_view'
 
   # Example of regular route:
-    post 'player/update_position' => 'players#update_position'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

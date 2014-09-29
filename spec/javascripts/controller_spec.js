@@ -114,11 +114,11 @@ describe("bind events function", function() {
 		beforeEach(function() {
 			this.marker = spyOn(window, 'PlayerMarker');
 			controller.view = {
-				playerIdDiv: 1,
-				playerLatDiv: -41.295308,
-				playerLngDiv: 174.773082,
-				gameIdDiv: 4,
-				playerKindDiv: "rabbit",
+				playerId: 1,
+				playerLat: -41.295308,
+				playerLng: 174.773082,
+				gameId: 4,
+				playerKind: "rabbit",
 
 				renderMapPlayerMarkers: function() {}
 			}
