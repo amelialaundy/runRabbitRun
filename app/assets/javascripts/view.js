@@ -68,7 +68,7 @@ View.prototype = {
     setMapLocation: function(data) {
       this.lat = data[0]['geometry']['location']['lat']
       this.lng = data[0]['geometry']['location']['lng']
-    }
+    },
 
     createMarker: function(playerMarker) {
     	var options = this.createNewPlayerMarkerOptions(playerMarker);
