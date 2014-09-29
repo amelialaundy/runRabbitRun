@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   end
 
   def create
-
+    console.log(params)
     game_params = params["game"]
     game = Game.new(centre_lat:game_params["centre_lat"],
                      centre_lng:game_params["centre_lng"],

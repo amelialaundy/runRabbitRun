@@ -1,6 +1,6 @@
 function PlayerController() {
 	this.view = new View();
-	this.geocodeSearch = new GeocodeSearch();
+	
 	this.playerOptions = {
       lat: null,
       lng: null,
@@ -18,7 +18,7 @@ function PlayerController() {
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
-    this.newGameUrl = '/games/new'
+    
     var self = this
 }
 
@@ -34,13 +34,13 @@ PlayerController.prototype = {
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
-		
+
 	},
 
 	
 
 	setGeocodedLocationForNewGame: function(data) {
-		this.view.setMapLocation
+		
 		// $.ajax({
 		// 	type: "POST",
 		// 	url: this.newGameUrl,

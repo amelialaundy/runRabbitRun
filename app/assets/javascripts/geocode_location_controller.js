@@ -1,6 +1,7 @@
 function GeocodeController() {
 	this.view = new View();
 	this.geocodeSearch  = new GeocodeSearch();
+	this.newGameUrl = '/games/new'
 	self = this
 }
 
@@ -13,7 +14,12 @@ GeocodeController.prototype = {
 		
 	},
 
-	setGeocodedLocationForNewGame: function() {
-		
+	setGeocodedLocationForNewGame: function(data) {
+		self.view.setMapLocation(data)
+		$.ajax({
+			type: "POST",
+			url: this.newGameUrl,
+			data: data
+		});
 	}
 }

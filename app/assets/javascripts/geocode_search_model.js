@@ -1,5 +1,5 @@
 function GeocodeSearch() {
-	this.locationControllerUrl = "/games/new?address="
+	this.locationControllerUrl = "/location_search/new?address="
 }
 
 
