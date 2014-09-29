@@ -18,7 +18,9 @@ DomManager = (function () {
             plId: publik.playerId,
             plLat: publik.playerLat,
             plLng: publik.playerLng,
-            kind: publik.playerKind
+            kind: publik.playerKind,
+            gameLat: publik.gameLat,
+            gameLng: publik.gameLng
         }
     }
 
@@ -26,13 +28,14 @@ DomManager = (function () {
 }());
 
 function View() {
-	this.lat = -41.295308
-	this.lng = 174.773082
+  this.divData = DomManager.getDivContents();
+	this.lat = this.divData.gameLat
+	this.lng = this.divData.gameLng
 	this.zoom = 15
 	this.googlePlayer = null
   this.searchButton = document.querySelector(".newGameButton")
 
-  this.divData = DomManager.getDivContents();
+  
 
   this.playerId = this.divData.plId
   this.playerLat = this.divData.plLat
