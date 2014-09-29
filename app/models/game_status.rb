@@ -12,9 +12,7 @@ private
 
 	def update_player_location(args)
     @player = Player.find(args.fetch(:id))
-    @player.lat = args.fetch(:lat)
-    @player.lng = args.fetch(:lng)
-    @player.save
+    @player.update(lat: args.fetch(:lat), lng: args.fetch(:lng))
 	end
 
 	def proximity_to_rabbit?(game_id)
