@@ -15,11 +15,12 @@ GeocodeController.prototype = {
 	},
 
 	setGeocodedLocationForNewGame: function(data) {
+		console.log(data[0]['geometry']['location']['lat'])
 		self.view.setMapLocation(data)
 		$.ajax({
 			type: "POST",
-			url: this.newGameUrl,
-			data: data
+			url: self.newGameUrl,
+			data: {data: data}
 		});
 	}
 }

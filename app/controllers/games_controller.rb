@@ -4,11 +4,16 @@ class GamesController < ApplicationController
   end
 
   def create
-    console.log(params)
-    game_params = params["game"]
-    game = Game.new(centre_lat:game_params["centre_lat"],
-                     centre_lng:game_params["centre_lng"],
-                     num_players:game_params["num_players"],
+    puts "*********"
+    puts params['data']
+    puts "*********"
+    # game_params = params["game"]
+
+    puts params['data']['0']['geometry']['location']['lat']
+      # this.lng = data[0]['geometry']['location']['lng']
+    game = Game.new(centre_lat:params['data']['0']['geometry']['location']['lat'],
+                     centre_lng:params['data']['0']['geometry']['location']['lng'],
+                     num_players: 1,
                      active: true)
     game.save
     redirect_to ('/games/'+game.id.to_s)

@@ -14,8 +14,18 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
+
+	// var view = new View();
+	// DomManager.registerDivs()
+	// var playerController = new PlayerController(view);
+	// playerController.start();
+
+
+
+  
   var geocodeController = new GeocodeController();
   console.log("geocode")
+
   $(geocodeController.view.searchButton).on("click", geocodeController.getGeocodeLocation);
 });
 
