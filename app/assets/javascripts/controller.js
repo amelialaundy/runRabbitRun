@@ -1,6 +1,6 @@
 function PlayerController() {
 	this.view = new View();
-	this.abilityController = new AbilityController();
+	this.abilityController = new AbilityController(this.view);
 	
 	this.playerOptions = {
       lat: null,
