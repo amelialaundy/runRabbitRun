@@ -4,7 +4,7 @@ describe("PlayerController", function() {
 	describe("attributes on creation", function() {
 	  beforeEach(function() {
 	  	var myView = spyOn(window, 'View');
-	  	
+
 	  	controller = new PlayerController();
 	  });
 
@@ -36,7 +36,7 @@ describe("PlayerController", function() {
 	    expect(controller.start).toBeDefined();
 	  });
 
-	  
+
 	})
 
 describe("bind events function", function() {
@@ -89,7 +89,7 @@ describe("bind events function", function() {
 		beforeEach(function() {
 			spyOn(window, 'clearInterval');
 			spyOn(window, 'alert')
-			
+
 		})
 
 		it("stops the timer when the game is won", function () {
@@ -127,7 +127,7 @@ describe("bind events function", function() {
 		})
 
 		it("sets the player options id from info from the view", function () {
-			
+
 	    expect(controller.playerOptions.id).toBe(1);
 	  });
 
@@ -151,7 +151,7 @@ describe("bind events function", function() {
 	    expect(controller.view.renderMapPlayerMarkers).toHaveBeenCalledWith(controller.player);
 	  });
 	})
-	
+
 
 	describe("move player marker function", function() {
 		beforeEach(function() {
@@ -163,7 +163,7 @@ describe("bind events function", function() {
 	    controller.biggestLng = 174.785596
 	    controller.smallestLat = -41.302645
 	    controller.smallestLng = 174.760568
-			
+
 		})
 
 		it("changes the latitude of the player positively when the up arrow is pressed", function () {
@@ -221,7 +221,22 @@ describe("bind events function", function() {
 			controller.movePlayerMarker(this.event);
 	    expect(controller.playerOptions.lat).toBe(originalLat);
 	  });
-  	
+
+	});
+
+	describe('Rabbit street view',function(){
+  	beforeEach(function(){
+  		var myView = spyOn(window, 'View');
+    	controller = new PlayerController();
+  	});
+
+  	it("initializes with an endpoint to send the rabbit's position", function(){
+  		expect(controller.updateRabbitUrl).toBeDefined()
+  	});
+
+  	it('sets a up rabbit location timer', function(){
+  		expect(controller.setUpRabbitLocationTimer).toBeDefined()
+  	})
 
 	})
 
