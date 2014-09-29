@@ -1,6 +1,6 @@
 function PlayerController() {
 	this.view = new View();
-	this.abilityController = new AbilityController(this.view);
+	this.abilityController = new AbilityController(this.view, this);
 	
 	this.playerOptions = {
       lat: null,
@@ -101,10 +101,11 @@ PlayerController.prototype = {
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var new_lng = this.playerOptions.lng - 0.00008
-			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
-				this.playerOptions.lng = new_lng
-			}
+			// var new_lng = this.playerOptions.lng - 0.00008
+			// if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
+			// 	this.playerOptions.lng = new_lng
+			// }
+			this.abilityController.addSpeed(this.player)
 		}
 
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)

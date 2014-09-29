@@ -6,6 +6,7 @@ function AbilityController(view, playerController) {
 
 AbilityController.prototype = {
 	addSpeed: function(player) {
-		document.removeEventListener("keyup", this.playerController.movePlayerMarker.bind(this), false);
+		console.log(this)
+		document.removeEventListener("keyup", this.playerController.movePlayerMarker, false);
 	}
 }
