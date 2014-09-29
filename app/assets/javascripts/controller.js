@@ -89,8 +89,16 @@ PlayerController.prototype = {
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
+			console.log("right")
 			var new_lng = this.playerOptions.lng + 0.00008
+			console.log(this.biggestLng)
+			console.log(this.smallestLng)
+			console.log(typeof(this.playerOptions.lng))
+			console.log(typeof(this.playerOptions.lat))
+			console.log(e.keyCode)
+			console.log(typeof(new_lng))
 			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
+				console.log("within big and small lng in right move")
 				this.playerOptions.lng = new_lng
 			}
 		// 40 = down
@@ -105,7 +113,9 @@ PlayerController.prototype = {
 			// if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
 			// 	this.playerOptions.lng = new_lng
 			// }
-			this.abilityController.addSpeed(this.player)
+			// this.abilityController.addSpeed(this.player)
+			console.log(this)
+			document.removeEventListener("keyup", this.movePlayerMarker.bind(this), false);
 		}
 
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)

@@ -40,10 +40,12 @@ function View() {
   
 
   this.playerId = this.divData.plId
-  this.playerLat = this.divData.plLat
-  this.playerLng = this.divData.plLng
+  this.playerLat = parseFloat(this.divData.plLat)
+  this.playerLng = parseFloat(this.divData.plLng)
   this.gameId = this.divData.plGameId
   this.playerKind = this.divData.kind
+  console.log(typeof(this.playerLat))
+  console.log(typeof(this.playerLng))
 }
 
 View.prototype = {
@@ -93,7 +95,9 @@ View.prototype = {
     },
 
     moveMarker: function(lat, lng) {
+
     	LatLng = {lat: parseFloat(lat), lng: parseFloat(lng)}
+      console.log(LatLng)
     	this.googlePlayer.setPosition(LatLng);
     },
 
