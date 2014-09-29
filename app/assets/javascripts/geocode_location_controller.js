@@ -1,7 +1,7 @@
 function GeocodeController() {
 	this.view = new View();
 	this.geocodeSearch  = new GeocodeSearch();
-	this.newGameUrl = '/games/create'
+	this.createGameUrl = '/games'
 	self = this
 }
 
@@ -19,14 +19,16 @@ GeocodeController.prototype = {
 		self.view.setMapLocation(postData)
 		$.ajax({
 			type: "POST",
-			url: self.newGameUrl,
+			url: self.createGameUrl,
 			data: {data: postData},
-			success: this.printData
+			success: self.printData
 		});
 	},
 
 	printData: function(data) {
+			console.log(data['game_id'])
+		window.location.replace("/games/"+data['game_id'])
 		console.log("data function")
-		console.log(data)
+	
 	}
 }
