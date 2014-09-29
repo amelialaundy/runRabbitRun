@@ -20,7 +20,6 @@ describe("GeocoderController", function() {
 
 	describe("getGeocodeLocation function", function() {
 		beforeEach(function() {
-			// spyOn(window, 'GeocodeSearch')
 	  	geocodeController = new GeocodeController();
 	  });
 
@@ -35,8 +34,44 @@ describe("GeocoderController", function() {
 			geocodeController.getGeocodeLocation(e);
 			expect(geocodeController.location).toEqual(address);
 		});
+	})
 
-	
+	describe("setGeocodedLocationForNewGame function", function() {
+		beforeEach(function() {
+	  	geocodeController = new GeocodeController();
+
+	  	spyOn($, 'ajax');
+	  	this.setMap = spyOn(View.prototype, 'setMapLocation');
+
+	  	// this.data = ('postData', [ 'data' ]);
+	  	this.dataForPost = jasmine.createSpyObj('postData', ['data']);
+
+	  	geocodeController.setGeocodedLocationForNewGame(this.dataForPost);
+	  	this.requestArgs = $.ajax.calls.argsFor(0);
+	  })
+
+		it("makes a POST request ", function() {
+			expect(this.requestArgs[0].type).toEqual('POST');
+		});
+
+		it("makes a POST request ", function() {
+			expect(this.requestArgs[0].type).toEqual('POST');
+		});
+
+		it("sends data to '/games", function() {
+			expect(this.requestArgs[0].url).toEqual(geocodeController.createGameUrl);
+		});
+
+		it("sends data to '/games", function() {
+			console.log(this.requestArgs[0])
+			console.log(this.dataForPost)
+			expect(this.requestArgs[0].data).toEqual(this.dataForPost);
+		});
+
+		it("calls a reload function on ajax success", function() {
+			console.log(this.requestArgs[0].success)
+			expect(this.requestArgs[0].success).toEqual(geocodeController.redirectToNewGame);
+		});
 	})
 
 })

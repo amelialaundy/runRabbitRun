@@ -15,16 +15,16 @@ GeocodeController.prototype = {
 	},
 
 	setGeocodedLocationForNewGame: function(postData) {
-		self.view.setMapLocation(postData)
+		self.view.setMapLocation(postData) 
 		$.ajax({
 			type: "POST",
 			url: self.createGameUrl,
 			data: {data: postData},
-			success: self.printData
+			success: self.redirectToNewGame
 		});
 	},
 
-	printData: function(data) {
+	redirectToNewGame: function(data) {
 		window.location.replace("/games/"+data['game_id'])
 	
 	}
