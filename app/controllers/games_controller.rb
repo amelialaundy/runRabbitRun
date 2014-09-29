@@ -23,9 +23,10 @@ class GamesController < ApplicationController
   end
 
   def self.get_params(params)
+    p params
     return {
-      lat: params['data']['0']['geometry']['location']['lat'],
-      lng: params['data']['0']['geometry']['location']['lng']
+      lat: params['data']['results']['0']['geometry']['location']['lat'],
+      lng: params['data']['results']['0']['geometry']['location']['lng']
     }
   end
 

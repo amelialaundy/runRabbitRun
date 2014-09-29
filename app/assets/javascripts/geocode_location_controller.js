@@ -15,7 +15,8 @@ GeocodeController.prototype = {
 	},
 
 	setGeocodedLocationForNewGame: function(postData) {
-		self.view.setMapLocation(postData) 
+		console.log(postData['results'][0])
+		self.view.setMapLocation(postData['results']) 
 		$.ajax({
 			type: "POST",
 			url: self.createGameUrl,
