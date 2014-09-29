@@ -113,7 +113,7 @@ PlayerController.prototype = {
 			// if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
 			// 	this.playerOptions.lng = new_lng
 			// }
-			// this.abilityController.addSpeed(this.player)
+			this.abilityController.addSpeed(this.player)
 			console.log(this)
 			document.removeEventListener("keyup", this.movePlayerMarker.bind(this), false);
 		}
