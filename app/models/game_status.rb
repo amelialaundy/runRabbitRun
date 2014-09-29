@@ -2,7 +2,8 @@ class GameStatus
 
   def update(args)
     player_location(args)
-    zone = proximity_to_rabbit?(args.fetch(:game_id))
+    @game = Game.find(args.fetch(:game_id))
+    zone = proximity_to_rabbit?
     @game.finished! if zone == "win_zone"
     zone
 	end    
@@ -17,7 +18,6 @@ private
 	end
 
 	def proximity_to_rabbit?(game_id)
-    @game = Game.find(game_id)
     rabbit = @game.players.find_by(kind: "rabbit")
     params = {
       centre_x: rabbit.lat,
@@ -29,7 +29,6 @@ private
 	end
 
   def which_zone?(options)
-    # 0, 1, 2
     if @player.kind == "hunter"
       centre_x = options[:centre_x]
       centre_y = options[:centre_y]

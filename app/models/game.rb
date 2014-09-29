@@ -16,4 +16,9 @@ class Game < ActiveRecord::Base
       return "hunter"
     end
   end
+
+  def finished!(current_game)
+    self.active = false
+  end
+
 end
