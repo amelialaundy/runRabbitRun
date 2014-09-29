@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   post 'rabbit/update_rabbit_street_view' => 'rabbit#update_rabbit_street_view'
 
   # Example of regular route:
-    post 'player/update_position' => 'players#update_position'
+  post 'player/update_position' => 'players#update_position'
 
-    get '/location_search/new' => 'location_search#new'
+  get '/location_search/new' => 'location_search#new'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
