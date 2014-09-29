@@ -29,6 +29,7 @@ PlayerController.prototype = {
 		this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
 		this.setUpRabbitLocationTimer(10000);
+		this.view.showBoxView();
 	},
 
 	bindEvents: function() {

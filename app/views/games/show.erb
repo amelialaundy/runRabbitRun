@@ -2,6 +2,7 @@
 $(document).ready(function(){
   DomManager.registerDivs()
   var playerController = new PlayerController();
+
   playerController.start();
 });
 </script>
@@ -9,7 +10,7 @@ $(document).ready(function(){
 <script type='text/javascript'>
 
 	localStorage['game.id'] = <%= @player.game_id %>
-	localStorage['player.id'] = <%=@player.id %> 
+	localStorage['player.id'] = <%=@player.id %>
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
 	localStorage['player.kind'] = '<%=@player.kind %>'

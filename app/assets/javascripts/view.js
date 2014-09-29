@@ -9,7 +9,7 @@ DomManager = (function () {
         publik.playerKind = localStorage['player.kind']
     }
 
-    
+
     publik.getDivContents = function () {
         return {
             plGameId: publik.gameId,
@@ -79,5 +79,22 @@ View.prototype = {
     showStreetView: function(latlng){
         var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
         $('#streetview').html('<img src='+baseUri+latlng+'>')
+    },
+
+    showBoxView: function(){
+        var lat =-41.29398399999985;
+        var lng = 174.7716679999999;
+        var self = this;
+
+        var icon = '/assets/box.png';
+
+        var marker = new google.maps.Marker({
+            position: { lat: lat,
+                        lng: lng},
+            map: this.map,
+            icon: icon
+        });
     }
+
+
 }
