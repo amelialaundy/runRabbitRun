@@ -4,14 +4,13 @@ class GamesController < ApplicationController
   end
 
   def create
-
-    game_params = params["game"]
-    game = Game.new(centre_lat:game_params["centre_lat"],
-                     centre_lng:game_params["centre_lng"],
-                     num_players:game_params["num_players"],
+    game_params = GamesController.get_params(params)
+    game = Game.new(centre_lat:game_params[:lat],
+                     centre_lng:game_params[:lng],
+                     num_players: 1,
                      active: true)
     game.save
-    redirect_to ('/games/'+game.id.to_s)
+    render json: {game_id: game.id}
   end
 
   def show
@@ -20,7 +19,13 @@ class GamesController < ApplicationController
                           lat: @game.get_random_lat,
                           lng: @game.get_random_lng,
                           kind: @game.mark_as_rabbit? )
+  end
 
+  def self.get_params(params)
+    return {
+      lat: params['data']['results']['0']['geometry']['location']['lat'],
+      lng: params['data']['results']['0']['geometry']['location']['lng']
+    }
   end
 
 end

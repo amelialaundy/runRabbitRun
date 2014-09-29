@@ -1,5 +1,6 @@
 function PlayerController() {
 	this.view = new View();
+	
 	this.playerOptions = {
       lat: null,
       lng: null,
@@ -17,6 +18,7 @@ function PlayerController() {
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
+    
     var self = this
 }
 
@@ -32,6 +34,7 @@ PlayerController.prototype = {
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
+
 	},
 
 	setUpLocationTimer: function(interval) {
@@ -70,6 +73,7 @@ PlayerController.prototype = {
 		if (e.keyCode == 38) {
 			var new_lat = this.playerOptions.lat + 0.00008
 			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+
 				this.playerOptions.lat = new_lat
 
 			}
@@ -92,16 +96,19 @@ PlayerController.prototype = {
 				this.playerOptions.lng = new_lng
 			}
 		}
+
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
 	},
 
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
-		this.biggestLat = centreLat + 0.003882
-		this.biggestLng = centreLng + 0.007397
-		this.smallestLat = centreLat - 0.003882
-		this.smallestLng = centreLng - 0.007397
+		farthestLat = 0.003882
+		farthestLng = 0.007397
+		this.biggestLat = centreLat + farthestLat
+		this.biggestLng = centreLng + farthestLng
+		this.smallestLat = centreLat - farthestLat
+		this.smallestLng = centreLng - farthestLng
 	},
 
 

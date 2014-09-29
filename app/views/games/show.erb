@@ -1,9 +1,9 @@
 <script type="text/javascript">
-$(document).ready(function(){
-  DomManager.registerDivs()
-  var playerController = new PlayerController();
-  playerController.start();
-});
+	$(document).ready(function(){
+	  DomManager.registerDivs()
+	  var playerController = new PlayerController();
+	  playerController.start();
+	});
 </script>
 
 <script type='text/javascript'>
@@ -12,6 +12,9 @@ $(document).ready(function(){
 	localStorage['player.id'] = <%=@player.id %> 
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
+	localStorage['game.lat'] = '<%=@player.game.centre_lat %>'
+	localStorage['game.lng'] = '<%=@player.game.centre_lng %>'
+
 	localStorage['player.kind'] = '<%=@player.kind %>'
 
 </script>

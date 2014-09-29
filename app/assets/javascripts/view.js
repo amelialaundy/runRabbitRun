@@ -6,7 +6,9 @@ DomManager = (function () {
         publik.playerId = localStorage['player.id']
         publik.playerLat = localStorage['player.lat'];
         publik.playerLng = localStorage['player.lng'];
-        publik.playerKind = localStorage['player.kind']
+        publik.playerKind = localStorage['player.kind'];
+        publik.gameLat = localStorage['game.lat'];
+        publik.gameLng = localStorage['game.lng'];
     }
 
     
@@ -16,7 +18,9 @@ DomManager = (function () {
             plId: publik.playerId,
             plLat: publik.playerLat,
             plLng: publik.playerLng,
-            kind: publik.playerKind
+            kind: publik.playerKind,
+            gameLat: publik.gameLat,
+            gameLng: publik.gameLng
         }
     }
 
@@ -24,18 +28,22 @@ DomManager = (function () {
 }());
 
 function View() {
-	this.lat = -41.295308
-	this.lng = 174.773082
+
+  this.divData = DomManager.getDivContents();
+	this.lat = parseFloat(this.divData.gameLat);
+	this.lng = parseFloat(this.divData.gameLng);
+
 	this.zoom = 16
 	this.googlePlayer = null
+  this.searchButton = document.querySelector(".newGameButton")
 
-    this.divData = DomManager.getDivContents();
+  
 
-    this.playerId = this.divData.plId
-    this.playerLat = this.divData.plLat
-    this.playerLng = this.divData.plLng
-    this.gameId = this.divData.plGameId
-    this.playerKind = this.divData.kind
+  this.playerId = this.divData.plId
+  this.playerLat = this.divData.plLat
+  this.playerLng = this.divData.plLng
+  this.gameId = this.divData.plGameId
+  this.playerKind = this.divData.kind
 }
 
 View.prototype = {
@@ -57,6 +65,19 @@ View.prototype = {
       var newMapMarker =  this.createMarker(playerMarker);
     },
 
+    getAddress: function() {
+      this.address = $('#address-search-bar').val();
+      return {
+        address: this.address
+      };
+    },
+
+    setMapLocation: function(data) {
+      this.lat = data[0]['geometry']['location']['lat']
+      this.lng = data[0]['geometry']['location']['lng']
+
+    },
+
     createMarker: function(playerMarker) {
     	var options = this.createNewPlayerMarkerOptions(playerMarker);
     	var googlePlayerMarker = new google.maps.Marker(options)
@@ -72,7 +93,7 @@ View.prototype = {
     },
 
     moveMarker: function(lat, lng) {
-    	LatLng = {lat: lat, lng: lng}
+    	LatLng = {lat: parseFloat(lat), lng: parseFloat(lng)}
     	this.googlePlayer.setPosition(LatLng);
     },
 
