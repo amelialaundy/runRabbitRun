@@ -6,7 +6,9 @@ DomManager = (function () {
         publik.playerId = localStorage['player.id']
         publik.playerLat = localStorage['player.lat'];
         publik.playerLng = localStorage['player.lng'];
-        publik.playerKind = localStorage['player.kind']
+        publik.playerKind = localStorage['player.kind'];
+        publik.gameLat = localStorage['game.lat'];
+        publik.gameLng = localStorage['game.lng'];
     }
 
     
@@ -68,7 +70,7 @@ View.prototype = {
     setMapLocation: function(data) {
       this.lat = data[0]['geometry']['location']['lat']
       this.lng = data[0]['geometry']['location']['lng']
-      
+
     },
 
     createMarker: function(playerMarker) {
