@@ -31,7 +31,7 @@ PlayerController.prototype = {
 	},
 
 	bindEvents: function() {
-		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
+		document.addEventListener("keydown", this.movePlayerMarker.bind(this), false);
 	},
 
 	setUpLocationTimer: function(interval) {

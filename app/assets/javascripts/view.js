@@ -29,6 +29,8 @@ function View() {
 	this.zoom = 15
 	this.googlePlayer = null
 
+    this.rabbitMarker = '/assets/rabbitmarker2.png'
+
     this.divData = DomManager.getDivContents();
 
     this.playerIdDiv = this.divData.plId
@@ -67,7 +69,8 @@ View.prototype = {
     createNewPlayerMarkerOptions: function(playerMarker) {
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng)
+    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
+          icon: this.rabbitMarker
     	};
     },
 
