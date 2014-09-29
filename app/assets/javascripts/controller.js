@@ -83,7 +83,9 @@ PlayerController.prototype = {
 		// 38 = up
 		if (e.keyCode == 38) {
 			var new_lat = this.playerOptions.lat + 0.00008
+			debugger;
 			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+
 				this.playerOptions.lat = new_lat
 
 			}
@@ -106,10 +108,12 @@ PlayerController.prototype = {
 				this.playerOptions.lng = new_lng
 			}
 		}
+
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
 	},
 
 	setMapBoundaries: function() {
+		console.log(this.view.lat)
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
 		this.biggestLat = centreLat + 0.007337
