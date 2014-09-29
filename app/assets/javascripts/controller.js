@@ -18,6 +18,7 @@ function PlayerController() {
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
+    this.newGameUrl = '/games/new'
     var self = this
 }
 
@@ -33,13 +34,24 @@ PlayerController.prototype = {
 
 	bindEvents: function() {
 		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
-		$(this.view.searchButton).on("click", this.getGeocodeLocation.bind(this));
+		
 	},
 
 	getGeocodeLocation: function(e) {
+		console.log("hey")
 		e.preventDefault();
 		var location = this.view.getAddress();
-		this.geocodeSearch.search(location.address, this.view.setMapLocation)
+		this.geocodeSearch.search(location.address, this.setGeocodedLocationForNewGame)
+		
+	},
+
+	setGeocodedLocationForNewGame: function(data) {
+		this.view.setMapLocation
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: this.newGameUrl,
+		// 	data: data
+		// });
 	},
 
 	setUpLocationTimer: function(interval) {
