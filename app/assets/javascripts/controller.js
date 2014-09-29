@@ -18,7 +18,8 @@ function PlayerController() {
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
-    
+    this.sendWinMessageUrl = '/player/send_win_message'
+
     var self = this
 }
 
@@ -53,9 +54,17 @@ PlayerController.prototype = {
 	checkWinState: function(data) {
 		if (data.game_status == true) {
 			clearInterval(this.locationTimer)
-			alert("end of game!!")
+			this.sendWinMessageToAll()
 		}
+	},
 
+	sendWinMessageToAll:function(){
+		var self = this
+		$.ajax({
+			type: "POST",
+			url: this.sendWinMessageUrl,
+			data: {player_stats: self.playerOptions},
+		})
 	},
 
 	createPlayerMarkers: function() {
@@ -130,11 +139,16 @@ PlayerController.prototype = {
 	// sets up pusher channel
 	setUpRabbitLocationPusher: function(){
 		var self = this
+		var gameId = this.playerOptions.game_id
 		this.pusher = new Pusher('7a73ab83106664465bfd');
-		this.channel = this.pusher.subscribe('rabbit_location_game_'+ this.playerOptions.game_id);
+		this.channel = this.pusher.subscribe('game_'+ gameId);
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
 			self.view.showStreetView(data.message)
 		});
-	},
+		this.channel.bind('win_message', function(data){
+			alert(data.message)
+		});
+
+	}
 
 };
