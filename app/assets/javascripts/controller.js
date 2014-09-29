@@ -37,17 +37,6 @@ PlayerController.prototype = {
 
 	},
 
-	
-
-	setGeocodedLocationForNewGame: function(data) {
-		
-		// $.ajax({
-		// 	type: "POST",
-		// 	url: this.newGameUrl,
-		// 	data: data
-		// });
-	},
-
 	setUpLocationTimer: function(interval) {
 		self.locationTimer = setInterval(this.sendPlayerPosition.bind(this), interval)
 	},
