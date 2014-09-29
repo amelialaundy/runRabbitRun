@@ -43,16 +43,18 @@ PlayerController.prototype = {
 		  type: "POST",
 		  url: this.updatePlayerUrl,
 		  data: this.playerOptions,
-		  success: this.checkWinState.bind(this)
+		  success: this.checkProximityToRabbit.bind(this)
 		});
 	},
 
-	checkWinState: function(data) {
-		if (data.game_status == true) {
+	checkProximityToRabbit: function(data) {
+		if (data.proximity == true) {
 			clearInterval(this.locationTimer)
 			alert("end of game!!")
+		} 
+		else if (data.proximity == true) {
+      alert("close to rabbit!!")
 		}
-
 	},
 
 	createPlayerMarkers: function() {
