@@ -9,8 +9,8 @@ function GeocodeController() {
 GeocodeController.prototype = {
 	getGeocodeLocation: function(e) {
 		e.preventDefault();
-		var location = self.view.getAddress();
-		self.geocodeSearch.search(location.address, self.setGeocodedLocationForNewGame)
+		this.location = self.view.getAddress();
+		self.geocodeSearch.search(this.location.address, self.setGeocodedLocationForNewGame)
 		
 	},
 
