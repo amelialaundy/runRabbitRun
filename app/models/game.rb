@@ -21,4 +21,8 @@ class Game < ActiveRecord::Base
     self.active = false
   end
 
+  def find_rabbit
+    self.players.find_by(kind: "rabbit")
+  end
+
 end
