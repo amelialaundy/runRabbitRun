@@ -29,7 +29,7 @@ function View() {
 	this.zoom = 15
 	this.googlePlayer = null
 
-    this.rabbitMarker = '/assets/rabbitmarker2.png'
+    this.rabbitMarker = '/assets/rabbitmarker.png'
 
     this.divData = DomManager.getDivContents();
 
