@@ -28,7 +28,7 @@ DomManager = (function () {
 }());
 
 function View() {
-  this.rabbitMarker = '/assets/rabbitmarker.png'
+  //this.rabbitMarker = '/assets/rabbitmarker.png'
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
@@ -92,7 +92,7 @@ View.prototype = {
     	return {
     	  map: this.map,
     	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
-        icon: this.rabbitMarker
+        icon: iconPic
     	};
     },
 
