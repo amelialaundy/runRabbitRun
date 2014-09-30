@@ -20,7 +20,6 @@ function PlayerController() {
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
     this.sendWinMessageUrl = '/player/send_win_message'
-    this.mainDocument = document
 
     self = this
 }
