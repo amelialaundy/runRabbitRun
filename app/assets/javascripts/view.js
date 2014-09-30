@@ -81,20 +81,7 @@ View.prototype = {
         $('#streetview').html('<img src='+baseUri+latlng+'>')
     },
 
-    showBoxView: function(){
-        var lat =-41.29398399999985;
-        var lng = 174.7716679999999;
-        var self = this;
 
-        var icon = '/assets/box.png';
-
-        var marker = new google.maps.Marker({
-            position: { lat: lat,
-                        lng: lng},
-            map: this.map,
-            icon: icon
-        });
-    }
 
 
 }

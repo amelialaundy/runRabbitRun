@@ -1,5 +1,6 @@
 function PlayerController() {
 	this.view = new View();
+	this.powerUp = new PowerUp(this.view)
 	this.playerOptions = {
       lat: null,
       lng: null,
@@ -29,7 +30,7 @@ PlayerController.prototype = {
 		this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
 		this.setUpRabbitLocationTimer(10000);
-		this.view.showBoxView();
+		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
 	},
 
 	bindEvents: function() {
@@ -102,7 +103,9 @@ PlayerController.prototype = {
 				this.playerOptions.lng = new_lng
 			}
 		}
-		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
+		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng);
+		this.powerUp.collectAbility(this.playerOptions)
+		console.log(this.playerOptions)
 	},
 
 	setMapBoundaries: function() {
@@ -142,7 +145,7 @@ PlayerController.prototype = {
 		this.channel.bind('win_message', function(data){
 			alert(data.message)
 		});
+	},
 
-	}
 
 };
