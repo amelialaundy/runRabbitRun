@@ -53,15 +53,20 @@ PlayerController.prototype = {
 		  type: "POST",
 		  url: this.updatePlayerUrl,
 		  data: this.playerOptions,
-		  success: this.checkWinState.bind(this)
+		  success: this.checkProximityToRabbit.bind(this)
 		});
 	},
 
-	checkWinState: function(data) {
-		if (data.game_status == true) {
-			clearInterval(this.locationTimer);
+	checkProximityToRabbit: function(data) {
+		if (data['proximity'] == "win") {
+			clearInterval(this.locationTimer)
 			this.sendWinMessageToAll()
-			
+		} else if (data['proximity'] == "red") {
+				this.view.showProximityAlert("red")
+		} else if (data['proximity'] == "yellow") {
+				this.view.showProximityAlert("yellow")
+		} else {
+				this.view.showProximityAlert("green")
 		}
 
 	},

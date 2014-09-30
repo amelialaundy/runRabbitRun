@@ -28,20 +28,15 @@ DomManager = (function () {
 }());
 
 function View() {
-
-
   this.rabbitMarker = '/assets/rabbitmarker.png'
-
-
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
   this.bodyElement = $('body')
   this.searchButton = document.querySelector(".newGameButton")
-
 	this.zoom = 16
 	this.googlePlayer = null
-
+  this.proximityAlert = $("#proximity-alert")
   this.playerId = this.divData.plId
   this.playerLat = parseFloat(this.divData.plLat)
   this.playerLng = parseFloat(this.divData.plLng)
@@ -111,6 +106,10 @@ View.prototype = {
         $('#streetview').html('<img class="streetview" src='+baseUri+latlng+'>')
     },
 
+    showProximityAlert: function(message) {
+      this.proximityAlert.css("background-color", message)
+    }
+
     showWinModal: function(message) {
         $("#dialog").dialog({
             width: 735,
@@ -133,5 +132,4 @@ View.prototype = {
     goHome: function() {
         alert('You selected goHome');
     }
-
 }

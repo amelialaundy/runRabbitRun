@@ -20,4 +20,13 @@ class Game < ActiveRecord::Base
       return "hunter"
     end
   end
+
+  def finished!
+    self.active = false
+  end
+
+  def find_rabbit
+    self.players.find_by(kind: "rabbit")
+  end
+
 end
