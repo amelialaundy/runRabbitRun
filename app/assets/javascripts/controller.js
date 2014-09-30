@@ -55,7 +55,6 @@ PlayerController.prototype = {
 	},
 
 	checkProximityToRabbit: function(data) {
-		console.log(data)
 		if (data['proximity'] == "win") {
 			clearInterval(this.locationTimer)
 			this.sendWinMessageToAll()
