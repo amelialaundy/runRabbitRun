@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Game, :type => :model do
 
-  let(:game) { create(:game) }
+  let(:game) { build(:game) }
 
   describe "#get_random_lat" do
     it "returns a random latitude within 0.007337 of centre" do
@@ -24,17 +24,16 @@ RSpec.describe Game, :type => :model do
 
   describe "#find_rabbit" do
     it "returns a rabbit object" do
-      rabbit = build(:player, kind: "rabbit")
-      allow(game).to receive_message_chain(:players, :find_by).and_return(rabbit)
-      result = game.find_rabbit
-      expect(result.kind).to eq("rabbit")
+      players = double(:players, rabbit: [])
+      expect(game).to receive(:players).and_return(players)
+      game.find_rabbit
     end
   end
 
   describe "#finished!" do
     it "ends the game" do
-      expect(game.finished!).to eq(false)
       game.finished!
+      expect(game.active).to eq(false)
     end
   end
 
