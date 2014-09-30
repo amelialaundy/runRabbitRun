@@ -15,14 +15,6 @@
  *= require_self
  */
 
-
- #proximity-alert {
- 	height: 10px;
- 	width: 10px;
- 	background-color: green;
- }
-
-
  /* run rabit run css lib */
  body {
  	background-color: #7c6150;
@@ -194,4 +186,11 @@ input.newGameButton:focus {
 	position: relative;
 	display: none;
 }
+ #proximity-alert {
+ 	height: 131px;
+ 	width: 260px;
+ 	background-color: #066804;
+ 	float: left;
+ }
+
 
