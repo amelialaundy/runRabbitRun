@@ -11,7 +11,7 @@ DomManager = (function () {
         publik.gameLng = localStorage['game.lng'];
     }
 
-    
+
     publik.getDivContents = function () {
         return {
             plGameId: publik.gameId,
@@ -100,5 +100,9 @@ View.prototype = {
     showStreetView: function(latlng){
         var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
         $('#streetview').html('<img src='+baseUri+latlng+'>')
-    }
+    },
+
+
+
+
 }
