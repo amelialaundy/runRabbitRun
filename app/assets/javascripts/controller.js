@@ -93,29 +93,30 @@ GameController.prototype = {
 	movePlayerMarker: function(e) {
 		// 38 = up
 		if (e.keyCode == 38) {
-			var new_lat = self.playerOptions.lat + 0.00008
+			var new_lat = self.player.options.lat + 0.00008
 			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
-
-				self.playerOptions.lat = new_lat
-
+				self.player.move([0.00008, 0.0])
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			var new_lng = self.playerOptions.lng + 0.00008
+			var new_lng = self.player.options.lng + 0.00008
 			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
-				self.playerOptions.lng = new_lng
+				self.player.move([0.0, 0.00008])
+				// self.playerOptions.lng = new_lng
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			var new_lat = self.playerOptions.lat - 0.00008
+			var new_lat = self.player.options.lat - 0.00008
 			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
-				self.playerOptions.lat = new_lat
+				self.player.move([-0.00008, 0.0])
+				// self.playerOptions.lat = new_lat
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var new_lng = self.playerOptions.lng - 0.00008
+			var new_lng = self.player.options.lng - 0.00008
 			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
-				self.playerOptions.lng = new_lng
+				self.player.move([0.0, -0.00008])
+				// self.playerOptions.lng = new_lng
 			}
 		// 70 = f key
 		} else if (e.keyCode == 70) {
