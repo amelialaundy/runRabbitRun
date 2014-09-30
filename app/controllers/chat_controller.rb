@@ -21,7 +21,6 @@ skip_before_action :verify_authenticity_token
 
 	  activity = Activity.new('chat-message', options['text'], options)
 
-	  puts "-------- here"
 	  data = activity.getMessage()
 	  response = Pusher[channel_name].trigger('chat_message', data)
 

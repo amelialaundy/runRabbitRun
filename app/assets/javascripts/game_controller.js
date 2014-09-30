@@ -1,6 +1,7 @@
 function GameController() {
 	this.view = new View();
 	this.powerUp = new PowerUp(this.view)
+	this.boundary = null
 	this.abilityController = new AbilityController(this.view, this);
 
 	this.playerOptions = {
@@ -29,8 +30,10 @@ GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
+		this.boundary = new Boundary([this.view.lat, this.view.lng]);
+		this.boundary.setMapLimits();
 		this.createPlayerMarkers();
-		this.setMapBoundaries();
+		// this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
 		this.setUpRabbitLocationTimer(10000);
 		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
@@ -94,25 +97,25 @@ GameController.prototype = {
 		// 38 = up
 		if (e.keyCode == 38) {
 			var newLat = self.player.currentLat + moveDistance
-			if (newLat < self.biggestLat && newLat > self.smallestLat) {
+			if (newLat < self.boundary.mapLimits.biggestLat && newLat > self.boundary.mapLimits.smallestLat) {
 				self.player.move([moveDistance, 0.0])
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
 			var newLng = self.player.currentLng + moveDistance
-			if (newLng < self.biggestLng && newLng > self.smallestLng) {
+			if (newLng < self.boundary.mapLimits.biggestLng && newLng > self.boundary.mapLimits.smallestLng) {
 				self.player.move([0.0, moveDistance])
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
 			var newLat = self.player.currentLat - moveDistance
-			if (newLat < self.biggestLat && newLat > self.smallestLat) {
+			if (newLat < self.boundary.mapLimits.biggestLat && newLat > self.boundary.mapLimits.smallestLat) {
 				self.player.move([-moveDistance, 0.0])
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
 			var newLng = self.player.currentLng - moveDistance
-			if (newLng < self.biggestLng && newLng > self.smallestLng) {
+			if (newLng < self.boundary.mapLimits.biggestLng && newLng > self.boundary.mapLimits.smallestLng) {
 				self.player.move([0.0, -moveDistance])
 			}
 		// 70 = f key
@@ -133,16 +136,19 @@ GameController.prototype = {
 		}
 	},
 
-	setMapBoundaries: function() {
-		centreLat = this.view.lat;
-		centreLng = this.view.lng;
-		farthestLat = 0.003882
-		farthestLng = 0.007397
-		this.biggestLat = centreLat + farthestLat
-		this.biggestLng = centreLng + farthestLng
-		this.smallestLat = centreLat - farthestLat
-		this.smallestLng = centreLng - farthestLng
-	},
+	// setMapBoundaries: function() {
+
+	// 	centreLat = this.view.lat;
+	// 	centreLng = this.view.lng;
+	// 	this.boundary = new Boundary([centreLat, centreLng])
+	// 	this.boundary.setMapLimits();
+	// 	farthestLat = 0.003882
+	// 	farthestLng = 0.007397
+	// 	this.biggestLat = centreLat + farthestLat
+	// 	this.biggestLng = centreLng + farthestLng
+	// 	this.smallestLat = centreLat - farthestLat
+	// 	this.smallestLng = centreLng - farthestLng
+	// },
 
 
 	setUpRabbitLocationTimer: function(interval) {
