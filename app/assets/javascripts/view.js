@@ -34,12 +34,12 @@ function View() {
 	this.lng = parseFloat(this.divData.gameLng);
   this.bodyElement = $('body')
   this.searchButton = document.querySelector(".newGameButton")
-  
+
 	this.zoom = 16
 	this.googlePlayer = null
-  
 
-  
+
+
   this.playerId = this.divData.plId
   this.playerLat = parseFloat(this.divData.plLat)
   this.playerLng = parseFloat(this.divData.plLng)
@@ -86,9 +86,16 @@ View.prototype = {
     },
 
     createNewPlayerMarkerOptions: function(playerMarker) {
+        if (playerMarker.kind =="rabbit"){
+            var iconPic = "http://img1.wikia.nocookie.net/__cb20120422035528/habbo/en/images/f/fd/Rabbit.png"
+        }
+        else{
+            var iconPic = "http://www.pixeljoint.com/files/icons/terminator_cyborg.gif"
+        };
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng)
+    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
+          icon: iconPic
     	};
     },
 
