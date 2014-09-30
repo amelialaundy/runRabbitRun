@@ -1,6 +1,3 @@
-#require 'digest/md5'
-# require 'uuid'
-
 class Activity
   
   def initialize(activity_type, action_text, options)

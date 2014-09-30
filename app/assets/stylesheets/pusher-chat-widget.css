@@ -76,7 +76,7 @@
   border-radius: 6px;
   vertical-align: top;
   
-  color: white;
+  color: black;
   background-color: #0064CD;
 
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -127,7 +127,7 @@
 .pusher-chat-widget ul.activity-stream li.chat-message {
   background-color: #DDF4FB;
   border-color: #C6EDF9;
-  color: #404040;
+  color: black;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 

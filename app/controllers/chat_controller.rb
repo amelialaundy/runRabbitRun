@@ -1,13 +1,7 @@
 class ChatController < ApplicationController
 skip_before_action :verify_authenticity_token
 
-#require_relative 'activity'
-# require_relative 'config'
-
-# set :public_folder, '../'
 	def new
-	# File.read("../pusher-realtime-chat-widget/src/ruby-sinatra/chat.rb")
-	# /Users/Amelia/eda/runRabbitRun/app/pusher-realtime-chat-widget/src/ruby-sinatra/chat.rb
 	  chat_info = params[:chat_info]
 
 	  channel_name = nil
