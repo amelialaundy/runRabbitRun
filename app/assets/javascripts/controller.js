@@ -38,7 +38,9 @@ PlayerController.prototype = {
 
 	bindEvents: function() {
 		$('body').on("keyup", this.movePlayerMarker);
-
+	},
+	unbindEvents: function() {
+		$('body').off("keyup", this.movePlayerMarker)
 	},
 
 	setUpLocationTimer: function(interval) {
@@ -155,7 +157,8 @@ PlayerController.prototype = {
 			self.view.showStreetView(data.message)
 		});
 		this.channel.bind('win_message', function(data){
-			alert(data.message)
+			alert(data.message);
+			self.unbindEvents();
 		});
 	},
 
