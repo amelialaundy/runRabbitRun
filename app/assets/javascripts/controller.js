@@ -55,12 +55,13 @@ PlayerController.prototype = {
 	},
 
 	checkProximityToRabbit: function(data) {
-		if (data.proximity == "win zone") {
+		console.log(data)
+		if (data['proximity'] == "win") {
 			clearInterval(this.locationTimer)
 			this.sendWinMessageToAll()
-		} else if (data.proximity == "red zone") {
+		} else if (data['proximity'] == "red") {
 				this.view.showProximityAlert("red")
-		} else if (data.proximity == "yellow zone") {
+		} else if (data['proximity'] == "yellow") {
 				this.view.showProximityAlert("yellow")
 		} else {
 				this.view.showProximityAlert("green")

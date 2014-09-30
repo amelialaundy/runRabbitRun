@@ -103,6 +103,7 @@ View.prototype = {
     },
 
     showProximityAlert: function(message) {
+      console.log(message)
       this.proximityAlert.css("background-color", message)
     }
 }

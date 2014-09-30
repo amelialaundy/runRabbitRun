@@ -37,9 +37,9 @@ private
             if circle_area < radius**2
                 @game.active = false
                 @game.save
-                return "yellow"
+                return "win zone"
             else
-                return false
+                return "yellow"
             end
         else
             return false
