@@ -106,12 +106,10 @@ View.prototype = {
         $('#streetview').html('<img class="streetview" src='+baseUri+latlng+'>')
     },
 
-<<<<<<< HEAD
     showProximityAlert: function(message) {
-      console.log(message)
       this.proximityAlert.css("background-color", message)
     }
-=======
+
     showWinModal: function(message) {
         $("#dialog").dialog({
             width: 735,
@@ -134,6 +132,4 @@ View.prototype = {
     goHome: function() {
         alert('You selected goHome');
     }
-
->>>>>>> dev_branch
 }
