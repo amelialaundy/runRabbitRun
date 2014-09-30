@@ -111,7 +111,7 @@ View.prototype = {
         $('#streetview').html('<img class="streetview" src='+baseUri+latlng+'>')
     },
 
-    showWinModal: function() {
+    showWinModal: function(message) {
         $("#dialog").dialog({
             width: 735,
             autoOpen: true,

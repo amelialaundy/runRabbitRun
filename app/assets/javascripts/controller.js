@@ -61,7 +61,7 @@ PlayerController.prototype = {
 		if (data.game_status == true) {
 			clearInterval(this.locationTimer);
 			this.sendWinMessageToAll()
-			this.view.showWinModal()
+			
 		}
 
 	},
@@ -160,8 +160,9 @@ PlayerController.prototype = {
 			self.view.showStreetView(data.message)
 		});
 		this.channel.bind('win_message', function(data){
-			alert(data.message);
+			self.view.showWinModal(data.message)
 			self.unbindEvents();
+
 		});
 	},
 

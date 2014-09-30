@@ -44,7 +44,7 @@ nav,
 #map-canvas, 
 #streetview {
 	display: block;
-	xoutline: 1px solid red;
+	xoutline: 1px solid red; /*for.testing*/
 }
 
 body {
@@ -141,7 +141,7 @@ a:active {
 input.newGameButton {
 	border: 2px groove #6b4708;
 	cursor: pointer; /* forces the cursor to change to a hand when the button is hovered */
-	padding: 5px 25px;
+	padding: 8px 5px;
 	/* give the background a gradient */
 	background-color: #f0e2c9; /*required for browsers that don't support gradients*/
 	background: -webkit-gradient(linear, left top, left bottom, from(#f6c060), to(#f0e2c9));
@@ -151,7 +151,7 @@ input.newGameButton {
 	background: linear-gradient(top, #f6c060, #f0e2c9);
 	/*style to the text inside the button*/
 	color: #382606;
-	font-size: 18px;
+	font-size: 16px;
 	/*give the corners a small curve*/
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -160,7 +160,7 @@ input.newGameButton {
 	-webkit-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
 	-moz-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
 	box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
-	width: 400px;
+	width: 120px;
 }
 /* now style the button's hover and focus states */
 input.newGameButton:hover, 
@@ -172,7 +172,13 @@ input.newGameButton:focus {
 	box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
 	outline: none;
 }
-
+#address-search-bar {
+	border: 2px solid #6b4708;
+  padding: 10px;
+  margin: 0;
+  width: 340px;
+  font-size: 14px;
+}
 #dialog {
 	display: none;
 }
@@ -182,15 +188,4 @@ input.newGameButton:focus {
 	position: relative;
 	display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
 
