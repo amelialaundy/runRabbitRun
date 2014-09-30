@@ -10,7 +10,7 @@ PowerUp.prototype = {
     var radius = 0.0003;
     var circleArea = Math.pow((player.lat-this.lat),2)+ Math.pow((player.lng-this.lng),2) ;
     if(circleArea < Math.pow(radius,2) ){
-      console.log("GotBox!")
+      // Place ability event here
       this.marker.setVisible(false)
     }
   },

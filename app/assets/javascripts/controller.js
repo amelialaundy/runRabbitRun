@@ -105,7 +105,6 @@ PlayerController.prototype = {
 		}
 		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng);
 		this.powerUp.collectAbility(this.playerOptions)
-		console.log(this.playerOptions)
 	},
 
 	setMapBoundaries: function() {
