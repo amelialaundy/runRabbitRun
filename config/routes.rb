@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'games/new' => 'games#new'
   post 'games' => 'games#create'
   get 'games/:id' => 'games#show'
-  post'chat' => 'chat/new'
+  post 'chat' => 'chat#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
