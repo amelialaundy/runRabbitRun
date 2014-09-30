@@ -1,4 +1,9 @@
 Rails.application.configure do
+  require 'pusher'
+
+  Pusher.app_id = 90890
+  Pusher.key = '7a73ab83106664465bfd'
+  Pusher.secret = '6ccc9c0aab6bf0fbaae2'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

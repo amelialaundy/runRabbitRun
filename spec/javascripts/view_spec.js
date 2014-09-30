@@ -25,7 +25,7 @@ describe("View", function() {
       expect(view.lng).not.toBe(null);
     });
 
-    it("calls DomManager.getDivContents", function () {
+    xit("calls DomManager.getDivContents", function () {
       expect(DomManager.getDivContents).toHaveBeenCalled();
     });
   })
