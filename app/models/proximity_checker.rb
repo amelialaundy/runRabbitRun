@@ -2,10 +2,10 @@ class ProximityChecker
 
 	WIN_ZONE_RADIUS_SQUARED = 0.0005 ** 2
 	RED_ZONE_RADIUS_SQUARED = 0.002 ** 2
-	YELLOW_ZONE_RADIUS_SQUARED = 0.004 ** 2
+	YELLOW_ZONE_RADIUS_SQUARED = 0.005 ** 2
 
 
-	attr_reader :hunter, :rabbit, :hunter_coordinate, :rabbit_coordinate
+	attr_reader :hunter, :rabbit, :hunter_coordinate, :rabbit_coordinate, :win
 
 	def initialize(players)
 		@hunter = players.fetch(:hunter)
@@ -19,15 +19,13 @@ class ProximityChecker
 		((hunter_coordinate.lat - rabbit_coordinate.lat)**2 + (hunter_coordinate.lng - rabbit_coordinate.lng)**2)
 	end
 
-
-
 	def zone
-    if circle_area < WIN_ZONE_RADIUS
+    if circle_area < WIN_ZONE_RADIUS_SQUARED
     	@win = true
     	"win"
-    elsif circle_area < RED_ZONE_RADIUS
+    elsif circle_area < RED_ZONE_RADIUS_SQUARED
     	"red"
-    elsif circle_area < YELLOW_ZONE_RADIUS
+    elsif circle_area < YELLOW_ZONE_RADIUS_SQUARED
     	"yellow"
     else
     	"green"
