@@ -109,14 +109,13 @@ PlayerController.prototype = {
 			}
 		// 70 = f key
 		} else if (e.keyCode == 70) {
-			self.abilityController.addSpeed(self.player)
+			self.abilityController.addSpeed()
 		}
 
 		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
-		self.powerUp.collectAbility(this.playerOptions)
-
-
-
+		if(self.powerUp.collectAbility(self.playerOptions)){
+			self.abilityController.addSpeed();
+		}
 	},
 
 	setMapBoundaries: function() {
