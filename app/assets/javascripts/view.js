@@ -45,8 +45,6 @@ function View() {
   this.playerLng = parseFloat(this.divData.plLng)
   this.gameId = this.divData.plGameId
   this.playerKind = this.divData.kind
-  console.log(typeof(this.playerLat))
-  console.log(typeof(this.playerLng))
 }
 
 View.prototype = {
@@ -97,8 +95,7 @@ View.prototype = {
 
     moveMarker: function(lat, lng) {
 
-    	LatLng = {lat: parseFloat(lat), lng: parseFloat(lng)}
-      console.log(LatLng)
+    	LatLng = {lat: lat, lng: lng}
     	this.googlePlayer.setPosition(LatLng);
     },
 
