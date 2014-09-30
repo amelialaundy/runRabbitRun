@@ -32,7 +32,7 @@ private
             centre_y = options[:centre_y]
             player_x = options[:player_x]
             player_y = options[:player_y]
-            radius = 0.0002
+            radius = 0.001
             circle_area = ((player_x - centre_x)**2 + (player_y - centre_y)**2)
             if circle_area < radius**2
                 @game.active = false

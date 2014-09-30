@@ -1,6 +1,8 @@
 function PlayerController() {
 	this.view = new View();
 	this.powerUp = new PowerUp(this.view)
+	this.abilityController = new AbilityController(this.view, this);
+
 	this.playerOptions = {
       lat: null,
       lng: null,
@@ -19,7 +21,8 @@ function PlayerController() {
     this.updatePlayerUrl = '/player/update_position'
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
     this.sendWinMessageUrl = '/player/send_win_message'
-    var self = this
+
+    self = this
 }
 
 PlayerController.prototype = {
@@ -34,7 +37,8 @@ PlayerController.prototype = {
 	},
 
 	bindEvents: function() {
-		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
+		$('body').on("keyup", this.movePlayerMarker);
+
 	},
 
 	setUpLocationTimer: function(interval) {
@@ -79,41 +83,51 @@ PlayerController.prototype = {
 	movePlayerMarker: function(e) {
 		// 38 = up
 		if (e.keyCode == 38) {
-			var new_lat = this.playerOptions.lat + 0.00008
-			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
-				this.playerOptions.lat = new_lat
+			var new_lat = self.playerOptions.lat + 0.00008
+			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
+
+				self.playerOptions.lat = new_lat
 
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			var new_lng = this.playerOptions.lng + 0.00008
-			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
-				this.playerOptions.lng = new_lng
+			var new_lng = self.playerOptions.lng + 0.00008
+			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
+				self.playerOptions.lng = new_lng
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			var new_lat = this.playerOptions.lat - 0.00008
-			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
-				this.playerOptions.lat = new_lat
+			var new_lat = self.playerOptions.lat - 0.00008
+			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
+				self.playerOptions.lat = new_lat
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var new_lng = this.playerOptions.lng - 0.00008
-			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
-				this.playerOptions.lng = new_lng
+			var new_lng = self.playerOptions.lng - 0.00008
+			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
+				self.playerOptions.lng = new_lng
 			}
+		// 70 = f key
+		} else if (e.keyCode == 70) {
+			self.abilityController.addSpeed(self.player)
 		}
-		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng);
-		this.powerUp.collectAbility(this.playerOptions)
+
+		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
+		self.powerUp.collectAbility(this.playerOptions)
+
+
+
 	},
 
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
 		centreLng = this.view.lng;
-		this.biggestLat = centreLat + 0.007337
-		this.biggestLng = centreLng + 0.012514
-		this.smallestLat = centreLat - 0.007337
-		this.smallestLng = centreLng - 0.012514
+		farthestLat = 0.003882
+		farthestLng = 0.007397
+		this.biggestLat = centreLat + farthestLat
+		this.biggestLng = centreLng + farthestLng
+		this.smallestLat = centreLat - farthestLat
+		this.smallestLng = centreLng - farthestLng
 	},
 
 
