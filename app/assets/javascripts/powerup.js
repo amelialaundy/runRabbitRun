@@ -1,7 +1,12 @@
 var PowerUp = function(view){
-  this.lat = -41.29398399999985;
-  this.lng = 174.7716679999999;
+  
   this.view = view;
+  this.maxLat = 3882
+  this.minLat = -3883
+  this.maxLng = 7397
+  this.minLng = -7397
+  this.lat = (this.view.lat + ((Math.random() * (this.maxLat - this.minLat) + this.minLat))/1000000.0)
+  this.lng = (this.view.lng + ((Math.random() * (this.maxLng - this.minLng) + this.minLat))/1000000.0)
 }
 
 PowerUp.prototype = {
@@ -16,6 +21,8 @@ PowerUp.prototype = {
   },
 
   showPowerUp: function(lat,lng){
+    console.log("show power up")
+    console.log(this)
     var self = this;
     var icon = '/assets/box.png';
     this.marker = new google.maps.Marker({
