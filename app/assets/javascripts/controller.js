@@ -1,7 +1,8 @@
 function PlayerController() {
 	this.view = new View();
+	this.powerUp = new PowerUp(this.view)
 	this.abilityController = new AbilityController(this.view, this);
-	
+
 	this.playerOptions = {
       lat: null,
       lng: null,
@@ -32,6 +33,7 @@ PlayerController.prototype = {
 		this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
 		this.setUpRabbitLocationTimer(10000);
+		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
 	},
 
 	bindEvents: function() {
@@ -105,12 +107,15 @@ PlayerController.prototype = {
 			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
 				self.playerOptions.lng = new_lng
 			}
-		// 70 = f key 
+		// 70 = f key
 		} else if (e.keyCode == 70) {
-			self.abilityController.addSpeed(self.player)
+			self.abilityController.addSpeed()
 		}
 
 		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
+		if(self.powerUp.collectAbility(self.playerOptions)){
+			self.abilityController.addSpeed();
+		}
 	},
 
 	setMapBoundaries: function() {
@@ -152,7 +157,7 @@ PlayerController.prototype = {
 		this.channel.bind('win_message', function(data){
 			alert(data.message)
 		});
+	},
 
-	}
 
 };
