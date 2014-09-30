@@ -63,7 +63,7 @@ describe("bind events function", function() {
 
 	describe("sending player position", function() {
 		beforeEach(function() {
-			// spyOn(controller, 'checkWinState');
+			// spyOn(controller, 'checkProximityToRabbit');
 
 			spyOn($, 'ajax');
 			controller.playerOptions = {
@@ -95,19 +95,19 @@ describe("bind events function", function() {
 
 		})
 
-		it("stops the timer when the game is won", function () {
+	xit("stops the timer when the game is won", function () {
 			this.data = {
-			    game_status: true
+			    proximity: true
 			};
-			controller.checkWinState(this.data);
+			controller.checkProximityToRabbit(this.data);
 	    expect(clearInterval).toHaveBeenCalledWith(controller.locationTimer);
-	  });
+	});
 
-  	it("doesnt stops the timer when the game is won", function () {
+  	xit("doesnt stops the timer when the game is won", function () {
   		this.data = {
-  		    game_status: false
+  		    proximity: false
   		};
-  		controller.checkWinState(this.data);
+  		controller.checkProximityToRabbit(this.data);
       expect(clearInterval).not.toHaveBeenCalled();
     });
 

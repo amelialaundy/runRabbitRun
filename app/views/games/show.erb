@@ -12,13 +12,34 @@
 	localStorage['player.id'] = <%=@player.id %>
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
+
 	localStorage['game.lat'] = '<%=@player.game.centre_lat %>'
 	localStorage['game.lng'] = '<%=@player.game.centre_lng %>'
 
 	localStorage['player.kind'] = '<%=@player.kind %>'
 
 </script>
+<div id="proximity-alert"></div>
 
-<div id="map-canvas"></div>
+<div>
+	<header>&nbsp;<br/>&nbsp;</header>
+	<div id="map-canvas"></div>
+	<div id ="streetview"></div>
+</div>
+
+
+<!--  for testing only  -->
+<div id="player-info" data-pl-game-id=<%=@player.game_id %>>
+	<div>Game: #<%= @game.id %></div>
+	<div id='player-id' data-pl-id=<%=@player.id %> >Player Id: <%= @player.id %></div>
+	<div id='player-lat' data-pl-lat=<%=@player.lat %>>Player Lat: <%= @player.lat%></div>
+	<div id='player-lng' data-pl-lng=<%=@player.lng %>>Player Lng: <%= @player.lng%></div>
+	<div id='player-kind' data-kind=<%=@player.kind %>>Player kind: <%= @player.kind%></div>
+</div>
+
+<div id="dialog">
+  <img alt="Bunny is Dead!" class="bunnyIsDead" src="/assets/bunnyisdead.jpg">
+</div>
 
 <div id ='streetview'></div>
+
