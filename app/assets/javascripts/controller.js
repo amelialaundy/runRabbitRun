@@ -39,7 +39,9 @@ PlayerController.prototype = {
 	bindEvents: function() {
 
 		$('body').on("keyup", this.movePlayerMarker);
-
+	},
+	unbindEvents: function() {
+		$('body').off("keyup", this.movePlayerMarker)
 	},
 
 	setUpLocationTimer: function(interval) {
@@ -159,6 +161,8 @@ PlayerController.prototype = {
 		});
 		this.channel.bind('win_message', function(data){
 			self.view.showWinModal(data.message)
+			self.unbindEvents();
+
 		});
 	},
 
