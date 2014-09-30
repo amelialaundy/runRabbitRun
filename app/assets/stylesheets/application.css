@@ -11,17 +11,15 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require jquery-ui
  *= require_self
  */
 
-#map-canvas {
-   height: 500px;
-   width: 700px;
- }
 
- #streetview {
- 	height: 400px;
- 	width: 400px;
+ #proximity-alert {
+ 	height: 10px;
+ 	width: 10px;
+ 	background-color: green;
  }
 
 
@@ -31,29 +29,37 @@
  	color: white;
  	font-size: 14px;
  	font-family: arial;
+ 	background: url("/assets/bgb1400x650.jpg") no-repeat center center fixed;
+ 	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
  }
 
  .imageLogoStyle {
  	border: none;
  }
 
-article, header, nav, aside, section, footer, nav {
+article, 
+header, 
+nav, 
+aside, 
+section, 
+footer, 
+nav, 
+#map-canvas, 
+#streetview {
 	display: block;
-}
-
-article, header, nav, aside, section, footer, nav {
-	xoutline: 1px solid #000; 
+	xoutline: 1px solid red; /*for.testing*/
 }
 
 body {
-	width: 920px;
+	width: 980px;
 	margin: 0 auto; 
 }
 
 article {
 	overflow: hidden;
-	margin: 20px 0;
-	padding: 5px; 
 }
 
 aside {
@@ -69,41 +75,89 @@ section.logo {
 	width: 40%;
 	text-align: center;
 }
+.gameOptions {
+	width: 530px;
+	margin-left: 20px;
+}
+.activeGames {
+	padding:0 0 0 20px; 
+}
 
+/* welcome page */
+.gameID {
+	width: 90px;
+	margin-bottom: 5px;
+}
+.gameLink {
+	width: 120px;
+}
 
 
 /* misc css */
-
 .floatLeft {
 	float: left;
 }
 .floatRight {
 	float: right;
 }
-
 .textCenter {
 	text-align: center;
 }
 
+footer hr {
+	color: #d6d6d6;
+	background: #d6d6d6;
+	border: none;
+	height: 1px;
+	padding: 0;
+}
+
+/* text link */
+a:link,
+a:visited
+ {
+    color: #88add7;
+    text-decoration: none;
+}
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+a:active {
+    color: #41add7;
+}
+
+/* google street view */
+#map-canvas {
+   height: 500px;
+   width: 700px;
+   border: 5px solid #fff;
+   float: left;
+   margin-right: 10px;
+ }
+
+#streetview img {
+	border: 5px solid #fff;
+	width: 250px;
+	height: 250px;
+}
 
 /* button styling */
 /* first style the button */
 input.newGameButton {
-	border: 2px groove #7c93ba;
+	border: 2px groove #6b4708;
 	cursor: pointer; /* forces the cursor to change to a hand when the button is hovered */
-	padding: 5px 25px;
+	padding: 8px 5px;
 	/* give the background a gradient */
-	background-color: #6b6dbb; /*required for browsers that don't support gradients*/
-	background: -webkit-gradient(linear, left top, left bottom, from(#88add7), to(#6b6dbb));
-	background: -webkit-linear-gradient(top, #88add7, #6b6dbb);
-	background: -moz-linear-gradient(top, #88add7, #6b6dbb);
-	background: -o-linear-gradient(top, #88add7, #6b6dbb);
-	background: linear-gradient(top, #88add7, #6b6dbb);
+	background-color: #f0e2c9; /*required for browsers that don't support gradients*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#f6c060), to(#f0e2c9));
+	background: -webkit-linear-gradient(top, #f6c060, #f0e2c9);
+	background: -moz-linear-gradient(top, #f6c060, #f0e2c9);
+	background: -o-linear-gradient(top, #f6c060, #f0e2c9);
+	background: linear-gradient(top, #f6c060, #f0e2c9);
 	/*style to the text inside the button*/
-	color: #fff;
-	font-size: 1.1em;
-	letter-spacing: .1em;
-	font-variant:small-caps;
+	color: #382606;
+	font-size: 16px;
 	/*give the corners a small curve*/
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -112,16 +166,32 @@ input.newGameButton {
 	-webkit-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
 	-moz-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
 	box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
-	width: 400px;
+	width: 120px;
 }
 /* now style the button's hover and focus states */
 input.newGameButton:hover, 
 input.newGameButton:focus {
-	color:#edebda;
+	color:#684404;
 	/*reduce the spread of the shadow to give a pushed effect*/
 	-webkit-box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
 	-moz-box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
 	box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
 	outline: none;
+}
+#address-search-bar {
+	border: 2px solid #6b4708;
+  padding: 10px;
+  margin: 0;
+  width: 340px;
+  font-size: 14px;
+}
+#dialog {
+	display: none;
+}
+.ui-dialog .ui-dialog-titlebar {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	display: none;
 }
 

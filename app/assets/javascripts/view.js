@@ -28,18 +28,15 @@ DomManager = (function () {
 }());
 
 function View() {
-
+  this.rabbitMarker = '/assets/rabbitmarker.png'
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
   this.bodyElement = $('body')
   this.searchButton = document.querySelector(".newGameButton")
-  
 	this.zoom = 16
 	this.googlePlayer = null
-  
-
-  
+  this.proximityAlert = $("#proximity-alert")
   this.playerId = this.divData.plId
   this.playerLat = parseFloat(this.divData.plLat)
   this.playerLng = parseFloat(this.divData.plLng)
@@ -86,9 +83,16 @@ View.prototype = {
     },
 
     createNewPlayerMarkerOptions: function(playerMarker) {
+        if (playerMarker.kind =="rabbit"){
+            var iconPic = "http://img1.wikia.nocookie.net/__cb20120422035528/habbo/en/images/f/fd/Rabbit.png"
+        }
+        else{
+            var iconPic = "http://www.pixeljoint.com/files/icons/terminator_cyborg.gif"
+        };
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng)
+    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
+        icon: this.rabbitMarker
     	};
     },
 
@@ -98,11 +102,34 @@ View.prototype = {
     },
 
     showStreetView: function(latlng){
-        var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
-        $('#streetview').html('<img src='+baseUri+latlng+'>')
+        var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=250x250&location="
+        $('#streetview').html('<img class="streetview" src='+baseUri+latlng+'>')
     },
 
+    showProximityAlert: function(message) {
+      this.proximityAlert.css("background-color", message)
+    },
 
+    showWinModal: function(message) {
+        $("#dialog").dialog({
+            width: 735,
+            autoOpen: true,
+            modal: true,
+            closeOnEscape: true,
+            draggable: false,
+            buttons: {
+              "Home": function () {
+                  goHome();
+                  dialog.dialog('destroy');
+              }
+            },
+            open: function(e, ui) {
+                $('button').blur();
+            }
+        });
+    },
 
-
+    goHome: function() {
+        alert('You selected goHome');
+    }
 }

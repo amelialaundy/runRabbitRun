@@ -37,8 +37,11 @@ PlayerController.prototype = {
 	},
 
 	bindEvents: function() {
-		$('body').on("keyup", this.movePlayerMarker);
 
+		$('body').on("keyup", this.movePlayerMarker);
+	},
+	unbindEvents: function() {
+		$('body').off("keyup", this.movePlayerMarker)
 	},
 
 	setUpLocationTimer: function(interval) {
@@ -50,15 +53,22 @@ PlayerController.prototype = {
 		  type: "POST",
 		  url: this.updatePlayerUrl,
 		  data: this.playerOptions,
-		  success: this.checkWinState.bind(this)
+		  success: this.checkProximityToRabbit.bind(this)
 		});
 	},
 
-	checkWinState: function(data) {
-		if (data.game_status == true) {
+	checkProximityToRabbit: function(data) {
+		if (data['proximity'] == "win") {
 			clearInterval(this.locationTimer)
 			this.sendWinMessageToAll()
+		} else if (data['proximity'] == "red") {
+				this.view.showProximityAlert("red")
+		} else if (data['proximity'] == "yellow") {
+				this.view.showProximityAlert("yellow")
+		} else {
+				this.view.showProximityAlert("green")
 		}
+
 	},
 
 	sendWinMessageToAll:function(){
@@ -155,7 +165,9 @@ PlayerController.prototype = {
 			self.view.showStreetView(data.message)
 		});
 		this.channel.bind('win_message', function(data){
-			alert(data.message)
+			self.view.showWinModal(data.message)
+			self.unbindEvents();
+
 		});
 	},
 

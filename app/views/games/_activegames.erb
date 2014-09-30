@@ -1,11 +1,13 @@
 <div id='open-games'>
 <% @games.each do |game| %>
-	<p>
-		Open game
-	#<%= game.id%>
-	<%= game.centre_lat %>:
-	<%= game.centre_lng %>
-	<%= link_to "join",'games/'+game.id.to_s,  method:'get' %>
-	</p>
+
+	<article class="activeGame">
+		<section class="gameID">Game #<%= game.id%>:</section>
+		<section class="gameLink"><%= link_to "Join game",'games/'+game.id.to_s,  method:'get' %></section>
+
+	</article>
 <%end%>
+
+
 </div>
+
