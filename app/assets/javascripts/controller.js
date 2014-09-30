@@ -37,6 +37,7 @@ PlayerController.prototype = {
 	},
 
 	bindEvents: function() {
+
 		$('body').on("keyup", this.movePlayerMarker);
 	},
 	unbindEvents: function() {
@@ -58,9 +59,11 @@ PlayerController.prototype = {
 
 	checkWinState: function(data) {
 		if (data.game_status == true) {
-			clearInterval(this.locationTimer)
+			clearInterval(this.locationTimer);
 			this.sendWinMessageToAll()
+			this.view.showWinModal()
 		}
+
 	},
 
 	sendWinMessageToAll:function(){
