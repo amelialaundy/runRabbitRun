@@ -1,16 +1,16 @@
-function AbilityController(view, playerController) {
+function AbilityController(view, gameController) {
 	this.view = view
-	this.playerController = playerController
+	this.gameController = gameController
 
 }
 
 AbilityController.prototype = {
 	addSpeed: function() {
 		this.view.bodyElement.off("keyup");
-		this.view.bodyElement.on("keydown", this.playerController.movePlayerMarker)
+		this.view.bodyElement.on("keydown", this.gameController.movePlayerMarker)
 	},
   normalSpeed: function(){
     this.view.bodyElement.off("keydown");
-    this.view.bodyElement.on("keyup", this.playerController.movePlayerMarker);
+    this.view.bodyElement.on("keyup", this.gameController.movePlayerMarker);
   }
 }

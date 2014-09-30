@@ -1,4 +1,4 @@
-function PlayerController() {
+function GameController() {
 	this.view = new View();
 	this.powerUp = new PowerUp(this.view)
 	this.abilityController = new AbilityController(this.view, this);
@@ -25,7 +25,7 @@ function PlayerController() {
     self = this
 }
 
-PlayerController.prototype = {
+GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
@@ -87,7 +87,7 @@ PlayerController.prototype = {
 		this.playerOptions.game_id = this.view.gameId
 		this.playerOptions.kind = this.view.playerKind
 		this.player = new PlayerMarker(this.playerOptions);
-	    this.view.renderMapPlayerMarkers(this.player);
+	  this.view.renderMapPlayerMarkers(this.player);
 	},
 
 	movePlayerMarker: function(e) {
@@ -125,7 +125,7 @@ PlayerController.prototype = {
 		if(self.powerUp.collectAbility(self.playerOptions)){
 			self.abilityController.addSpeed();
 			setTimeout(function(){self.abilityController.normalSpeed()},3000);
-			self.powerUp = null
+				self.powerUp = null
 			setTimeout(function(){
 				self.powerUp = new PowerUp(self.view);
 				self.powerUp.showPowerUp(self.powerUp.lat,self.powerUp.lng)
