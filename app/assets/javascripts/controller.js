@@ -113,11 +113,16 @@ PlayerController.prototype = {
 		} else if (e.keyCode == 70) {
 			self.abilityController.addSpeed()
 		}
-
 		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
 		if(self.powerUp.collectAbility(self.playerOptions)){
 			self.abilityController.addSpeed();
 			setTimeout(function(){self.abilityController.normalSpeed()},3000);
+			self.powerUp = null
+			setTimeout(function(){
+				self.powerUp = new PowerUp(self.view);
+				self.powerUp.showPowerUp(self.powerUp.lat,self.powerUp.lng)
+			},5000)
+
 		}
 	},
 
