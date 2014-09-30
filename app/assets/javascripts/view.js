@@ -32,6 +32,7 @@ function View() {
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
+  this.bodyElement = $('body')
 
 	this.zoom = 16
 	this.googlePlayer = null
