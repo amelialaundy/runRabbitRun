@@ -108,7 +108,7 @@ View.prototype = {
 
     showProximityAlert: function(message) {
       this.proximityAlert.css("background-color", message)
-    }
+    },
 
     showWinModal: function(message) {
         $("#dialog").dialog({
