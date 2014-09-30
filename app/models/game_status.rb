@@ -1,7 +1,9 @@
 class GameStatus
 
-  WIN_ZONE_RADIUS = 0.001
-  RED_ZONE_RADIUS = 0.01
+	def self.update(args)
+        player_location(args)
+        active?(args.fetch(:game_id))
+	end
 
   def initialize(game)
     @game = game

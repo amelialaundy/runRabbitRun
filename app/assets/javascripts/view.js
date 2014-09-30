@@ -11,7 +11,7 @@ DomManager = (function () {
         publik.gameLng = localStorage['game.lng'];
     }
 
-    
+
     publik.getDivContents = function () {
         return {
             plGameId: publik.gameId,
@@ -32,16 +32,17 @@ function View() {
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
-
+  this.bodyElement = $('body')
+  this.searchButton = document.querySelector(".newGameButton")
+  
 	this.zoom = 16
 	this.googlePlayer = null
-  this.searchButton = document.querySelector(".newGameButton")
+  this.proximityAlert = $("#proximity-alert")
 
   
-
   this.playerId = this.divData.plId
-  this.playerLat = this.divData.plLat
-  this.playerLng = this.divData.plLng
+  this.playerLat = parseFloat(this.divData.plLat)
+  this.playerLng = parseFloat(this.divData.plLng)
   this.gameId = this.divData.plGameId
   this.playerKind = this.divData.kind
 }
@@ -75,7 +76,6 @@ View.prototype = {
     setMapLocation: function(data) {
       this.lat = data[0]['geometry']['location']['lat']
       this.lng = data[0]['geometry']['location']['lng']
-
     },
 
     createMarker: function(playerMarker) {
@@ -93,12 +93,17 @@ View.prototype = {
     },
 
     moveMarker: function(lat, lng) {
-    	LatLng = {lat: parseFloat(lat), lng: parseFloat(lng)}
+    	LatLng = {lat: lat, lng: lng}
     	this.googlePlayer.setPosition(LatLng);
     },
 
     showStreetView: function(latlng){
         var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=400x400&location="
         $('#streetview').html('<img src='+baseUri+latlng+'>')
+    },
+
+    showProximityAlert: function(message) {
+      console.log(message)
+      this.proximityAlert.css("background-color", message)
     }
 }

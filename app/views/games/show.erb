@@ -9,7 +9,7 @@
 <script type='text/javascript'>
 
 	localStorage['game.id'] = <%= @player.game_id %>
-	localStorage['player.id'] = <%=@player.id %> 
+	localStorage['player.id'] = <%=@player.id %>
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
 	localStorage['game.lat'] = '<%=@player.game.centre_lat %>'
@@ -18,6 +18,7 @@
 	localStorage['player.kind'] = '<%=@player.kind %>'
 
 </script>
+<div id="proximity-alert"></div>
 
 <div id="map-canvas"></div>
 

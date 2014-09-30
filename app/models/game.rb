@@ -1,12 +1,16 @@
 class Game < ActiveRecord::Base
   has_many :players
 
+
   def get_random_lat
-    centre_lat + rand(-3882..3882)/1000000.0
+    max_lat = 3882
+
+    centre_lat + rand(-max_lat..max_lat)/1000000.0
   end
 
   def get_random_lng
-    centre_lng + rand(-7397..7397)/1000000.0
+    max_lng = 7397
+    centre_lng + rand(-max_lng..max_lng)/1000000.0
   end
 
   def mark_as_rabbit?
