@@ -7,7 +7,6 @@ class GamesController < ApplicationController
     game_params = GamesController.get_params(params)
     game = Game.new(centre_lat:game_params[:lat],
                      centre_lng:game_params[:lng],
-                     num_players: 1,
                      active: true)
     game.save
     render json: {game_id: game.id}
