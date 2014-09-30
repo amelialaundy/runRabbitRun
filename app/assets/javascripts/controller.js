@@ -37,8 +37,11 @@ PlayerController.prototype = {
 	},
 
 	bindEvents: function() {
-		$('body').on("keyup", this.movePlayerMarker);
 
+		$('body').on("keyup", this.movePlayerMarker);
+	},
+	unbindEvents: function() {
+		$('body').off("keyup", this.movePlayerMarker)
 	},
 
 	setUpLocationTimer: function(interval) {
@@ -65,6 +68,7 @@ PlayerController.prototype = {
 		} else {
 				this.view.showProximityAlert("green")
 		}
+
 	},
 
 	sendWinMessageToAll:function(){
@@ -161,7 +165,9 @@ PlayerController.prototype = {
 			self.view.showStreetView(data.message)
 		});
 		this.channel.bind('win_message', function(data){
-			alert(data.message)
+			self.view.showWinModal(data.message)
+			self.unbindEvents();
+
 		});
 	},
 
