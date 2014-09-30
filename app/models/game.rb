@@ -17,7 +17,7 @@ class Game < ActiveRecord::Base
     end
   end
 
-  def finished!(current_game)
+  def finished!
     self.active = false
   end
 
