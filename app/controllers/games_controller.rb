@@ -5,7 +5,7 @@ class GamesController < ApplicationController
 
   def create
     game_params = get_params(params)
-    game = Game.new(centre_lat:game_params[:lat],
+    game = Game.create(centre_lat:game_params[:lat],
                      centre_lng:game_params[:lng],
                      active: true)
     render json: {game_id: game.id}

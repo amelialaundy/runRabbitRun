@@ -10,20 +10,23 @@ RSpec.describe GamesController, :type => :controller do
             lng: "174.77248"
         }}}}}}
     end
-    let(:params) {{centre_lat: "-41.29526", centre_lng: "174.77248", active: true}}
+    let(:params) {{centre_lat: "-41.29526", centre_lng: "174.77248", active:true}}
 
   # before do
   #   allow(GamesController).to receive(:get_params).and_return(send_params)
   # end
 
   it "receives json parameters" do
+    game = double(:game, id:4)
+    expect(Game).to receive(:create).with(params).and_return(game)
     post :create, send_params
-    expect(Game).to receive(:new).with(params).and_call_original
   end
 
+  context "hits the database", db:true do
     it "creates a game" do
-    	expect { post :create, params }.to change {Game.count}.by(1)
+      expect { post :create, send_params }.to change {Game.count}.by(1)
     end
+  end
 
     it "gives the game the right params" do
     	post :create, params
