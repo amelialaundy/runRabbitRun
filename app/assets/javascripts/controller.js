@@ -37,7 +37,7 @@ PlayerController.prototype = {
 
 	bindEvents: function() {
 		console.log($('body'))
-		$('body').on("keyup", this.movePlayerMarker.bind(this));
+		$('body').on("keyup", this.movePlayerMarker);
 
 	},
 
