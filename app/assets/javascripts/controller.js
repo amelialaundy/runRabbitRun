@@ -1,5 +1,6 @@
 function PlayerController() {
 	this.view = new View();
+	this.abilityController = new AbilityController(this.view, this);
 	
 	this.playerOptions = {
       lat: null,
@@ -20,7 +21,7 @@ function PlayerController() {
     this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
     this.sendWinMessageUrl = '/player/send_win_message'
 
-    var self = this
+    self = this
 }
 
 PlayerController.prototype = {
@@ -34,7 +35,7 @@ PlayerController.prototype = {
 	},
 
 	bindEvents: function() {
-		document.addEventListener("keyup", this.movePlayerMarker.bind(this), false);
+		$('body').on("keyup", this.movePlayerMarker);
 
 	},
 
@@ -80,33 +81,36 @@ PlayerController.prototype = {
 	movePlayerMarker: function(e) {
 		// 38 = up
 		if (e.keyCode == 38) {
-			var new_lat = this.playerOptions.lat + 0.00008
-			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
+			var new_lat = self.playerOptions.lat + 0.00008
+			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
 
-				this.playerOptions.lat = new_lat
+				self.playerOptions.lat = new_lat
 
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			var new_lng = this.playerOptions.lng + 0.00008
-			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
-				this.playerOptions.lng = new_lng
+			var new_lng = self.playerOptions.lng + 0.00008
+			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
+				self.playerOptions.lng = new_lng
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			var new_lat = this.playerOptions.lat - 0.00008
-			if (new_lat < this.biggestLat && new_lat > this.smallestLat) {
-				this.playerOptions.lat = new_lat
+			var new_lat = self.playerOptions.lat - 0.00008
+			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
+				self.playerOptions.lat = new_lat
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var new_lng = this.playerOptions.lng - 0.00008
-			if (new_lng < this.biggestLng && new_lng > this.smallestLng) {
-				this.playerOptions.lng = new_lng
+			var new_lng = self.playerOptions.lng - 0.00008
+			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
+				self.playerOptions.lng = new_lng
 			}
+		// 70 = f key 
+		} else if (e.keyCode == 70) {
+			self.abilityController.addSpeed(self.player)
 		}
 
-		this.view.moveMarker(this.playerOptions.lat, this.playerOptions.lng)
+		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
 	},
 
 	setMapBoundaries: function() {
