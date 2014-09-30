@@ -21,8 +21,6 @@ PowerUp.prototype = {
   },
 
   showPowerUp: function(lat,lng){
-    console.log("show power up")
-    console.log(this)
     var self = this;
     var icon = '/assets/box.png';
     this.marker = new google.maps.Marker({
