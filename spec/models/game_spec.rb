@@ -31,6 +31,14 @@ RSpec.describe Game, :type => :model do
     end
   end
 
+  describe "#finished!" do
+    it "ends the game" do
+      # expect(game.finished!).to eq(false)
+      game.finished!
+      expect(game).to receive(:active).and_return(false)
+    end
+  end
+
 
 
 end
