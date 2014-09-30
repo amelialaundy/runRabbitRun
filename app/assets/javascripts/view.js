@@ -33,13 +33,13 @@ function View() {
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
   this.bodyElement = $('body')
-
+  this.searchButton = document.querySelector(".newGameButton")
+  
 	this.zoom = 16
 	this.googlePlayer = null
-  this.searchButton = document.querySelector(".newGameButton")
-
   
 
+  
   this.playerId = this.divData.plId
   this.playerLat = parseFloat(this.divData.plLat)
   this.playerLng = parseFloat(this.divData.plLng)
@@ -76,7 +76,6 @@ View.prototype = {
     setMapLocation: function(data) {
       this.lat = data[0]['geometry']['location']['lat']
       this.lng = data[0]['geometry']['location']['lng']
-
     },
 
     createMarker: function(playerMarker) {
@@ -94,7 +93,6 @@ View.prototype = {
     },
 
     moveMarker: function(lat, lng) {
-
     	LatLng = {lat: lat, lng: lng}
     	this.googlePlayer.setPosition(LatLng);
     },
