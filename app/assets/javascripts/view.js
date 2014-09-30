@@ -27,6 +27,11 @@ DomManager = (function () {
     return publik;
 }());
 
+
+
+
+
+
 function View() {
   this.rabbitMarker = '/assets/rabbitmarker.png'
   this.divData = DomManager.getDivContents();
