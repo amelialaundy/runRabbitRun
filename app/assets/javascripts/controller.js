@@ -36,7 +36,6 @@ PlayerController.prototype = {
 	},
 
 	bindEvents: function() {
-		console.log($('body'))
 		$('body').on("keyup", this.movePlayerMarker);
 
 	},
@@ -81,9 +80,6 @@ PlayerController.prototype = {
 	},
 
 	movePlayerMarker: function(e) {
-		// var otherSelf = this
-		console.log(self)
-		console.log(e.keyCode)
 		// 38 = up
 		if (e.keyCode == 38) {
 			var new_lat = self.playerOptions.lat + 0.00008
@@ -94,10 +90,8 @@ PlayerController.prototype = {
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			console.log("right")
 			var new_lng = self.playerOptions.lng + 0.00008
 			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
-				console.log("within big and small lng in right move")
 				self.playerOptions.lng = new_lng
 			}
 		// 40 = down
@@ -115,17 +109,10 @@ PlayerController.prototype = {
 		// 70 = f key 
 		} else if (e.keyCode == 70) {
 			self.abilityController.addSpeed(self.player)
-			console.log("in the left function")
 		}
 
 		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
 	},
-
-	// turnOffListener: function() {
-	// 	console.log("turn off")
-	// 	console.log($('body'))
-	// 	$('body').off("keyup");
-	// },
 
 	setMapBoundaries: function() {
 		centreLat = this.view.lat;
