@@ -93,26 +93,26 @@ GameController.prototype = {
 		var moveDistance = 0.00008
 		// 38 = up
 		if (e.keyCode == 38) {
-			var new_lat = self.player.currentLat + moveDistance
-			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
+			var newLat = self.player.currentLat + moveDistance
+			if (newLat < self.biggestLat && newLat > self.smallestLat) {
 				self.player.move([moveDistance, 0.0])
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			var new_lng = self.player.currentLng + moveDistance
-			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
+			var newLng = self.player.currentLng + moveDistance
+			if (newLng < self.biggestLng && newLng > self.smallestLng) {
 				self.player.move([0.0, moveDistance])
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			var new_lat = self.player.currentLat - moveDistance
-			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
+			var newLat = self.player.currentLat - moveDistance
+			if (newLat < self.biggestLat && newLat > self.smallestLat) {
 				self.player.move([-moveDistance, 0.0])
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var new_lng = self.player.currentLng - moveDistance
-			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
+			var newLng = self.player.currentLng - moveDistance
+			if (newLng < self.biggestLng && newLng > self.smallestLng) {
 				self.player.move([0.0, -moveDistance])
 			}
 		// 70 = f key
