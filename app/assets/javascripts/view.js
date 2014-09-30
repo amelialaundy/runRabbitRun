@@ -37,7 +37,7 @@ function View() {
   
 	this.zoom = 16
 	this.googlePlayer = null
-  
+  this.proximityAlert = $("#proximity-alert")
 
   
   this.playerId = this.divData.plId
@@ -102,7 +102,7 @@ View.prototype = {
         $('#streetview').html('<img src='+baseUri+latlng+'>')
     },
 
-
-
-
+    showProximityAlert: function(message) {
+      this.proximityAlert.css("background-color", message)
+    }
 }

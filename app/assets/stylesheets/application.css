@@ -24,6 +24,12 @@
  	width: 400px;
  }
 
+ #proximity-alert {
+ 	height: 10px;
+ 	width: 10px;
+ 	background-color: green;
+ }
+
 
  /* run rabit run css lib */
  body {

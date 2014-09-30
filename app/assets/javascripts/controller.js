@@ -50,14 +50,20 @@ PlayerController.prototype = {
 		  type: "POST",
 		  url: this.updatePlayerUrl,
 		  data: this.playerOptions,
-		  success: this.checkWinState.bind(this)
+		  success: this.checkProximityToRabbit.bind(this)
 		});
 	},
 
-	checkWinState: function(data) {
-		if (data.game_status == true) {
+	checkProximityToRabbit: function(data) {
+		if (data.proximity == "win zone") {
 			clearInterval(this.locationTimer)
 			this.sendWinMessageToAll()
+		} else if (data.proximity == "red zone") {
+				this.view.showProximityAlert("red")
+		} else if (data.proximity == "yellow zone") {
+				this.view.showProximityAlert("yellow")
+		} else {
+				this.view.showProximityAlert("green")
 		}
 	},
 

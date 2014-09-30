@@ -37,7 +37,7 @@ private
             if circle_area < radius**2
                 @game.active = false
                 @game.save
-                return true
+                return "yellow"
             else
                 return false
             end
