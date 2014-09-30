@@ -49,10 +49,9 @@ PlayerController.prototype = {
 
 	checkWinState: function(data) {
 		if (data.game_status == true) {
-			clearInterval(this.locationTimer)
-			alert("end of game!!")
+			clearInterval(this.locationTimer);
+			this.view.showWinModal()
 		}
-
 	},
 
 	createPlayerMarkers: function() {

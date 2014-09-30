@@ -12,9 +12,8 @@ $(document).ready(function(){
 	localStorage['player.lat'] = <%=@player.lat %>
 	localStorage['player.lng'] = <%=@player.lng %>
 	localStorage['player.kind'] = '<%=@player.kind %>'
-
-
 </script>
+
 <div>
 	<header>&nbsp;<br/>&nbsp;</header>
 	<div id="map-canvas"></div>
@@ -30,4 +29,6 @@ $(document).ready(function(){
 	<div id='player-kind' data-kind=<%=@player.kind %>>Player kind: <%= @player.kind%></div>
 </div>
 
-
+<div id="dialog">
+  <img alt="Bunny is Dead!" class="bunnyIsDead" src="/assets/bunnyisdead.jpg">
+</div>

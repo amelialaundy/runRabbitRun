@@ -82,5 +82,29 @@ View.prototype = {
     showStreetView: function(latlng){
         var baseUri ="http://maps.googleapis.com/maps/api/streetview?size=250x250&location="
         $('#streetview').html('<img class="streetview" src='+baseUri+latlng+'>')
+    },
+
+    showWinModal: function() {
+        $("#dialog").dialog({
+            width: 735,
+            autoOpen: true,
+            modal: true,
+            closeOnEscape: true,
+            draggable: false,
+            buttons: {
+              "Home": function () {
+                  goHome();
+                  dialog.dialog('destroy');
+              }
+            },
+            open: function(e, ui) {
+                $('button').blur();
+            }
+        });
+    },
+
+    goHome: function() {
+        alert('You selected goHome');
     }
+
 }
