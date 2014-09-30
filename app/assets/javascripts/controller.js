@@ -117,6 +117,7 @@ PlayerController.prototype = {
 		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
 		if(self.powerUp.collectAbility(self.playerOptions)){
 			self.abilityController.addSpeed();
+			setTimeout(function(){self.abilityController.normalSpeed()},3000);
 		}
 	},
 
