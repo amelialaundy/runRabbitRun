@@ -33,7 +33,6 @@ skip_before_action :verify_authenticity_token
 	  #   'Content-Type' =>  'application/json'
 
 	  # body result.to_json
-	  # render json: { activity: { actor: { image: "http://placekitten.com/200/200" } } }
 	end
 
 	def get_channel_name(http_referer)

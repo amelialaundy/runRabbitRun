@@ -37,7 +37,6 @@ GameController.prototype = {
 	},
 
 	bindEvents: function() {
-
 		$('body').on("keyup", this.movePlayerMarker);
 	},
 	unbindEvents: function() {
@@ -91,35 +90,36 @@ GameController.prototype = {
 	},
 
 	movePlayerMarker: function(e) {
+		var moveDistance = 0.00008
 		// 38 = up
 		if (e.keyCode == 38) {
-			var new_lat = self.player.options.lat + 0.00008
+			var new_lat = self.player.options.lat + moveDistance
 			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
-				self.player.move([0.00008, 0.0])
+				self.player.move([moveDistance, 0.0])
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			var new_lng = self.player.options.lng + 0.00008
+			var new_lng = self.player.options.lng + moveDistance
 			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
-				self.player.move([0.0, 0.00008])
+				self.player.move([0.0, moveDistance])
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			var new_lat = self.player.options.lat - 0.00008
+			var new_lat = self.player.options.lat - moveDistance
 			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
-				self.player.move([-0.00008, 0.0])
+				self.player.move([-moveDistance, 0.0])
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var new_lng = self.player.options.lng - 0.00008
+			var new_lng = self.player.options.lng - moveDistance
 			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
-				self.player.move([0.0, -0.00008])
+				self.player.move([0.0, -moveDistance])
 			}
 		// 70 = f key
 		} else if (e.keyCode == 70) {
 			self.abilityController.addSpeed()
 		}
-		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
+		self.view.moveMarker(self.player.currentLat, self.player.currentLng)
 		if(self.powerUp.collectAbility(self.playerOptions)){
 			self.abilityController.addSpeed();
 			setTimeout(function(){self.abilityController.normalSpeed()},3000);
