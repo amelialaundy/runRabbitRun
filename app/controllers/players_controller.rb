@@ -1,7 +1,8 @@
 class PlayersController < ApplicationController
 
 	def update_player_position
-		game_status = GameStatus.new(Game.find(params[:game_id]))
+    game = Game.find(params[:game_id])
+		game_status = GameStatus.new(game)
     proximity_data = game_status.update(params)
 		render json: proximity_data
 	end
