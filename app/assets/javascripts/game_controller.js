@@ -29,7 +29,6 @@ GameController.prototype = {
 		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
 		this.setUpRabbitLocationPusher();
 		this.locationTimer = new Timer(1000, this.updatePlayerUrl, this.player, this.checkProximityToRabbit.bind(this)  )
-		console.log(this.player.isRabbit())
 		if (this.player.isRabbit()) {
 			this.rabbitTimer = new Timer(10000, this.updateRabbitStreetViewUrl, this.player)
 		}

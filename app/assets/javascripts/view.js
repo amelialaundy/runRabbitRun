@@ -65,7 +65,6 @@ View.prototype = {
     },
 
     renderMapPlayerMarkers: function(playerMarker) {
-      console.log(playerMarker)
       var newMapMarker =  this.createMarker(playerMarker);
     },
 
