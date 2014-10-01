@@ -3,6 +3,8 @@ class Player < ActiveRecord::Base
 
   RABBIT = 'rabbit'
 
+  scope :rabbit, -> { find_by kind: RABBIT }
+
   def update_position(position_hash)
     self.lat = position_hash[:lat]
     self.lng = position_hash[:lng]
@@ -11,6 +13,10 @@ class Player < ActiveRecord::Base
 
 	def rabbit?
   	self.kind == RABBIT
+  end
+
+  def coordinates
+    @coordinate ||= Coordinate.new({ lat: lat, lng: lng })
   end
 
 end

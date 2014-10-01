@@ -15,14 +15,6 @@
  *= require_self
  */
 
-
- #proximity-alert {
- 	height: 10px;
- 	width: 10px;
- 	background-color: green;
- }
-
-
  /* run rabit run css lib */
  body {
  	background-color: #7c6150;
@@ -127,6 +119,25 @@ a:active {
     color: #41add7;
 }
 
+.backHomeLink a:link,
+.backHomeLink a:visited
+	{
+	    color: #000;
+	    text-decoration: none;
+	    font-weight: bold;
+	}
+.backHomeLink a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+.backHomeLink a:active {
+    color: #41add7;
+}
+.backHomeLink a:focus {
+    outline: none;
+}
+
+
 /* google street view */
 #map-canvas {
    height: 500px;
@@ -194,4 +205,10 @@ input.newGameButton:focus {
 	position: relative;
 	display: none;
 }
+ #proximity-alert {
+ 	height: 131px;
+ 	width: 260px;
+ 	float: left;
+ }
+
 

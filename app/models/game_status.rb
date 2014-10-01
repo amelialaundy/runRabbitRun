@@ -1,11 +1,6 @@
 class GameStatus
 
-	def self.update(args)
-        player_location(args)
-        active?(args.fetch(:game_id))
-	end
-
-  def initialize(game)
+	def initialize(game)
     @game = game
   end
 
@@ -15,6 +10,7 @@ class GameStatus
     return { proximity: "irrelevent"} if player.rabbit?
     rabbit = @game.find_rabbit
     proximity = ProximityChecker.new({hunter: player, rabbit: rabbit})
+
     @game.finished! if proximity.win
     return { proximity: proximity.zone }
 	end    

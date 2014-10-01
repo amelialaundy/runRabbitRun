@@ -1,10 +1,11 @@
 class Game < ActiveRecord::Base
   has_many :players
 
+  RABBIT = "rabbit"
+  HUNTER = "hunter"
 
   def get_random_lat
     max_lat = 3882
-
     centre_lat + rand(-max_lat..max_lat)/1000000.0
   end
 
@@ -13,12 +14,9 @@ class Game < ActiveRecord::Base
     centre_lng + rand(-max_lng..max_lng)/1000000.0
   end
 
+  #Marks first player to join/make game as rabbit
   def mark_as_rabbit?
-    if players.count<1
-      return "rabbit"
-    else
-      return "hunter"
-    end
+    players.count < 1 ? RABBIT : HUNTER
   end
 
   def finished!
@@ -26,7 +24,7 @@ class Game < ActiveRecord::Base
   end
 
   def find_rabbit
-    self.players.find_by(kind: "rabbit")
+    self.players.rabbit
   end
 
 end
