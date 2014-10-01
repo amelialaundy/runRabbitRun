@@ -57,7 +57,8 @@ View.prototype = {
         zoomControl: false,
         scrollwheel: false,
         disableDoubleClickZoom: true,
-        streetViewControl: false
+        streetViewControl: false,
+        disableDefaultUI: true
       }
       this.map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
