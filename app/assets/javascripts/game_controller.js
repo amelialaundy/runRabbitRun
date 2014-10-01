@@ -10,6 +10,7 @@ function GameController() {
       id: null,
       game_id: null,
       kind: null
+  	};
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/games/update_game_status'
