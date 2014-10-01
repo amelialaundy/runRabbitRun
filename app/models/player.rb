@@ -15,4 +15,8 @@ class Player < ActiveRecord::Base
   	self.kind == RABBIT
   end
 
+  def coordinates
+    @coordinate ||= Coordinate.new({ lat: lat, lng: lng })
+  end
+
 end

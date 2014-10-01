@@ -38,4 +38,15 @@ RSpec.describe Player, :type => :model do
 
 	end
 
+	describe "#coordinates" do
+		
+		it "saves the player's lat and lng into a coordinate object" do
+			player = build(:player)
+			coordinate_object = double("coordinate_object")
+			allow(Coordinate).to receive(:new).and_return(coordinate_object)
+			expect(player.coordinates).not_to be_nil
+		end
+
+	end
+
 end
