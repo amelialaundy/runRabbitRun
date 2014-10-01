@@ -55,8 +55,6 @@ describe("BoundaryModel", function(){
 
     });
 
-
-
     it("is defined", function(){
       expect(bounds.checkWithinLimits).toBeDefined();
     })
