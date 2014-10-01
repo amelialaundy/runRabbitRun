@@ -34,4 +34,8 @@ class ProximityChecker
     end
 	end
 
+	def win?
+    distance_between_hunter_and_rabbit < WIN_ZONE_RADIUS_SQUARED
+	end
+
 end
