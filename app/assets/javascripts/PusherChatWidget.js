@@ -18,7 +18,7 @@ function PusherChatWidget(pusher, options) {
     chatEndPoint: '/chat', // the end point where chat messages should be sanitized and then triggered
     channelName: document.location.href, // the name of the channel the chat will take place on
     appendTo: document.body, // A jQuery selector or object. Defines where the element should be appended to
-    debug: true
+    debug: false
   }, options);
   
   if(this.settings.debug && !Pusher.log) {

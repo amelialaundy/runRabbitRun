@@ -65,7 +65,7 @@ private
 
   def pusher_win(winner_data)
     Pusher['game_'+ winner_data["game_id"].to_s].trigger('win_message',{
-      :message => "Player #{winner_data["id"]} is the winner!"
+      :message => winner_data["id"]
     })
   end
 

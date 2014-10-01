@@ -24,11 +24,12 @@ GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
+
 		this.createPlayerMarkers();
 		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
 		this.setUpRabbitLocationPusher();
 		this.locationTimer = new Timer(1000, this.updatePlayerUrl, this.player, this.checkProximityToRabbit.bind(this)  )
-		if (this.player.isRabbit) {
+		if (this.player.isRabbit()) {
 			this.rabbitTimer = new Timer(10000, this.updateRabbitStreetViewUrl, this.player)
 		}
 		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
@@ -121,8 +122,18 @@ GameController.prototype = {
 		self.view.showStreetView(data.message)
 		});
 		channel.bind('win_message', function(data){
-		self.view.showWinModal(data.message)
-		self.unbindEvents();
+			self.view.showWinModal(self.specifyEndMessage(data.message))
+			self.unbindEvents();
 		});
 	},
+
+	specifyEndMessage: function(message){
+		if(self.playerOptions.kind == "rabbit"){
+			return "Oh No! You got eaten!!!"
+		}else if(message == this.playerOptions.id){
+			return "You got the bunny! Rabbit stew is the best!!!"
+		}else{
+			return "Someone else got the rabbit..."
+		}
+	}
 };
