@@ -15,7 +15,7 @@ function GameController() {
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
-    this.updateRabbitUrl = '/rabbit/update_rabbit_street_view'
+    this.updateRabbitStreetViewUrl = '/rabbit/update_rabbit_street_view'
     this.sendWinMessageUrl = '/player/send_win_message'
 
     self = this
@@ -25,8 +25,6 @@ GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
-		
-		
 		this.createPlayerMarkers();
 		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
 		this.boundary.setMapLimits();
@@ -138,7 +136,7 @@ GameController.prototype = {
 		if(this.player.options.kind == 'rabbit'){
 			$.ajax({
 			  type: "POST",
-			  url: this.updateRabbitUrl,
+			  url: this.updateRabbitStreetViewUrl,
 			  data: this.player.options,
 			});
 		}
@@ -150,7 +148,7 @@ GameController.prototype = {
 		this.pusher = new Pusher('7a73ab83106664465bfd');
 		this.channel = this.pusher.subscribe('game_'+ gameId);
 		this.channel.bind('show_rabbit_street_view_game', function(data) {
-			self.view.showStreetView(data.message)
+		self.view.showStreetView(data.message)
 		});
 		this.channel.bind('win_message', function(data){
 			self.view.showWinModal(data.message)
@@ -158,6 +156,4 @@ GameController.prototype = {
 
 		});
 	},
-
-
 };
