@@ -121,7 +121,7 @@ GameController.prototype = {
 		channel.bind('show_rabbit_street_view_game', function(data) {
 		self.view.showStreetView(data.message)
 		});
-		this.channel.bind('win_message', function(data){
+		channel.bind('win_message', function(data){
 			self.view.showWinModal(self.specifyEndMessage(data.message))
 			self.unbindEvents();
 		});

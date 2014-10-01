@@ -89,7 +89,7 @@ View.prototype = {
     },
 
     createNewPlayerMarkerOptions: function(playerMarker) {
-        if (playerMarker.kind =="rabbit"){
+        if (playerMarker.options.kind =="rabbit"){
             var iconPic = "/assets/rabbit.png"
         }
         else{
