@@ -82,7 +82,7 @@ describe("bind events function", function() {
 	    expect(this.requestArgs[0].type).toEqual('POST');
 	  });
 
-  	it("sends the request to '/player/update_position' ", function () {
+  	it("sends the request to '/games/update_game_status' ", function () {
       expect(this.requestArgs[0].data).toEqual(controller.playerOptions);
     });
 
@@ -263,7 +263,7 @@ describe("bind events function", function() {
 	    	expect(this.requestArgs[0].type).toEqual('POST');
 	  	});
 
-	  	it("sends the POST request to '/rabbit/update_rabbit_street_view'",function(){
+	  	it("sends the POST request to '/games/update_rabbit_street_view'",function(){
 	    	expect(this.requestArgs[0].url).toEqual(controller.updateRabbitUrl);
 	  	})
 

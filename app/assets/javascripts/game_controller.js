@@ -10,14 +10,13 @@ function GameController() {
       id: null,
       game_id: null,
       kind: null
-  };
-  this.locationTimer = null;
-  this.rabbitTimer = null;
-  this.updatePlayerUrl = '/player/update_position'
-  this.updateRabbitStreetViewUrl = '/rabbit/update_rabbit_street_view'
-  this.sendWinMessageUrl = '/player/send_win_message'
+    this.locationTimer = null;
+    this.rabbitTimer = null;
+    this.updatePlayerUrl = '/games/update_game_status'
+    this.updateRabbitUrl = '/games/update_rabbit_street_view'
+    this.sendWinMessageUrl = '/games/send_win_message'
 
-  self = this
+    self = this
 }
 
 GameController.prototype = {
