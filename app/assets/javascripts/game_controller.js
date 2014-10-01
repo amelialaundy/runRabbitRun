@@ -1,6 +1,7 @@
-function PlayerController() {
+function GameController() {
 	this.view = new View();
 	this.powerUp = new PowerUp(this.view)
+	this.boundary = null
 	this.abilityController = new AbilityController(this.view, this);
 
 	this.playerOptions = {
@@ -11,11 +12,6 @@ function PlayerController() {
       kind: null
     };
 
-    this.biggestLat = null
-    this.biggestLng = null
-    this.smallestLat = null
-    this.smallestLng = null
-
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
@@ -25,19 +21,21 @@ function PlayerController() {
     self = this
 }
 
-PlayerController.prototype = {
+GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
+		
+		
 		this.createPlayerMarkers();
-		this.setMapBoundaries();
+		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
+		this.boundary.setMapLimits();
 		this.setUpLocationTimer(1000);
 		this.setUpRabbitLocationTimer(10000);
 		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
 	},
 
 	bindEvents: function() {
-
 		$('body').on("keyup", this.movePlayerMarker);
 	},
 	unbindEvents: function() {
@@ -52,7 +50,7 @@ PlayerController.prototype = {
 		$.ajax({
 		  type: "POST",
 		  url: this.updatePlayerUrl,
-		  data: this.playerOptions,
+		  data: self.player.options,
 		  success: this.checkProximityToRabbit.bind(this)
 		});
 	},
@@ -76,7 +74,7 @@ PlayerController.prototype = {
 		$.ajax({
 			type: "POST",
 			url: this.sendWinMessageUrl,
-			data: {player_stats: self.playerOptions},
+			data: {player_stats: self.player.options},
 		})
 	},
 
@@ -87,58 +85,48 @@ PlayerController.prototype = {
 		this.playerOptions.game_id = this.view.gameId
 		this.playerOptions.kind = this.view.playerKind
 		this.player = new PlayerMarker(this.playerOptions);
-	    this.view.renderMapPlayerMarkers(this.player);
+	  this.view.renderMapPlayerMarkers(this.player);
 	},
 
 	movePlayerMarker: function(e) {
+		var moveDistance = 0.00008
 		// 38 = up
 		if (e.keyCode == 38) {
-			var new_lat = self.playerOptions.lat + 0.00008
-			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
-
-				self.playerOptions.lat = new_lat
-
+			if (self.boundary.checkWithinLimits([moveDistance, 0.0 ])) {
+				self.player.move([moveDistance, 0.0])
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			var new_lng = self.playerOptions.lng + 0.00008
-			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
-				self.playerOptions.lng = new_lng
+			if (self.boundary.checkWithinLimits([0.00, moveDistance])) {
+				self.player.move([0.0, moveDistance])
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			var new_lat = self.playerOptions.lat - 0.00008
-			if (new_lat < self.biggestLat && new_lat > self.smallestLat) {
-				self.playerOptions.lat = new_lat
+			if (self.boundary.checkWithinLimits([-moveDistance, 0.0 ])) {
+				self.player.move([-moveDistance, 0.0])
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var new_lng = self.playerOptions.lng - 0.00008
-			if (new_lng < self.biggestLng && new_lng > self.smallestLng) {
-				self.playerOptions.lng = new_lng
+			if (self.boundary.checkWithinLimits([0.00, -moveDistance])) {
+				self.player.move([0.0, -moveDistance])
 			}
 		// 70 = f key
 		} else if (e.keyCode == 70) {
 			self.abilityController.addSpeed()
 		}
+		self.view.moveMarker(self.player.options.lat, self.player.options.lng)
 
-		self.view.moveMarker(self.playerOptions.lat, self.playerOptions.lng)
-		if(self.powerUp.collectAbility(self.playerOptions)){
+		if(self.powerUp.collectAbility(self.player.options)){
 			self.abilityController.addSpeed();
+			setTimeout(function(){self.abilityController.normalSpeed()},3000);
+				self.powerUp = null
+			setTimeout(function(){
+				self.powerUp = new PowerUp(self.view);
+				self.powerUp.showPowerUp(self.powerUp.lat,self.powerUp.lng)
+			},5000)
+
 		}
 	},
-
-	setMapBoundaries: function() {
-		centreLat = this.view.lat;
-		centreLng = this.view.lng;
-		farthestLat = 0.003882
-		farthestLng = 0.007397
-		this.biggestLat = centreLat + farthestLat
-		this.biggestLng = centreLng + farthestLng
-		this.smallestLat = centreLat - farthestLat
-		this.smallestLng = centreLng - farthestLng
-	},
-
 
 	setUpRabbitLocationTimer: function(interval) {
 		this.setUpRabbitLocationPusher();
@@ -147,18 +135,18 @@ PlayerController.prototype = {
 
 	// Only sends message if player is 'rabbit'
 	sendRabbitPosition: function(){
-		if(this.playerOptions.kind == 'rabbit'){
+		if(this.player.options.kind == 'rabbit'){
 			$.ajax({
 			  type: "POST",
 			  url: this.updateRabbitUrl,
-			  data: this.playerOptions,
+			  data: this.player.options,
 			});
 		}
 	},
-	// sets up pusher channel
+
 	setUpRabbitLocationPusher: function(){
 		var self = this
-		var gameId = this.playerOptions.game_id
+		var gameId = this.player.options.game_id
 		this.pusher = new Pusher('7a73ab83106664465bfd');
 		this.channel = this.pusher.subscribe('game_'+ gameId);
 		this.channel.bind('show_rabbit_street_view_game', function(data) {

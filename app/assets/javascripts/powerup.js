@@ -1,5 +1,5 @@
 var PowerUp = function(view){
-  
+
   this.view = view;
   this.maxLat = 3882
   this.minLat = -3883

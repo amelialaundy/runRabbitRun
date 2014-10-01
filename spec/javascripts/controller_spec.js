@@ -1,11 +1,11 @@
-describe("PlayerController", function() {
+describe("GameController", function() { 
 	var controller = null;
 
 	describe("attributes on creation", function() {
 	  beforeEach(function() {
 	  	var myView = spyOn(window, 'View');
 
-	  	controller = new PlayerController();
+	  	controller = new GameController();
 	  });
 
 	  it("a new view has been created", function() {
@@ -230,7 +230,7 @@ describe("bind events function", function() {
 	describe('Rabbit street view',function(){
   	beforeEach(function(){
   		var myView = spyOn(window, 'View');
-    	controller = new PlayerController();
+    	controller = new GameController();
   	});
 
   	it("initializes with an endpoint to send the rabbit's position", function(){
