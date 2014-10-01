@@ -6,7 +6,6 @@ function PlayerMarker(options) {
 
 PlayerMarker.prototype = {
 	move: function(change) {
-		console.log(change)
 		this.options.lat += change[0]
 		this.options.lng += change[1]
 	}
