@@ -151,8 +151,8 @@ GameController.prototype = {
 		self.view.showStreetView(data.message)
 		});
 		this.channel.bind('win_message', function(data){
-			self.view.showWinModal(data.message)
-			self.unbindEvents();
+		self.view.showWinModal(data.message)
+		self.unbindEvents();
 
 		});
 	},
