@@ -96,7 +96,7 @@ View.prototype = {
         };
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
+    	  position: new google.maps.LatLng(playerMarker.currentLat, playerMarker.currentLng),
         icon: iconPic
     	};
     },
