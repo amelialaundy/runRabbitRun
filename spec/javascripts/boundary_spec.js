@@ -49,32 +49,36 @@ describe("BoundaryModel", function(){
       latspan = 0.003822
       lngspan = 0.007397
       mapCentre = [41.32445,-172.30542]
-      bounds = new Boundary(mapCentre, "player")
+      var player = {options: {lat:41.32445,lng:-172.30542}}
+      bounds = new Boundary(mapCentre, player)
       bounds.setMapLimits()
+
     });
+
+
 
     it("is defined", function(){
       expect(bounds.checkWithinLimits).toBeDefined();
     })
 
     it("returns false when passed a faraway latitude", function(){
-      var badCoords = [51.32445,-172.30542]
-      expect(bounds.checkWithinLimits(badCoords)).toBe(false)
+      var badvector = [2,0]
+      expect(bounds.checkWithinLimits(badvector)).toBe(false)
     })
 
     it("returns false when passed a faraway longitude", function(){
-      var badCoords = [41.32445,-182.30542]
-      expect(bounds.checkWithinLimits(badCoords)).toBe(false)
+      var badvector = [0,432]
+      expect(bounds.checkWithinLimits(badvector)).toBe(false)
     })
 
-    it("returns false when passed a faraway latlng", function(){
-      var badCoords = [45.32445,-142.30542]
-      expect(bounds.checkWithinLimits(badCoords)).toBe(false)
+    it("returns false when passed a to faraway latlng", function(){
+      var badvector = [-2,-2]
+      expect(bounds.checkWithinLimits(badvector)).toBe(false)
     })
 
-    it("returns true when passed a faraway latlng", function(){
-      var badCoords = [41.32445,-172.30542]
-      expect(bounds.checkWithinLimits(badCoords)).toBe(true)
+    it("returns true when player lands in boundary", function(){
+      var goodVector = [0,0]
+      expect(bounds.checkWithinLimits(goodVector)).toBe(true)
     })
 
   })

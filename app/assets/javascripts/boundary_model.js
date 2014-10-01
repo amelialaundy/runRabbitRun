@@ -23,8 +23,8 @@ Boundary.prototype = {
 		}
 		newLat = vector[0] + this.player.options.lat;
 		newLng = vector[1] + this.player.options.lng;
-		if (newLat < self.boundary.mapLimits.biggestLat && newLat > self.boundary.mapLimits.smallestLat) {
-			if (newLng < self.boundary.mapLimits.biggestLng && newLng > self.boundary.mapLimits.smallestLng) {
+		if (newLat < this.mapLimits.biggestLat && newLat > this.mapLimits.smallestLat) {
+			if (newLng < this.mapLimits.biggestLng && newLng > this.mapLimits.smallestLng) {
 				return true
 			}
 		} else {
