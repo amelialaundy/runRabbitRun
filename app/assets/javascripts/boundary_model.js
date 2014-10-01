@@ -17,9 +17,12 @@ Boundary.prototype = {
 		}
 	},
 
-	checkWithinLimits: function(coords) {
-		newLat = coords[0] + this.player.currentLat;
-		newLng = coords[1] + this.player.currentLng;
+	checkWithinLimits: function(vector) {
+		if (vector == null) {
+			return false
+		}
+		newLat = vector[0] + this.player.options.lat;
+		newLng = vector[1] + this.player.options.lng;
 		if (newLat < self.boundary.mapLimits.biggestLat && newLat > self.boundary.mapLimits.smallestLat) {
 			if (newLng < self.boundary.mapLimits.biggestLng && newLng > self.boundary.mapLimits.smallestLng) {
 				return true

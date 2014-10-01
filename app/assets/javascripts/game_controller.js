@@ -75,32 +75,29 @@ GameController.prototype = {
 	  this.view.renderMapPlayerMarkers(this.player);
 	},
 
-	movePlayerMarker: function(e) {
+	vectorForKeyCode: function(keyCode) {
 		var moveDistance = 0.00008
-		// 38 = up
-		if (e.keyCode == 38) {
-			if (self.boundary.checkWithinLimits([moveDistance, 0.0 ])) {
-				self.player.move([moveDistance, 0.0])
-			}
-		// 39 = right
-		} else if (e.keyCode == 39) {
-			if (self.boundary.checkWithinLimits([0.00, moveDistance])) {
-				self.player.move([0.0, moveDistance])
-			}
-		// 40 = down
-		} else if (e.keyCode == 40) {
-			if (self.boundary.checkWithinLimits([-moveDistance, 0.0 ])) {
-				self.player.move([-moveDistance, 0.0])
-			}
-		// 37 = left
-		} else if (e.keyCode == 37) {
-			if (self.boundary.checkWithinLimits([0.00, -moveDistance])) {
-				self.player.move([0.0, -moveDistance])
-			}
-		// 70 = f key
-		} else if (e.keyCode == 70) {
-			self.abilityController.addSpeed()
+
+		if (keyCode == 38) {
+			return [moveDistance, 0.0 ]
+		} else if (keyCode == 39) {
+			return [0.00, moveDistance]
+		} else if (keyCode == 40) {
+			return [-moveDistance, 0.0 ]
+		} else if (keyCode == 37) {
+			return [0.00, -moveDistance]
+		} else if (keyCode == 70) {
+			self.abilityController.addSpeed();
+			return null;
+		} 
+	},
+
+	movePlayerMarker: function(e) {
+		var vector = self.vectorForKeyCode(e.keyCode)
+		if (self.boundary.checkWithinLimits(vector)) {
+			self.player.move(vector)
 		}
+
 		self.view.moveMarker(self.player.options.lat, self.player.options.lng)
 
 		if(self.powerUp.collectAbility(self.player.options)){
