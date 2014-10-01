@@ -27,7 +27,8 @@ PowerUp.prototype = {
       position: { lat: lat,
                   lng: lng},
       map: this.view.map,
-      icon: icon
+      icon: icon,
+      animation: google.maps.Animation.BOUNCE
     });
   }
 }
