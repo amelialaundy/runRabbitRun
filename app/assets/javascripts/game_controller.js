@@ -73,6 +73,15 @@ GameController.prototype = {
 	  this.view.renderMapPlayerMarkers(this.player);
 	},
 
+	movePlayerMarker: function(e) {
+		var vector = self.vectorForKeyCode(e.keyCode)
+		if (self.boundary.checkWithinLimits(vector)) {
+			self.player.move(vector)
+		}
+		self.view.moveMarker(self.player.options.lat, self.player.options.lng)
+		self.checkForPowerUps();
+	},
+
 	vectorForKeyCode: function(keyCode) {
 		var moveDistance = 0.00008
 
@@ -88,15 +97,6 @@ GameController.prototype = {
 			self.abilityController.addSpeed();
 			return null;
 		} 
-	},
-
-	movePlayerMarker: function(e) {
-		var vector = self.vectorForKeyCode(e.keyCode)
-		if (self.boundary.checkWithinLimits(vector)) {
-			self.player.move(vector)
-		}
-		self.view.moveMarker(self.player.options.lat, self.player.options.lng)
-		self.checkForPowerUps();
 	},
 
 	checkForPowerUps: function() {
