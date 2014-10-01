@@ -65,6 +65,7 @@ View.prototype = {
     },
 
     renderMapPlayerMarkers: function(playerMarker) {
+      console.log(playerMarker)
       var newMapMarker =  this.createMarker(playerMarker);
     },
 
@@ -96,7 +97,7 @@ View.prototype = {
         };
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
+    	  position: new google.maps.LatLng(playerMarker.currentLat, playerMarker.currentLng),
         icon: this.rabbitMarkerUrl
     	};
     },
