@@ -1,12 +1,6 @@
 class GameStatus
 
-	# def self.update(args)
-
- #        player_location(args)
- #        active?(args.fetch(:game_id))
-	# end
-
-  def initialize(game)
+	def initialize(game)
     @game = game
   end
 
