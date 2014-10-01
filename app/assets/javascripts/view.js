@@ -28,7 +28,6 @@ DomManager = (function () {
 }());
 
 function View() {
-  this.rabbitMarker = '/assets/rabbitmarker.png'
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
@@ -84,15 +83,15 @@ View.prototype = {
 
     createNewPlayerMarkerOptions: function(playerMarker) {
         if (playerMarker.kind =="rabbit"){
-            var iconPic = "rabbit.png"
+            var iconPic = "/assets/rabbit.png"
         }
         else{
-            var iconPic = "terminator.gif"
+            var iconPic = "/assets/terminator.gif"
         };
     	return {
     	  map: this.map,
     	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
-        icon: this.rabbitMarker
+        icon: iconPic
     	};
     },
 
@@ -111,7 +110,7 @@ View.prototype = {
     },
 
     showWinModal: function(message) {
-        $("#dialog h3").html(message)
+        $("#dialog h3.winMessage").html(message)
         $("#dialog").dialog({
             width: 735,
             autoOpen: true,

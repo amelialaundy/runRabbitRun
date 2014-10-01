@@ -26,7 +26,7 @@ class ProximityChecker
     elsif circle_area < RED_ZONE_RADIUS_SQUARED
     	"red"
     elsif circle_area < YELLOW_ZONE_RADIUS_SQUARED
-    	"yellow"
+    	"orange"
     else
     	"green"
     end
