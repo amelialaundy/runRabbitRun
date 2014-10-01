@@ -25,8 +25,8 @@ GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
-		
-		
+
+
 		this.createPlayerMarkers();
 		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
 		this.boundary.setMapLimits();
@@ -153,11 +153,21 @@ GameController.prototype = {
 			self.view.showStreetView(data.message)
 		});
 		this.channel.bind('win_message', function(data){
-			self.view.showWinModal(data.message)
+			self.view.showWinModal(self.specifyEndMessage(data.message))
 			self.unbindEvents();
-
 		});
 	},
+
+	specifyEndMessage: function(message){
+		if(self.playerOptions.kind == "rabbit"){
+			return "Oh No! You got eaten!!!"
+		}else if(message == this.playerOptions.id){
+			return "You got the bunny! Rabbit stew is the best!!!"
+		}else{
+			return "Someone else got the rabbit..."
+		}
+
+	}
 
 
 };
