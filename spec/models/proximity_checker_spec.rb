@@ -4,15 +4,15 @@ RSpec.describe ProximityChecker, :type => :model do
 
 	describe "#new" do
 
+		before do
+			allow(Coordinate).to receive(:new)
+		end
+
 		context "when passed in valid parameters" do 
 
 			let(:hunter) { build(:player, kind: "hunter") }
 			let(:rabbit) { build(:player, kind: "rabbit") }
 			let(:proximity_checker) { ProximityChecker.new({ hunter: hunter, rabbit: rabbit }) }
-	 		
-	 		before do
-	 			allow(Coordinate).to receive(:new)
-	 		end
 
 			it "initializes with a hunter object" do 
 				allow(Coordinate).to receive(:new)
@@ -27,12 +27,8 @@ RSpec.describe ProximityChecker, :type => :model do
 
 		context "when passed in invalid parameters" do
 
-			before do
-				allow(Coordinate).to receive(:new)
-			end
-
 			it "returns an error message when incorrect parameters are passed in" do
-				expect {ProximityChecker.new()}.to raise_error
+				expect {ProximityChecker.new}.to raise_error
 			end
 
 			it "returns an error when only a hunter is passed in" do
@@ -69,13 +65,53 @@ RSpec.describe ProximityChecker, :type => :model do
 
 	describe "#zone" do
 
-		it "indicates that the game is over if the hunter is very close to the rabbit" do
-			hunter = double("hunter")
-			rabbit = double("rabbit")
-			proximity_checker = ProximityChecker.new({ hunter: hunter, rabbit: rabbit })
-			allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.00000024)
-			proximity_checker.zone
-			expect(proximity_checker.win).to eq(true)
+		let(:hunter) { instance_double("Player") }
+		let(:rabbit) { instance_double("Player") }
+		let(:proximity_checker) { ProximityChecker.new({ hunter: hunter, rabbit: rabbit }) }
+
+		context "win" do
+
+			before do
+				allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.00000024)
+			end
+
+			it "indicates that the game is over if the hunter is very close to the rabbit" do
+				proximity_checker.zone
+				expect(proximity_checker.win).to eq(true)
+			end
+
+			it "returns 'win' if the hunter is very close to the rabbit" do
+				allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.00000024)
+				expect(proximity_checker.zone).to eq("win")				
+			end
+
+		end
+
+		context "red" do
+
+			it "returns 'red' if the hunter is close to the rabbit" do
+				allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.000003)
+				expect(proximity_checker.zone).to eq("red")	
+			end
+
+		end
+
+		context "yellow" do
+
+			it "returns 'yellow' if the hunter is a moderate distance from the rabbit" do
+				allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.000024)
+				expect(proximity_checker.zone).to eq("yellow")	
+			end
+
+		end
+
+		context "green" do
+
+			it "returns 'green' if the hunter is far from the rabbit" do
+				allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.001)
+				expect(proximity_checker.zone).to eq("green")	
+			end
+
 		end
 
 	end
