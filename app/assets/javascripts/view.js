@@ -84,10 +84,10 @@ View.prototype = {
 
     createNewPlayerMarkerOptions: function(playerMarker) {
         if (playerMarker.kind =="rabbit"){
-            var iconPic = "http://img1.wikia.nocookie.net/__cb20120422035528/habbo/en/images/f/fd/Rabbit.png"
+            var iconPic = "rabbit.png"
         }
         else{
-            var iconPic = "http://www.pixeljoint.com/files/icons/terminator_cyborg.gif"
+            var iconPic = "terminator.gif"
         };
     	return {
     	  map: this.map,
@@ -111,25 +111,13 @@ View.prototype = {
     },
 
     showWinModal: function(message) {
+        $("#dialog h3").html(message)
         $("#dialog").dialog({
             width: 735,
             autoOpen: true,
             modal: true,
             closeOnEscape: true,
-            draggable: false,
-            buttons: {
-              "Home": function () {
-                  goHome();
-                  dialog.dialog('destroy');
-              }
-            },
-            open: function(e, ui) {
-                $('button').blur();
-            }
+            draggable: false
         });
-    },
-
-    goHome: function() {
-        alert('You selected goHome');
     }
 }
