@@ -10,6 +10,7 @@ class GameStatus
     return { proximity: "irrelevent"} if player.rabbit?
     rabbit = @game.find_rabbit
     proximity = ProximityChecker.new({hunter: player, rabbit: rabbit})
+
     @game.finished! if proximity.win
     return { proximity: proximity.zone }
 	end    

@@ -27,8 +27,13 @@ DomManager = (function () {
     return publik;
 }());
 
+
+
+
+
+
 function View() {
-  this.rabbitMarker = '/assets/rabbitmarker.png'
+  this.rabbitMarkerUrl = '/assets/rabbitmarker.png'
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
@@ -60,6 +65,7 @@ View.prototype = {
     },
 
     renderMapPlayerMarkers: function(playerMarker) {
+      console.log(playerMarker)
       var newMapMarker =  this.createMarker(playerMarker);
     },
 
@@ -91,8 +97,8 @@ View.prototype = {
         };
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
-        icon: this.rabbitMarker
+    	  position: new google.maps.LatLng(playerMarker.currentLat, playerMarker.currentLng),
+        icon: this.rabbitMarkerUrl
     	};
     },
 
