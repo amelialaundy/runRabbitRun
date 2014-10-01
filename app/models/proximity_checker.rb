@@ -27,13 +27,8 @@ class ProximityChecker
     	"win"
     elsif distance_between_hunter_and_rabbit < RED_ZONE_RADIUS_SQUARED
     	"red"
-<<<<<<< HEAD
     elsif distance_between_hunter_and_rabbit < YELLOW_ZONE_RADIUS_SQUARED
-    	"yellow"
-=======
-    elsif circle_area < YELLOW_ZONE_RADIUS_SQUARED
     	"orange"
->>>>>>> f038853565b6d840f4d47d170be8199f04ccb558
     else
     	"green"
     end
