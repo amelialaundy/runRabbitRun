@@ -4,6 +4,7 @@ function Boundary(mapCentre, player) {
 	this.centreLng = mapCentre[1]
 	distanceToFarthestLat = 0.003882
 	distanceToFarthestLng = 0.007397
+	this.setMapLimits();
 }
 
 Boundary.prototype = {

@@ -27,9 +27,11 @@ GameController.prototype = {
 		this.view.initializeMap();
 		this.createPlayerMarkers();
 		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
-		this.boundary.setMapLimits();
-		this.setUpLocationTimer(1000);
-		this.setUpRabbitLocationTimer(10000);
+		this.setUpRabbitLocationPusher();
+		this.locationTimer = new Timer(1000, this.updatePlayerUrl, this.player, this.checkProximityToRabbit.bind(this)  )
+		if (this.player.isRabbit) {
+			this.rabbitTimer = new Timer(10000, this.updateRabbitStreetViewUrl, this.player)
+		}
 		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
 	},
 
@@ -38,19 +40,6 @@ GameController.prototype = {
 	},
 	unbindEvents: function() {
 		$('body').off("keyup", this.movePlayerMarker)
-	},
-
-	setUpLocationTimer: function(interval) {
-		self.locationTimer = setInterval(this.sendPlayerPosition.bind(this), interval)
-	},
-
-	sendPlayerPosition: function() {
-		$.ajax({
-		  type: "POST",
-		  url: this.updatePlayerUrl,
-		  data: self.player.options,
-		  success: this.checkProximityToRabbit.bind(this)
-		});
 	},
 
 	checkProximityToRabbit: function(data) {
@@ -126,31 +115,15 @@ GameController.prototype = {
 		}
 	},
 
-	setUpRabbitLocationTimer: function(interval) {
-		this.setUpRabbitLocationPusher();
-		self.rabbitTimer = setInterval(this.sendRabbitPosition.bind(this), interval)
-	},
-
-	// Only sends message if player is 'rabbit'
-	sendRabbitPosition: function(){
-		if(this.player.options.kind == 'rabbit'){
-			$.ajax({
-			  type: "POST",
-			  url: this.updateRabbitStreetViewUrl,
-			  data: this.player.options,
-			});
-		}
-	},
-
 	setUpRabbitLocationPusher: function(){
 		var self = this
 		var gameId = this.player.options.game_id
-		this.pusher = new Pusher('7a73ab83106664465bfd');
-		this.channel = this.pusher.subscribe('game_'+ gameId);
-		this.channel.bind('show_rabbit_street_view_game', function(data) {
+		var pusher = new Pusher('7a73ab83106664465bfd');
+		var channel = pusher.subscribe('game_'+ gameId);
+		channel.bind('show_rabbit_street_view_game', function(data) {
 		self.view.showStreetView(data.message)
 		});
-		this.channel.bind('win_message', function(data){
+		channel.bind('win_message', function(data){
 		self.view.showWinModal(data.message)
 		self.unbindEvents();
 
