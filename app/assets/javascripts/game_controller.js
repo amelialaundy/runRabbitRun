@@ -57,7 +57,6 @@ GameController.prototype = {
 	},
 
 	checkProximityToRabbit: function(data) {
-		console.log(data)
 		if (data['proximity'] == "win") {
 			clearInterval(this.locationTimer)
 			this.sendWinMessageToAll()
@@ -99,19 +98,16 @@ GameController.prototype = {
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			// var newLng = self.player.currentLng + moveDistance
 			if (self.boundary.checkWithinLimits([0.00, moveDistance])) {
 				self.player.move([0.0, moveDistance])
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			// var newLat = self.player.currentLat - moveDistance
 			if (self.boundary.checkWithinLimits([-moveDistance, 0.0 ])) {
 				self.player.move([-moveDistance, 0.0])
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			// var newLng = self.player.currentLng - moveDistance
 			if (self.boundary.checkWithinLimits([0.00, -moveDistance])) {
 				self.player.move([0.0, -moveDistance])
 			}

@@ -26,13 +26,5 @@ Boundary.prototype = {
 		} else {
 			return false
 		}
-
 	}
-
-
-		// this.biggestLat = this.centreLat + distanceToFarthestLat
-		// this.biggestLng = this.centreLng + distanceToFarthestLng
-		// this.smallestLat = this.centreLat - distanceToFarthestLat
-		// this.smallestLng = this.centreLng - distanceToFarthestLng
-	
 }
