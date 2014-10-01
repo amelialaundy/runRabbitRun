@@ -133,21 +133,6 @@ GameController.prototype = {
 		}
 	},
 
-	// setMapBoundaries: function() {
-
-	// 	centreLat = this.view.lat;
-	// 	centreLng = this.view.lng;
-	// 	this.boundary = new Boundary([centreLat, centreLng])
-	// 	this.boundary.setMapLimits();
-	// 	farthestLat = 0.003882
-	// 	farthestLng = 0.007397
-	// 	this.biggestLat = centreLat + farthestLat
-	// 	this.biggestLng = centreLng + farthestLng
-	// 	this.smallestLat = centreLat - farthestLat
-	// 	this.smallestLng = centreLng - farthestLng
-	// },
-
-
 	setUpRabbitLocationTimer: function(interval) {
 		this.setUpRabbitLocationPusher();
 		self.rabbitTimer = setInterval(this.sendRabbitPosition.bind(this), interval)
