@@ -31,27 +31,28 @@ $(function() {
 
 
 <div>
-	<header>&nbsp;<br/>&nbsp;</header>
+	<header>&nbsp;</header>
 	<div id="map-canvas"></div>
 	<div>
 		<div id ="streetview"></div>
 		<div id="proximity-alert">
 			<img alt="Bunny Alert!" src="/assets/alert.png">
 		</div>
+		<div id="pusher_chat_widget"></div>
 	</div>
 </div>
 <!-- pusher -->
-<div id='pusher_chat_widget'></div>
+
 
 
 <!--  for testing only  -->
-<div id="player-info" data-pl-game-id=<%=@player.game_id %>>
+<!-- <div id="player-info" data-pl-game-id=<%=@player.game_id %>>
 	<div>Game: #<%= @game.id %></div>
 	<div id='player-id' data-pl-id=<%=@player.id %> >Player Id: <%= @player.id %></div>
 	<div id='player-lat' data-pl-lat=<%=@player.lat %>>Player Lat: <%= @player.lat%></div>
 	<div id='player-lng' data-pl-lng=<%=@player.lng %>>Player Lng: <%= @player.lng%></div>
 	<div id='player-kind' data-kind=<%=@player.kind %>>Player kind: <%= @player.kind%></div>
-</div>
+</div> -->
 
 <div id="dialog">
   <img alt="Bunny is Dead!" class="bunnyIsDead" src="/assets/bunnyisdead.jpg">
