@@ -10,12 +10,11 @@ function GameController() {
       id: null,
       game_id: null,
       kind: null
-    };
-
+  	};
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/games/update_game_status'
-    this.updateRabbitUrl = '/games/update_rabbit_street_view'
+    this.updateRabbitStreetViewUrl = '/games/update_rabbit_street_view'
     this.sendWinMessageUrl = '/games/send_win_message'
 
     self = this
@@ -25,13 +24,14 @@ GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
-		
-		
+
 		this.createPlayerMarkers();
 		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
-		this.boundary.setMapLimits();
-		this.setUpLocationTimer(1000);
-		this.setUpRabbitLocationTimer(10000);
+		this.setUpRabbitLocationPusher();
+		this.locationTimer = new Timer(1000, this.updatePlayerUrl, this.player, this.checkProximityToRabbit.bind(this)  )
+		if (this.player.isRabbit()) {
+			this.rabbitTimer = new Timer(10000, this.updateRabbitStreetViewUrl, this.player)
+		}
 		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
 	},
 
@@ -40,19 +40,6 @@ GameController.prototype = {
 	},
 	unbindEvents: function() {
 		$('body').off("keyup", this.movePlayerMarker)
-	},
-
-	setUpLocationTimer: function(interval) {
-		self.locationTimer = setInterval(this.sendPlayerPosition.bind(this), interval)
-	},
-
-	sendPlayerPosition: function() {
-		$.ajax({
-		  type: "POST",
-		  url: this.updatePlayerUrl,
-		  data: self.player.options,
-		  success: this.checkProximityToRabbit.bind(this)
-		});
 	},
 
 	checkProximityToRabbit: function(data) {
@@ -89,34 +76,33 @@ GameController.prototype = {
 	},
 
 	movePlayerMarker: function(e) {
-		var moveDistance = 0.00008
-		// 38 = up
-		if (e.keyCode == 38) {
-			if (self.boundary.checkWithinLimits([moveDistance, 0.0 ])) {
-				self.player.move([moveDistance, 0.0])
-			}
-		// 39 = right
-		} else if (e.keyCode == 39) {
-			if (self.boundary.checkWithinLimits([0.00, moveDistance])) {
-				self.player.move([0.0, moveDistance])
-			}
-		// 40 = down
-		} else if (e.keyCode == 40) {
-			if (self.boundary.checkWithinLimits([-moveDistance, 0.0 ])) {
-				self.player.move([-moveDistance, 0.0])
-			}
-		// 37 = left
-		} else if (e.keyCode == 37) {
-			if (self.boundary.checkWithinLimits([0.00, -moveDistance])) {
-				self.player.move([0.0, -moveDistance])
-			}
-		// 70 = f key
-		} else if (e.keyCode == 70) {
-			self.abilityController.addSpeed()
+		var vector = self.vectorForKeyCode(e.keyCode)
+		if (self.boundary.checkWithinLimits(vector)) {
+			self.player.move(vector)
 		}
 		self.view.moveMarker(self.player.options.lat, self.player.options.lng)
+		self.checkForPowerUps();
+	},
 
-		if(self.powerUp.collectAbility(self.player.options)){
+	vectorForKeyCode: function(keyCode) {
+		var moveDistance = 0.00008
+
+		if (keyCode == 38) {
+			return [moveDistance, 0.0 ]
+		} else if (keyCode == 39) {
+			return [0.00, moveDistance]
+		} else if (keyCode == 40) {
+			return [-moveDistance, 0.0 ]
+		} else if (keyCode == 37) {
+			return [0.00, -moveDistance]
+		} else if (keyCode == 70) {
+			self.abilityController.addSpeed();
+			return null;
+		} 
+	},
+
+	checkForPowerUps: function() {
+		if(self.powerUp.collected(self.player.options)){
 			self.abilityController.addSpeed();
 			setTimeout(function(){self.abilityController.normalSpeed()},3000);
 				self.powerUp = null
@@ -124,40 +110,30 @@ GameController.prototype = {
 				self.powerUp = new PowerUp(self.view);
 				self.powerUp.showPowerUp(self.powerUp.lat,self.powerUp.lng)
 			},5000)
-
-		}
-	},
-
-	setUpRabbitLocationTimer: function(interval) {
-		this.setUpRabbitLocationPusher();
-		self.rabbitTimer = setInterval(this.sendRabbitPosition.bind(this), interval)
-	},
-
-	// Only sends message if player is 'rabbit'
-	sendRabbitPosition: function(){
-		if(this.player.options.kind == 'rabbit'){
-			$.ajax({
-			  type: "POST",
-			  url: this.updateRabbitUrl,
-			  data: this.player.options,
-			});
 		}
 	},
 
 	setUpRabbitLocationPusher: function(){
 		var self = this
 		var gameId = this.player.options.game_id
-		this.pusher = new Pusher('7a73ab83106664465bfd');
-		this.channel = this.pusher.subscribe('game_'+ gameId);
-		this.channel.bind('show_rabbit_street_view_game', function(data) {
-			self.view.showStreetView(data.message)
+		var pusher = new Pusher('7a73ab83106664465bfd');
+		var channel = pusher.subscribe('game_'+ gameId);
+		channel.bind('show_rabbit_street_view_game', function(data) {
+		self.view.showStreetView(data.message)
 		});
-		this.channel.bind('win_message', function(data){
-			self.view.showWinModal(data.message)
+		channel.bind('win_message', function(data){
+			self.view.showWinModal(self.specifyEndMessage(data.message))
 			self.unbindEvents();
-
 		});
 	},
 
-
+	specifyEndMessage: function(message){
+		if(self.playerOptions.kind == "rabbit"){
+			return "Oh No! You got eaten!!!"
+		}else if(message == this.playerOptions.id){
+			return "You got the bunny! Rabbit stew is the best!!!"
+		}else{
+			return "Someone else got the rabbit..."
+		}
+	}
 };

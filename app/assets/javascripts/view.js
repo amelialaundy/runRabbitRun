@@ -52,14 +52,14 @@ View.prototype = {
         zoomControl: false,
         scrollwheel: false,
         disableDoubleClickZoom: true,
-        streetViewControl: false
+        streetViewControl: false,
+        disableDefaultUI: true
       }
       this.map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
     },
 
     renderMapPlayerMarkers: function(playerMarker) {
-      console.log(playerMarker)
       var newMapMarker =  this.createMarker(playerMarker);
     },
 
@@ -83,7 +83,7 @@ View.prototype = {
     },
 
     createNewPlayerMarkerOptions: function(playerMarker) {
-        if (playerMarker.kind =="rabbit"){
+        if (playerMarker.options.kind =="rabbit"){
             var iconPic = "/assets/rabbit.png"
         }
         else{
