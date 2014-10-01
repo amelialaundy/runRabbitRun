@@ -4,7 +4,6 @@ class Game < ActiveRecord::Base
 
   def get_random_lat
     max_lat = 3882
-
     centre_lat + rand(-max_lat..max_lat)/1000000.0
   end
 
@@ -13,6 +12,7 @@ class Game < ActiveRecord::Base
     centre_lng + rand(-max_lng..max_lng)/1000000.0
   end
 
+  #Marks first player to join/make game as rabbit
   def mark_as_rabbit?
     if players.count<1
       return "rabbit"
