@@ -14,3 +14,4 @@ AbilityController.prototype = {
     this.view.bodyElement.on("keyup", this.gameController.movePlayerMarker);
   }
 }
+ 
