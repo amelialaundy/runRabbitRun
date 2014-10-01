@@ -1,10 +1,9 @@
-describe("GameController", function() { 
+describe("GameController", function() {
 	var controller = null;
 
 	describe("attributes on creation", function() {
 	  beforeEach(function() {
 	  	var myView = spyOn(window, 'View');
-
 	  	controller = new GameController();
 	  });
 
@@ -16,26 +15,10 @@ describe("GameController", function() {
 	    expect(controller.playerOptions).toBeDefined();
 	  });
 
-	  it("creates attributes of null for biggest lat", function() {
-	    expect(controller.biggestLat).toBeNull();
-	  });
-
-	  it("creates attributes of null for biggest lng", function() {
-	    expect(controller.biggestLng).toBeNull();
-	  });
-
-	  it("creates attributes of null for smallest lat", function() {
-	    expect(controller.smallestLat).toBeNull();
-	  });
-
-	  it("creates attributes of null for smallest lng", function() {
-	    expect(controller.smallestLng).toBeNull();
-	  });
 
 	  it("has a start function", function() {
 	    expect(controller.start).toBeDefined();
 	  });
-
 
 	})
 
