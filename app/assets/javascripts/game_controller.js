@@ -30,7 +30,6 @@ GameController.prototype = {
 		this.createPlayerMarkers();
 		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
 		this.boundary.setMapLimits();
-		// this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
 		this.setUpRabbitLocationTimer(10000);
 		this.powerUp.showPowerUp(this.powerUp.lat,this.powerUp.lng);
@@ -144,7 +143,7 @@ GameController.prototype = {
 			});
 		}
 	},
-	// sets up pusher channel
+
 	setUpRabbitLocationPusher: function(){
 		var self = this
 		var gameId = this.player.options.game_id
