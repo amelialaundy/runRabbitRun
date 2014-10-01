@@ -62,6 +62,21 @@ describe("BoundaryModel", function(){
       expect(bounds.checkWithinLimits(badCoords)).toBe(false)
     })
 
+    it("returns false when passed a faraway longitude", function(){
+      var badCoords = [41.32445,-182.30542]
+      expect(bounds.checkWithinLimits(badCoords)).toBe(false)
+    })
+
+    it("returns false when passed a faraway latlng", function(){
+      var badCoords = [45.32445,-142.30542]
+      expect(bounds.checkWithinLimits(badCoords)).toBe(false)
+    })
+
+    it("returns true when passed a faraway latlng", function(){
+      var badCoords = [41.32445,-172.30542]
+      expect(bounds.checkWithinLimits(badCoords)).toBe(true)
+    })
+
   })
 
 })
