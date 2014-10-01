@@ -116,22 +116,25 @@ View.prototype = {
     },
 
     showWinModal: function(message) {
-        $("#dialog").dialog({
-            width: 735,
-            autoOpen: true,
-            modal: true,
-            closeOnEscape: true,
-            draggable: false,
-            buttons: {
-              "Home": function () {
-                  goHome();
-                  dialog.dialog('destroy');
-              }
-            },
-            open: function(e, ui) {
-                $('button').blur();
-            }
-        });
+      // debugger;
+      var d = $("#dialog");
+      d.dialog()
+        // $("#dialog").dialog({
+        //     width: 735,
+        //     autoOpen: true,
+        //     modal: true,
+        //     closeOnEscape: true,
+        //     draggable: false,
+        //     // buttons: {
+        //     //   "Home": function () {
+        //     //       goHome();
+        //     //       // dialog.dialog('destroy');
+        //     //   }
+        //     // },
+        //     open: function(e, ui) {
+        //         $('button').blur();
+        //     }
+        // });
     },
 
     goHome: function() {

@@ -12,11 +12,6 @@ function GameController() {
       kind: null
     };
 
-    this.biggestLat = null
-    this.biggestLng = null
-    this.smallestLat = null
-    this.smallestLng = null
-
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/player/update_position'
@@ -30,9 +25,11 @@ GameController.prototype = {
 	start: function() {
 		this.bindEvents();
 		this.view.initializeMap();
-		this.boundary = new Boundary([this.view.lat, this.view.lng]);
-		this.boundary.setMapLimits();
+		
+		
 		this.createPlayerMarkers();
+		this.boundary = new Boundary([this.view.lat, this.view.lng], this.player);
+		this.boundary.setMapLimits();
 		// this.setMapBoundaries();
 		this.setUpLocationTimer(1000);
 		this.setUpRabbitLocationTimer(10000);
@@ -54,12 +51,13 @@ GameController.prototype = {
 		$.ajax({
 		  type: "POST",
 		  url: this.updatePlayerUrl,
-		  data: this.playerOptions,
+		  data: self.player.options,
 		  success: this.checkProximityToRabbit.bind(this)
 		});
 	},
 
 	checkProximityToRabbit: function(data) {
+		console.log(data)
 		if (data['proximity'] == "win") {
 			clearInterval(this.locationTimer)
 			this.sendWinMessageToAll()
@@ -78,7 +76,7 @@ GameController.prototype = {
 		$.ajax({
 			type: "POST",
 			url: this.sendWinMessageUrl,
-			data: {player_stats: self.playerOptions},
+			data: {player_stats: self.player.options},
 		})
 	},
 
@@ -96,35 +94,34 @@ GameController.prototype = {
 		var moveDistance = 0.00008
 		// 38 = up
 		if (e.keyCode == 38) {
-			var newLat = self.player.currentLat + moveDistance
-			if (newLat < self.boundary.mapLimits.biggestLat && newLat > self.boundary.mapLimits.smallestLat) {
+			if (self.boundary.checkWithinLimits([moveDistance, 0.0 ])) {
 				self.player.move([moveDistance, 0.0])
 			}
 		// 39 = right
 		} else if (e.keyCode == 39) {
-			var newLng = self.player.currentLng + moveDistance
-			if (newLng < self.boundary.mapLimits.biggestLng && newLng > self.boundary.mapLimits.smallestLng) {
+			// var newLng = self.player.currentLng + moveDistance
+			if (self.boundary.checkWithinLimits([0.00, moveDistance])) {
 				self.player.move([0.0, moveDistance])
 			}
 		// 40 = down
 		} else if (e.keyCode == 40) {
-			var newLat = self.player.currentLat - moveDistance
-			if (newLat < self.boundary.mapLimits.biggestLat && newLat > self.boundary.mapLimits.smallestLat) {
+			// var newLat = self.player.currentLat - moveDistance
+			if (self.boundary.checkWithinLimits([-moveDistance, 0.0 ])) {
 				self.player.move([-moveDistance, 0.0])
 			}
 		// 37 = left
 		} else if (e.keyCode == 37) {
-			var newLng = self.player.currentLng - moveDistance
-			if (newLng < self.boundary.mapLimits.biggestLng && newLng > self.boundary.mapLimits.smallestLng) {
+			// var newLng = self.player.currentLng - moveDistance
+			if (self.boundary.checkWithinLimits([0.00, -moveDistance])) {
 				self.player.move([0.0, -moveDistance])
 			}
 		// 70 = f key
 		} else if (e.keyCode == 70) {
 			self.abilityController.addSpeed()
 		}
-		self.view.moveMarker(self.player.currentLat, self.player.currentLng)
+		self.view.moveMarker(self.player.options.lat, self.player.options.lng)
 
-		if(self.powerUp.collectAbility(self.playerOptions)){
+		if(self.powerUp.collectAbility(self.player.options)){
 			self.abilityController.addSpeed();
 			setTimeout(function(){self.abilityController.normalSpeed()},3000);
 				self.powerUp = null
@@ -158,18 +155,18 @@ GameController.prototype = {
 
 	// Only sends message if player is 'rabbit'
 	sendRabbitPosition: function(){
-		if(this.playerOptions.kind == 'rabbit'){
+		if(this.player.options.kind == 'rabbit'){
 			$.ajax({
 			  type: "POST",
 			  url: this.updateRabbitUrl,
-			  data: this.playerOptions,
+			  data: this.player.options,
 			});
 		}
 	},
 	// sets up pusher channel
 	setUpRabbitLocationPusher: function(){
 		var self = this
-		var gameId = this.playerOptions.game_id
+		var gameId = this.player.options.game_id
 		this.pusher = new Pusher('7a73ab83106664465bfd');
 		this.channel = this.pusher.subscribe('game_'+ gameId);
 		this.channel.bind('show_rabbit_street_view_game', function(data) {

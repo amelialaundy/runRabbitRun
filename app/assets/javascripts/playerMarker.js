@@ -1,5 +1,6 @@
 function PlayerMarker(options) {
 	this.options = options
+	console.log(options.game_id)
 	// this.id = options.id;
 	this.currentLat = options.lat;
 	this.currentLng = options.lng;
@@ -9,8 +10,9 @@ function PlayerMarker(options) {
 
 PlayerMarker.prototype = {
 	move: function(change) {
-		console.log(change)
-		this.currentLat += change[0]
-		this.currentLng += change[1]
+		console.log("**********"+this.options)
+		this.options.lat += change[0]
+		this.options.lng += change[1]
+		console.log("********** after"+this.options.lng)
 	}
 }

@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
 
 	def update_player_position
+    p "this is the update player position params:#{params}"
 		game_status = GameStatus.new(Game.find(params[:game_id]))
     proximity_data = game_status.update(params)
 		render json: proximity_data
