@@ -96,11 +96,11 @@ RSpec.describe ProximityChecker, :type => :model do
 
 		end
 
-		context "yellow" do
+		context "orange" do
 
-			it "returns 'yellow' if the hunter is a moderate distance from the rabbit" do
+			it "returns 'orange' if the hunter is a moderate distance from the rabbit" do
 				allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.000024)
-				expect(proximity_checker.zone).to eq("yellow")	
+				expect(proximity_checker.zone).to eq("orange")	
 			end
 
 		end
@@ -112,6 +112,19 @@ RSpec.describe ProximityChecker, :type => :model do
 				expect(proximity_checker.zone).to eq("green")	
 			end
 
+		end
+
+	end
+
+	describe "#win" do
+
+		let(:hunter) { instance_double("Player") }
+		let(:rabbit) { instance_double("Player") }
+		let(:proximity_checker) { ProximityChecker.new({ hunter: hunter, rabbit: rabbit }) }
+
+		it "returns true if the hunter has caught the rabbit" do
+			allow(proximity_checker).to receive(:distance_between_hunter_and_rabbit).and_return(0.00000024)
+			expect(proximity_checker.win?).to eq(true)
 		end
 
 	end
