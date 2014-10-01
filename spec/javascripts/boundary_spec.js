@@ -19,7 +19,7 @@ describe("BoundaryModel", function(){
   describe("#setMapLimits",function(){
 
     beforeEach(function(){
-      latspan = 0.003822
+      latspan = 0.003882
       lngspan = 0.007397
       mapCentre = [41.32445,-172.30542]
       bounds = new Boundary(mapCentre, "player")
@@ -27,19 +27,19 @@ describe("BoundaryModel", function(){
     });
 
     it("sets biggest lat as predefined distance from centre", function() {
-      expect(bounds.biggestLat).toEqual(mapCentre[0]+latspan);
+      expect(bounds.mapLimits.biggestLat).toEqual(mapCentre[0]+latspan);
     });
 
     it("sets biggest lng as predefined distance from centre", function() {
-      expect(bounds.biggestLng).toEqual(mapCentre[0]+lngspan);
+      expect(bounds.mapLimits.biggestLng).toEqual(mapCentre[1]+lngspan);
     });
 
     it("sets smallest lat as predefined distance from centre", function() {
-      expect(bounds.smallestLat).toEqual(mapCentre[0]-latspan);
+      expect(bounds.mapLimits.smallestLat).toEqual(mapCentre[0]-latspan);
     });
 
     it("sets smallest lng as predefined distance from centre", function() {
-      expect(bounds.smallestLng).toEqual(mapCentre[0]-lngspan);
+      expect(bounds.mapLimits.smallestLng).toEqual(mapCentre[1]-lngspan);
     });
   });
 
@@ -55,6 +55,11 @@ describe("BoundaryModel", function(){
 
     it("is defined", function(){
       expect(bounds.checkWithinLimits).toBeDefined();
+    })
+
+    it("returns false when passed a faraway latitude", function(){
+      var badCoords = [51.32445,-172.30542]
+      expect(bounds.checkWithinLimits(badCoords)).toBe(false)
     })
 
   })
