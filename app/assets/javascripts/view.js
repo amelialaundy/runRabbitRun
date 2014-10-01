@@ -28,7 +28,6 @@ DomManager = (function () {
 }());
 
 function View() {
-  //this.rabbitMarker = '/assets/rabbitmarker.png'
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
