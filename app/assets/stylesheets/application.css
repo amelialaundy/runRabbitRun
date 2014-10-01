@@ -119,6 +119,25 @@ a:active {
     color: #41add7;
 }
 
+.backHomeLink a:link,
+.backHomeLink a:visited
+	{
+	    color: #000;
+	    text-decoration: none;
+	    font-weight: bold;
+	}
+.backHomeLink a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+.backHomeLink a:active {
+    color: #41add7;
+}
+.backHomeLink a:focus {
+    outline: none;
+}
+
+
 /* google street view */
 #map-canvas {
    height: 500px;
@@ -189,7 +208,6 @@ input.newGameButton:focus {
  #proximity-alert {
  	height: 131px;
  	width: 260px;
- 	background-color: #066804;
  	float: left;
  }
 

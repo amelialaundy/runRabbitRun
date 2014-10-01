@@ -61,8 +61,8 @@ GameController.prototype = {
 			this.sendWinMessageToAll()
 		} else if (data['proximity'] == "red") {
 				this.view.showProximityAlert("red")
-		} else if (data['proximity'] == "yellow") {
-				this.view.showProximityAlert("yellow")
+		} else if (data['proximity'] == "orange") {
+				this.view.showProximityAlert("orange")
 		} else {
 				this.view.showProximityAlert("green")
 		}

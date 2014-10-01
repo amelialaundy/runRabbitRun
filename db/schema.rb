@@ -11,16 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926042123) do
+ActiveRecord::Schema.define(version: 20140930202949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: true do |t|
-    t.decimal  "centre_lat",  precision: 9, scale: 6
-    t.decimal  "centre_lng",  precision: 9, scale: 6
-    t.integer  "num_players"
-    t.boolean  "active",                              default: true
+    t.decimal  "centre_lat", precision: 9, scale: 6
+    t.decimal  "centre_lng", precision: 9, scale: 6
+    t.boolean  "active",                             default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -22,12 +22,13 @@ PowerUp.prototype = {
 
   showPowerUp: function(lat,lng){
     var self = this;
-    var icon = '/assets/box.png';
+    var icon = '/assets/mysterybox.png';
     this.marker = new google.maps.Marker({
       position: { lat: lat,
                   lng: lng},
       map: this.view.map,
-      icon: icon
+      icon: icon,
+      animation: google.maps.Animation.BOUNCE
     });
   }
 }
