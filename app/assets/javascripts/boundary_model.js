@@ -27,4 +27,4 @@ Boundary.prototype = {
 			return false
 		}
 	}
-}
+} 
