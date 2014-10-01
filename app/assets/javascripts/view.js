@@ -27,6 +27,11 @@ DomManager = (function () {
     return publik;
 }());
 
+
+
+
+
+
 function View() {
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
@@ -59,6 +64,7 @@ View.prototype = {
     },
 
     renderMapPlayerMarkers: function(playerMarker) {
+      console.log(playerMarker)
       var newMapMarker =  this.createMarker(playerMarker);
     },
 

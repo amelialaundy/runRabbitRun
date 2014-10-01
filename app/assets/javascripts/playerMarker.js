@@ -1,5 +1,12 @@
 function PlayerMarker(options) {
-	this.lat = options.lat
-	this.lng = options.lng
-	this.kind = options.kind
+	this.options = options
+	this.currentLat = options.lat;
+    this.currentLng = options.lng;
+}
+
+PlayerMarker.prototype = {
+	move: function(change) {
+		this.options.lat += change[0]
+		this.options.lng += change[1]
+	}
 }
