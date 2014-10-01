@@ -101,7 +101,7 @@ GameController.prototype = {
 	},
 
 	checkForPowerUps: function() {
-		if(self.powerUp.collectAbility(self.player.options)){
+		if(self.powerUp.collected(self.player.options)){
 			self.abilityController.addSpeed();
 			setTimeout(function(){self.abilityController.normalSpeed()},3000);
 				self.powerUp = null
