@@ -1,4 +1,4 @@
-describe("GameController", function() {
+describe("GameController", function() { 
 	var controller = null;
 
 	describe("attributes on creation", function() {
