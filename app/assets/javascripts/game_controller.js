@@ -14,7 +14,7 @@ function GameController() {
     this.locationTimer = null;
     this.rabbitTimer = null;
     this.updatePlayerUrl = '/games/update_game_status'
-    this.updateRabbitUrl = '/games/update_rabbit_street_view'
+    this.updateRabbitStreetViewUrl = '/games/update_rabbit_street_view'
     this.sendWinMessageUrl = '/games/send_win_message'
 
     self = this
