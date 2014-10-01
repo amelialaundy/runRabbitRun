@@ -5,7 +5,6 @@ class GameStatus
   end
 
   def update(args)
-    puts "this is the args in game status update:#{args}"
     player = Player.find(args[:id])
     player.update_position({lat: args[:lat], lng: args[:lng]})
     return { proximity: "irrelevent"} if player.rabbit?
@@ -13,7 +12,6 @@ class GameStatus
     proximity = ProximityChecker.new({hunter: player, rabbit: rabbit})
 
     @game.finished! if proximity.win
-    p proximity.zone
     return { proximity: proximity.zone }
 	end    
 
