@@ -10,15 +10,14 @@ function GameController() {
       id: null,
       game_id: null,
       kind: null
-    };
+  };
+  this.locationTimer = null;
+  this.rabbitTimer = null;
+  this.updatePlayerUrl = '/player/update_position'
+  this.updateRabbitStreetViewUrl = '/rabbit/update_rabbit_street_view'
+  this.sendWinMessageUrl = '/player/send_win_message'
 
-    this.locationTimer = null;
-    this.rabbitTimer = null;
-    this.updatePlayerUrl = '/player/update_position'
-    this.updateRabbitStreetViewUrl = '/rabbit/update_rabbit_street_view'
-    this.sendWinMessageUrl = '/player/send_win_message'
-
-    self = this
+  self = this
 }
 
 GameController.prototype = {
@@ -97,9 +96,11 @@ GameController.prototype = {
 		if (self.boundary.checkWithinLimits(vector)) {
 			self.player.move(vector)
 		}
-
 		self.view.moveMarker(self.player.options.lat, self.player.options.lng)
+		self.checkForPowerUps();
+	},
 
+	checkForPowerUps: function() {
 		if(self.powerUp.collectAbility(self.player.options)){
 			self.abilityController.addSpeed();
 			setTimeout(function(){self.abilityController.normalSpeed()},3000);
@@ -108,7 +109,6 @@ GameController.prototype = {
 				self.powerUp = new PowerUp(self.view);
 				self.powerUp.showPowerUp(self.powerUp.lat,self.powerUp.lng)
 			},5000)
-
 		}
 	},
 
@@ -123,7 +123,6 @@ GameController.prototype = {
 		channel.bind('win_message', function(data){
 		self.view.showWinModal(data.message)
 		self.unbindEvents();
-
 		});
 	},
 };
