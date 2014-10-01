@@ -1,8 +1,8 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 	  DomManager.registerDivs()
-	  var playerController = new PlayerController();
-	  playerController.start();
+	  var gameController = new GameController();
+	  gameController.start();
 	});
 </script>
 
@@ -20,6 +20,15 @@
 
 </script>
 
+<script type='text/javascript'>
+$(function() {     
+    var pusher = new Pusher('7a73ab83106664465bfd');
+    var chatWidget = new PusherChatWidget(pusher, {
+    chatEndPoint: '/chat'
+  });
+});
+</script>
+
 
 <div>
 	<header>&nbsp;<br/>&nbsp;</header>
@@ -31,6 +40,8 @@
 		</div>
 	</div>
 </div>
+<!-- pusher -->
+<div id='pusher_chat_widget'></div>
 
 
 <!--  for testing only  -->
@@ -44,6 +55,8 @@
 
 <div id="dialog">
   <img alt="Bunny is Dead!" class="bunnyIsDead" src="/assets/bunnyisdead.jpg">
+  <h3 class="winMessage textCenter"></h3>
+  <div class="backHomeLink textCenter"><a href="/">Back to Main menu</a></div>
 </div>
 
 <!-- <div id ='streetview'></div> -->

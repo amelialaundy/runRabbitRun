@@ -27,8 +27,12 @@ DomManager = (function () {
     return publik;
 }());
 
+
+
+
+
+
 function View() {
-  this.rabbitMarker = '/assets/rabbitmarker.png'
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
 	this.lng = parseFloat(this.divData.gameLng);
@@ -60,6 +64,7 @@ View.prototype = {
     },
 
     renderMapPlayerMarkers: function(playerMarker) {
+      console.log(playerMarker)
       var newMapMarker =  this.createMarker(playerMarker);
     },
 
@@ -84,15 +89,15 @@ View.prototype = {
 
     createNewPlayerMarkerOptions: function(playerMarker) {
         if (playerMarker.kind =="rabbit"){
-            var iconPic = "http://img1.wikia.nocookie.net/__cb20120422035528/habbo/en/images/f/fd/Rabbit.png"
+            var iconPic = "/assets/rabbit.png"
         }
         else{
-            var iconPic = "http://www.pixeljoint.com/files/icons/terminator_cyborg.gif"
+            var iconPic = "/assets/terminator.gif"
         };
     	return {
     	  map: this.map,
-    	  position: new google.maps.LatLng(playerMarker.lat, playerMarker.lng),
-        icon: this.rabbitMarker
+    	  position: new google.maps.LatLng(playerMarker.currentLat, playerMarker.currentLng),
+        icon: iconPic
     	};
     },
 
@@ -111,25 +116,13 @@ View.prototype = {
     },
 
     showWinModal: function(message) {
+        $("#dialog h3.winMessage").html(message)
         $("#dialog").dialog({
             width: 735,
             autoOpen: true,
             modal: true,
             closeOnEscape: true,
-            draggable: false,
-            buttons: {
-              "Home": function () {
-                  goHome();
-                  dialog.dialog('destroy');
-              }
-            },
-            open: function(e, ui) {
-                $('button').blur();
-            }
+            draggable: false
         });
-    },
-
-    goHome: function() {
-        alert('You selected goHome');
     }
 }
