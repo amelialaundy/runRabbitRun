@@ -28,3 +28,4 @@ Boundary.prototype = {
 		}
 	}
 } 
+ 
