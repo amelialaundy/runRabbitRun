@@ -10,7 +10,19 @@
 	<article>
 		<header>&nbsp;</header>
 		<article>
-			<section class="logo"><%= image_tag("rrrlogo3.png", :alt => "Run Rabbit Run logo", :class => "imageLogoStyle") %></section>
+			<section class="logo">
+				<div><%= image_tag("rrrlogo3.png", :alt => "Run Rabbit Run logo", :class => "imageLogoStyle") %></div>
+				<div class="textLeft">
+					<h2>How to play</h2> 
+					<h3>Movement</h3>
+					<p>Move your player around the map using the arrow keys on your keyboard
+					boxes give a speed boost, to use hold your arrow keys down</p>
+
+					<h3>Aim</h3>
+					<p>As a rabbit you want to keep moving around the map to avoid hunters
+					as a hunter, the google street view and indicator will help you locate the rabbit and win</p>
+				</div>
+			</section>
 			<nav class="gameOptions floatLeft">
 				<div><%= render "games/new" %></div>
 
