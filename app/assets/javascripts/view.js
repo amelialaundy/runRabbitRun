@@ -27,11 +27,6 @@ DomManager = (function () {
     return publik;
 }());
 
-
-
-
-
-
 function View() {
   this.divData = DomManager.getDivContents();
 	this.lat = parseFloat(this.divData.gameLat);
